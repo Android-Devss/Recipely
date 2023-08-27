@@ -41,6 +41,7 @@ android {
 dependencies {
     val fragmentVersion = "1.6.1"
     val coilVersion = "2.4.0"
+    val lottieVersion = "6.0.1"
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -54,4 +55,6 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:$fragmentVersion")
     //Coil
     implementation("io.coil-kt:coil:$coilVersion")
+    //Lottie
+    implementation("com.airbnb.android:lottie:$lottieVersion")
 }
