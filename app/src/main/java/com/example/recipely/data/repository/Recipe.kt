@@ -1,7 +1,5 @@
 package com.example.recipely.data.repository
 
-import android.os.Parcelable
-
 data class Recipe(
     val recipeName : String,
     val ingredients : String,
