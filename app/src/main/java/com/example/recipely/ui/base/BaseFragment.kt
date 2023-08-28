@@ -15,30 +15,30 @@ import androidx.viewbinding.ViewBinding
  */
 
 abstract class BaseFragment<VB : ViewBinding> : Fragment() {
-    private var _binding: VB? = null
+    private var _binding : VB? = null
     val binding get() = _binding
 
     /**
      * A lambda expression used to inflate the ViewBinding associated with this Fragment.
      * This should be implemented in derived classes.
      */
-    abstract val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> VB
+    abstract val bindingInflater : (LayoutInflater, ViewGroup?, Boolean) -> VB
 
     /**
      * A tag used for logging purposes. Should be defined in derived classes.
      */
-    abstract val logTag: String
+    abstract val logTag : String
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        inflater : LayoutInflater,
+        container : ViewGroup?,
+        savedInstanceState : Bundle?
+    ) : View? {
         _binding = bindingInflater(inflater, container, false)
         return requireNotNull(_binding).root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view : View, savedInstanceState : Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
         addCallbacks()
@@ -59,7 +59,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
      *
      * @param value The message or value to be logged.
      */
-    fun log(value: Any) = Log.v(logTag, value.toString())
+    fun log(value : Any) = Log.v(logTag, value.toString())
 
     /**
      * Called when the Fragment's View is destroyed.

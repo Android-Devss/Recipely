@@ -1,4 +1,4 @@
-package com.example.recipely.data.source.util
+package com.example.recipely.util
 
 object Constant {
 

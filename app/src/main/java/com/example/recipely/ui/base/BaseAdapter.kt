@@ -16,22 +16,22 @@ import androidx.viewbinding.ViewBinding
  * @constructor Creates a BaseAdapter with the provided list of data items.
  */
 abstract class BaseAdapter<T, VB : ViewBinding>(
-    private var items: List<T>,
+    private var items : List<T>,
 ) : RecyclerView.Adapter<BaseAdapter.BaseViewHolder<VB>>() {
 
     /**
      * This property should be implemented by subclasses to provide a way to inflate the ViewBinding for RecyclerView item views.
      */
-    abstract val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> VB
+    abstract val bindingInflater : (LayoutInflater, ViewGroup?, Boolean) -> VB
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<VB> {
+    override fun onCreateViewHolder(parent : ViewGroup, viewType : Int) : BaseViewHolder<VB> {
         val inflater = LayoutInflater.from(parent.context)
         val binding = bindingInflater(inflater, parent, false)
 
         return BaseViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: BaseViewHolder<VB>, position: Int) {
+    override fun onBindViewHolder(holder : BaseViewHolder<VB>, position : Int) {
         val currentItem = items[position]
         onBindViewHolder(holder, position, currentItem)
     }
@@ -45,7 +45,7 @@ abstract class BaseAdapter<T, VB : ViewBinding>(
      * @param position The position of the item within the adapter's data set.
      * @param currentItem The data item to bind to the item view at the specified position.
      */
-    abstract fun onBindViewHolder(holder: BaseViewHolder<VB>, position: Int, currentItem: T)
+    abstract fun onBindViewHolder(holder : BaseViewHolder<VB>, position : Int, currentItem : T)
 
     /**
      * [BaseViewHolder] is a generic inner class that holds the ViewBinding for a RecyclerView item view.
@@ -53,21 +53,21 @@ abstract class BaseAdapter<T, VB : ViewBinding>(
      * @property binding The ViewBinding for the RecyclerView item view.
      * @constructor Creates a [BaseViewHolder] with the provided ViewBinding.
      */
-    class BaseViewHolder<VB : ViewBinding>(val binding: VB) : RecyclerView.ViewHolder(binding.root)
+    class BaseViewHolder<VB : ViewBinding>(val binding : VB) : RecyclerView.ViewHolder(binding.root)
 
     /**
      * Sets a new list of data items for the adapter and updates the RecyclerView with any changes using DiffUtil.
      *
      * @param newItems The new list of data items to be displayed in the RecyclerView.
      */
-    open fun setItems(newItems: List<T>) {
+    open fun setItems(newItems : List<T>) {
         val diffResult =
             DiffUtil.calculateDiff(BaseDiffUtil(items, newItems, ::areItemsSame, ::areContentSame))
         items = newItems
         diffResult.dispatchUpdatesTo(this)
     }
 
-    open fun areItemsSame(oldItem: T, newItem: T) = oldItem?.equals(newItem) == true
+    open fun areItemsSame(oldItem : T, newItem : T) = oldItem?.equals(newItem) == true
 
-    open fun areContentSame(oldPosition: T, newPosition: T) = true
+    open fun areContentSame(oldPosition : T, newPosition : T) = true
 }

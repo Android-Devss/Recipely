@@ -2,9 +2,9 @@ package com.example.recipely.data.source
 
 import android.content.Context
 import android.util.Log
-import com.example.recipely.data.repository.Recipe
-import com.example.recipely.data.source.util.Constant.FileName.CSV_FILE_NAME
-import com.example.recipely.data.source.util.CsvParser
+import com.example.recipely.data.source.model.Recipe
+import com.example.recipely.util.Constant.FileName.CSV_FILE_NAME
+import com.example.recipely.util.CsvParser
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
@@ -17,7 +17,7 @@ class DataSourceImp(private val context : Context, private val csvParser : CsvPa
             buffer.forEachLine {
                 val currentRecipe = csvParser.parseLine(it)
                 recipeList.add(currentRecipe)
-                Log.v("Main_Activity",it)
+                Log.v("Main_Activity", it)
             }
 
         }

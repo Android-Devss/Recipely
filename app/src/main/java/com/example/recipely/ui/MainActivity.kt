@@ -2,10 +2,10 @@ package com.example.recipely.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.recipely.data.repository.Recipe
+import com.example.recipely.data.source.model.Recipe
 import com.example.recipely.data.source.DataSourceImp
 import com.example.recipely.databinding.ActivityMainBinding
-import com.example.recipely.data.source.util.CsvParser
+import com.example.recipely.util.CsvParser
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
