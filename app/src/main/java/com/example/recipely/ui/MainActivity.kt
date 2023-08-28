@@ -2,11 +2,33 @@ package com.example.recipely.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.recipely.R
+import com.example.recipely.data.repository.Recipe
+import com.example.recipely.data.source.DataSourceImp
+import com.example.recipely.databinding.ActivityMainBinding
+import com.example.recipely.data.source.util.CsvParser
 
 class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private lateinit var binding : ActivityMainBinding
+    private lateinit var parser : CsvParser
+    private lateinit var dataSource : DataSourceImp
+    private lateinit var recipe : Recipe
+
+    override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        parser = CsvParser()
+        dataSource = DataSourceImp(this, parser)
+//        dataSource.getAllRecipes()
+//        bindRecipe()
+
     }
+
+//    private fun bindRecipe() {
+//        binding.apply {
+//            Cuisine.text = recipe.cuisine
+//            TotalTimeInMins.text = recipe.totalTimeInMinutes.toString()
+//            IngredientCount.text = recipe.ingredientsCount.toString()
+//        }
+//    }
 }
