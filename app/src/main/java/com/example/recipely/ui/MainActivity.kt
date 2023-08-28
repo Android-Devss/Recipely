@@ -19,16 +19,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         parser = CsvParser()
         dataSource = DataSourceImp(this, parser)
-//        dataSource.getAllRecipes()
-//        bindRecipe()
+        recipe = dataSource.getAllRecipes().first()
+
+        bindRecipe()
 
     }
 
-//    private fun bindRecipe() {
-//        binding.apply {
-//            Cuisine.text = recipe.cuisine
-//            TotalTimeInMins.text = recipe.totalTimeInMinutes.toString()
-//            IngredientCount.text = recipe.ingredientsCount.toString()
-//        }
-//    }
+    private fun bindRecipe() {
+        binding.apply {
+            Cuisine.text = recipe.cuisine
+            TotalTimeInMins.text = recipe.totalTimeInMinutes.toString()
+            IngredientCount.text = recipe.ingredientsCount.toString()
+        }
+    }
 }
