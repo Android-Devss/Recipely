@@ -1,4 +1,4 @@
-package com.example.recipely.data.repository
+package com.example.recipely.data.source.model
 
 data class Recipe(
     val recipeName : String,
