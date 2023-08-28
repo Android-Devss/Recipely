@@ -9,6 +9,7 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 
 class DataSourceImp(private val context : Context, private val csvParser : CsvParser) : DataSource {
+
     override fun getAllRecipes() : List<Recipe> {
         val recipeList = (mutableListOf<Recipe>())
         context.apply {
@@ -19,9 +20,7 @@ class DataSourceImp(private val context : Context, private val csvParser : CsvPa
                 recipeList.add(currentRecipe)
                 Log.v("Main_Activity", it)
             }
-
         }
-
         return recipeList
     }
 

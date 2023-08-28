@@ -18,5 +18,4 @@ class CsvParser {
             ingredientsCount = tokens[Constant.ColumnIndex.INGREDIENTS_COUNT].toInt(),
         )
     }
-
 }
