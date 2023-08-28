@@ -2,11 +2,16 @@ package com.example.recipely.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.recipely.R
+import com.example.recipely.data.source.model.Recipe
+import com.example.recipely.data.source.DataSourceImp
+import com.example.recipely.databinding.ActivityMainBinding
+import com.example.recipely.util.CsvParser
 
 class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private lateinit var binding : ActivityMainBinding
+    override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }
