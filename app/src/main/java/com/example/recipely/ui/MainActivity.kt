@@ -1,37 +1,35 @@
 package com.example.recipely.ui
 
-import android.os.Bundle
-import android.os.StrictMode
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import com.example.recipely.R
+import android.os.Bundle
+import com.example.recipely.data.repository.Recipe
+import com.example.recipely.data.source.DataSourceImp
 import com.example.recipely.databinding.ActivityMainBinding
-import com.example.recipely.ui.advice.AdviceFragment
-import com.example.recipely.ui.fragment.search.SearchFragment
+import com.example.recipely.data.source.util.CsvParser
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
-    private val searchFragment=SearchFragment()
-    private val adviceFragment=AdviceFragment()
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private lateinit var binding : ActivityMainBinding
+    private lateinit var parser : CsvParser
+    private lateinit var dataSource : DataSourceImp
+    private lateinit var recipe : Recipe
+
+    override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        StrictMode.getThreadPolicy()
+        parser = CsvParser()
+        dataSource = DataSourceImp(this, parser)
+        recipe = dataSource.getAllRecipes().first()
+
+        bindRecipe()
 
     }
-    private fun replaceFragment(fragment: Fragment) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragmentContainerView, fragment)
-        transaction.commit()
-    }
-    fun on(view: View) {
-        replaceFragment(searchFragment)
-    }
 
-    fun onClick(view: View) {
-        replaceFragment(adviceFragment)
+    private fun bindRecipe() {
+        binding.apply {
+            Cuisine.text = recipe.cuisine
+            TotalTimeInMins.text = recipe.totalTimeInMinutes.toString()
+            IngredientCount.text = recipe.ingredientsCount.toString()
+        }
     }
-
 }
