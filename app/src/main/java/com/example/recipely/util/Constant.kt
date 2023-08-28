@@ -17,5 +17,4 @@ object Constant {
     object FileName {
         const val CSV_FILE_NAME = "indian_food_v3.csv"
     }
-
 }
