@@ -3,6 +3,7 @@ package com.example.recipely.ui.homeFragment
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.net.toUri
+import coil.load
 import com.example.recipely.databinding.HomePopularCardBinding
 import com.example.recipely.domain.PopularRecipesModel
 
@@ -16,10 +17,9 @@ class PopularRecipesAdapter (recipes: List<PopularRecipesModel>)
         position: Int,
         currentItem: PopularRecipesModel
     ) {
-        val uriImage = currentItem.recipeName.toUri()
         holder.binding.apply {
             recipeName.text = currentItem.recipeName
-            recipeImage.setImageURI(uriImage)
+            recipeImage.load(currentItem.recipeImageUrl)
 
         }
     }
