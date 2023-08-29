@@ -1,12 +1,11 @@
 <resources>
     <string name="app_name">Recipely</string>
-    <string name="search">Search about indian food</string>
-    <string name="indianFood">Indian Food Breakfast</string>
-    <string name="image">image</string>
-    <string name="discover_recipes">Discover Recipes🍩🍿</string>
-    <string name="search_about_recipes">Search about recipes🍔</string>
-    <string name="no_recipes">No recipes matches your search 😪😪!</string>
-    <string name="enter_valid_data">Please enter valid data</string>
-    <string name="recipe_type">Recipe Type</string>
-    <string name="advices">Advices</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="recipe_details">Recipe Details</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="recipe_ingredients">Recipe Ingredients</string>
+    <string name="ingredients_count">Recipe Ingredients Count</string>
+    <string name="instructions">Instructions</string>
+    <string name="healthy_ingredients">Healthy Ingredients</string>
 </resources>
