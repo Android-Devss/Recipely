@@ -54,7 +54,7 @@
             android:layout_height="match_parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:listitem="@layout/parent_recyclerview_layout" />
+            tools:listitem="@layout/popular_recyclerview_layout" />
 
 
     </LinearLayout>

@@ -19,7 +19,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     override fun addCallbacks() {
-        // Add any required callbacks here
     }
 }
 
