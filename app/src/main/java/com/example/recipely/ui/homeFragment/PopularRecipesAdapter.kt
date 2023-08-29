@@ -2,7 +2,6 @@ package com.example.recipely.ui.homeFragment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.net.toUri
 import coil.load
 import com.example.recipely.databinding.HomePopularCardBinding
 import com.example.recipely.domain.PopularRecipesModel

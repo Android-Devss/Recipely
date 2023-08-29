@@ -2,6 +2,7 @@ package com.example.recipely.ui.homeFragment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.example.recipely.data.source.CsvDataSource
 import com.example.recipely.data.source.DataSource
 import com.example.recipely.data.source.DataSourceImp
 import com.example.recipely.databinding.FragmentHomeBinding
@@ -13,8 +14,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentHomeBinding =
         FragmentHomeBinding::inflate
-    private val dataManager: DataSource by lazy { DataSourceImp(requireContext(), CsvParser()) }
-    val itemList: MutableList<HomeItem<Any>> = mutableListOf()
+    private val dataSource by lazy { CsvDataSource(requireContext(), CsvParser()) }
+    private val dataManager: DataSource by lazy { DataSourceImp(requireContext(),dataSource) }
+
+    private val itemList: MutableList<HomeItem<Any>> = mutableListOf()
 
     override val logTag: String = this.javaClass.simpleName
 
