@@ -3,6 +3,7 @@ package com.example.recipely.ui.homeFragment
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.net.toUri
+import coil.load
 import com.example.recipely.R
 import com.example.recipely.data.source.model.Recipe
 import com.example.recipely.databinding.HomeEditorsCardBinding
@@ -20,10 +21,9 @@ class EditorsAdapter(
         position: Int,
         currentItem: Recipe
     ) {
-        val uriImage = currentItem.recipeName.toUri()
         holder.binding.apply {
             recipeName.text = currentItem.recipeName
-            recipeImage.setImageURI(uriImage)
+            recipeImage.load(currentItem.imageUrl)
             chefName.text=currentItem.cuisine
             iconArrow.setAltImageResource(R.drawable.baseline_arrow_forward_24)
         }

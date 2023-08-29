@@ -24,8 +24,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
         itemList.add(HomeItem(popularRecipes,1))
         itemList.add(HomeItem(editorsList,2))
-        val adapter = HomeNestedAdapter(itemList)
-        binding?.parentRecyclerView?.adapter = adapter
+        binding?.parentRecyclerView?.adapter= HomeNestedAdapter(itemList)
+
+
+//        val adapter = HomeNestedAdapter(itemList)
+//        binding?.parentRecyclerView?.adapter = adapter
     }
 
     override fun addCallbacks() {
