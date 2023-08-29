@@ -10,8 +10,9 @@ import java.io.InputStreamReader
 
 class DataSourceImp(private val context : Context, private val csvParser : CsvParser) : DataSource {
 
+    val recipeList = (mutableListOf<Recipe>())
     override fun getAllRecipes() : List<Recipe> {
-        val recipeList = (mutableListOf<Recipe>())
+
         context.apply {
             val inputStream = assets.open(CSV_FILE_NAME)
             val buffer = BufferedReader(InputStreamReader(inputStream))
@@ -24,5 +25,17 @@ class DataSourceImp(private val context : Context, private val csvParser : CsvPa
         return recipeList
     }
 
+    override fun getPopularRecipes(): List<Recipe> {
+        return recipeList.filter {
+            it.ingredientsCount < 4
+        }.sortedBy {
+            it.totalTimeInMinutes
+        }    }
+
+    override fun getEasyRecipes(): List<Recipe> {
+        return recipeList.filter {
+            it.totalTimeInMinutes < 30
+        }.sortedBy { it.ingredientsCount }
+    }
 
 }
