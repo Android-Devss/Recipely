@@ -2,7 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Recipely" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+         <item name="colorPrimary">@color/white_ff</item>
+        <item name="colorOnPrimary">@color/primary</item>
     </style>
 
     <style name="Theme.Recipely" parent="Base.Theme.Recipely" />
