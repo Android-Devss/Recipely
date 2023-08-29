@@ -8,21 +8,11 @@ import com.example.recipely.util.CsvParser
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
-class DataSourceImp(private val context : Context, private val csvParser : CsvParser) : DataSource {
+class DataSourceImp(private val context : Context, private val csvParser : CsvDataSource) : DataSource {
 
-    val recipeList = (mutableListOf<Recipe>())
-    override fun getAllRecipes() : List<Recipe> {
-
-        context.apply {
-            val inputStream = assets.open(CSV_FILE_NAME)
-            val buffer = BufferedReader(InputStreamReader(inputStream))
-            buffer.forEachLine {
-                val currentRecipe = csvParser.parseLine(it)
-                recipeList.add(currentRecipe)
-                Log.v("Main_Activity", it)
-            }
-        }
-        return recipeList
+    private val recipeList = csvParser.getAllRecipes()
+    override fun getAllRecipes(): List<Recipe> {
+      return csvParser.getAllRecipes()
     }
 
     override fun getPopularRecipes(): List<Recipe> {
