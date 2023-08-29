@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_margin="@dimen/space4"
     android:padding="@dimen/space4"
@@ -28,6 +30,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview_child"
             android:padding="@dimen/space4"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/home_popular_card"
             android:background="@color/white_ff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
