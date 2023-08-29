@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Recipely</string>
+    <string name="burgur">Beef Burgur</string>
+    <string name="chef_name">Alina Spader</string>
+    <string name="home">Home</string>
+    <string name="breakfast">BreakFast</string>
+    <string name="lunch">Lunch</string>
+    <string name="dinner">Dinner</string>
+    <string name="popular">Popular Recipe</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
