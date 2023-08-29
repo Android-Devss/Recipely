@@ -7,8 +7,9 @@ import com.example.recipely.util.CsvParser
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
-class CsvDataSource(private val context: Context, private val parser: CsvParser) :
-    RecipeDataSource {
+class GetCsvDataSource(private val context: Context, private val parser: CsvParser) :
+
+    GetRecipesDataSource {
     override fun getAllRecipes(): List<Recipe> {
         val recipeList = mutableListOf<Recipe>()
         context.apply {
@@ -21,5 +22,4 @@ class CsvDataSource(private val context: Context, private val parser: CsvParser)
         }
         return recipeList
     }
-
 }
