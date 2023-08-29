@@ -18,7 +18,7 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/popular"
+            android:text="@string/editors"
             android:fontFamily="@font/poppins_medium"
             android:layout_marginStart="@dimen/space12"
             android:textColor="@color/black60"
