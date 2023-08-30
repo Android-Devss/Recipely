@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:padding="@dimen/space4"
     android:layout_height="@dimen/second_card_height"
     android:layout_margin="@dimen/space8"
+    android:padding="@dimen/space4"
     app:cardCornerRadius="@dimen/corner_reduis"
     tools:ignore="TextSizeCheck">
 
@@ -15,7 +15,7 @@
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.utils.widget.ImageFilterView
-            android:id="@+id/recipe_image"
+            android:id="@+id/recipe_image1"
             android:layout_width="@dimen/first_card_image"
             android:layout_height="@dimen/first_card_image"
             android:layout_margin="@dimen/space16"
@@ -26,34 +26,34 @@
             app:roundPercent=".3" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/recipe_name"
+            android:id="@+id/recipe_name1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space24"
             android:layout_marginStart="@dimen/space16"
+            android:layout_marginTop="@dimen/space24"
             android:ellipsize="end"
             android:fontFamily="@font/poppins_semi_bold"
             android:lines="1"
             android:text="@string/burgur"
             android:textColor="@color/black87"
             android:textSize="@dimen/text18"
-            app:layout_constraintStart_toEndOf="@+id/recipe_image"
+            app:layout_constraintStart_toEndOf="@+id/recipe_image1"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/chef_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space16"
+            android:layout_marginTop="@dimen/space8"
             android:ellipsize="end"
             android:fontFamily="@font/poppins_medium"
             android:lines="1"
-            android:layout_marginStart="@dimen/space16"
-            android:layout_marginTop="@dimen/space8"
             android:text="@string/chef_name"
             android:textColor="@color/black37"
             android:textSize="@dimen/text18"
-            app:layout_constraintStart_toEndOf="@+id/recipe_image"
-            app:layout_constraintTop_toBottomOf="@+id/recipe_name" />
+            app:layout_constraintStart_toEndOf="@+id/recipe_image1"
+            app:layout_constraintTop_toBottomOf="@+id/recipe_name1" />
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:id="@+id/icon_arrow"

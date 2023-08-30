@@ -7,9 +7,11 @@
     android:layout_margin="@dimen/space8"
     app:cardCornerRadius="@dimen/corner_reduis"
     tools:ignore="TextSizeCheck">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <androidx.constraintlayout.utils.widget.ImageFilterView
             android:id="@+id/recipe_image"
             android:layout_width="@dimen/first_card_image"
@@ -20,6 +22,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:roundPercent=".3" />
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/recipe_name"
             android:layout_width="wrap_content"

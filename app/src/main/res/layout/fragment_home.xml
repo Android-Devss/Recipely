@@ -1,61 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/parent_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:ignore="UselessParent">
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/popular_recyclerview_layout" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/breakfast"
-                style="@style/Chip_Style"
-                android:backgroundTint="@color/primary"
-                android:text="@string/breakfast"
-                android:textColor="@color/white_ff"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/lunch"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/lunch"
-                style="@style/Chip_Style"
-                android:text="@string/lunch"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/dinner"
-                app:layout_constraintStart_toEndOf="@id/breakfast"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="VisualLintButtonSize" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/dinner"
-                style="@style/Chip_Style"
-                android:text="@string/dinner"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/lunch"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="VisualLintButtonSize" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/parent_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:listitem="@layout/popular_recyclerview_layout" />
-
-
-    </LinearLayout>
-
-</FrameLayout>
+</LinearLayout>

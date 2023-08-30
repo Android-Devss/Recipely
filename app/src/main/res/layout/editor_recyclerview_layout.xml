@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="@dimen/space4"
-    android:padding="@dimen/space4"
-    android:layout_height="wrap_content">
+    android:padding="@dimen/space4">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,27 +14,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/title1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/editors"
-            android:fontFamily="@font/poppins_medium"
             android:layout_marginStart="@dimen/space12"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/editors"
             android:textColor="@color/black60"
             android:textSize="@dimen/text18"
             android:textStyle="bold" />
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_child"
-            android:padding="@dimen/space4"
-            android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/home_editors_card"
-            android:background="@color/white_ff"
+            android:id="@+id/rv_editor_choice"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/white_ff"
+            android:orientation="vertical"
+            android:padding="@dimen/space4"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/home_editors_card">
 
         </androidx.recyclerview.widget.RecyclerView>
 
