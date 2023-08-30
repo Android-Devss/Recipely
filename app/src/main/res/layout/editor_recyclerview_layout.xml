@@ -23,7 +23,7 @@
             android:textSize="@dimen/text18"
             android:textStyle="bold" />
         <TextView
-            android:id="@+id/see_all_health"
+            android:id="@+id/see_all"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/see_all"
@@ -36,7 +36,7 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_child"
+            android:id="@+id/recyclerview"
             android:padding="@dimen/space4"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

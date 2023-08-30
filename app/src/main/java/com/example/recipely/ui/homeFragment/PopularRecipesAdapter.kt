@@ -10,17 +10,14 @@ class PopularRecipesAdapter (recipes: List<Recipe>)
     : HomeBaseAdapter<Recipe, HomePopularCardBinding>(recipes) {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> HomePopularCardBinding
         get() = HomePopularCardBinding::inflate
-
     override fun onBindViewHolder(
-        holder: BaseViewHolder<HomePopularCardBinding>,
-        position: Int,
-        currentItem:Recipe
+        holder: BaseViewHolder<HomePopularCardBinding>,position: Int
+        ,currentItem:Recipe
 
     ) {
         holder.binding.apply {
             recipeName.text = currentItem.recipeName
             recipeImage.load(currentItem.imageUrl)
-
         }
     }
 }

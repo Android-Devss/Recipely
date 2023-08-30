@@ -1,10 +1,8 @@
 package com.example.recipely.ui.homeFragment
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipely.R
 import com.example.recipely.data.source.model.Recipe
@@ -12,7 +10,6 @@ import com.example.recipely.databinding.EditorRecyclerviewLayoutBinding
 import com.example.recipely.databinding.PopularRecyclerviewLayoutBinding
 import com.example.recipely.domain.HomeItem
 import com.example.recipely.domain.enums.HomeItemType
-import kotlin.coroutines.coroutineContext
 
 
 class HomeNestedAdapter(private var listHomeItem : List<HomeItem<Any>>) :
@@ -37,10 +34,11 @@ class HomeNestedAdapter(private var listHomeItem : List<HomeItem<Any>>) :
                     parent,
                     false)
                 return EditorsViewHolder(view)
+
+
             }
 
-
-        else -> throw java.lang.Exception("Execption in home")
+        else -> throw java.lang.Exception("Exception in determining viewCard")
     }
 }
 
@@ -59,16 +57,22 @@ class HomeNestedAdapter(private var listHomeItem : List<HomeItem<Any>>) :
             }
         }
     }
-fun onBindingPopularRcipesViewHolder(holder: PopularRcipesViewHolder,position: Int){
+private fun onBindingPopularRcipesViewHolder(holder: PopularRcipesViewHolder, position: Int){
     val poplarItemsList=listHomeItem[position].item as List<Recipe>
     val adapter = PopularRecipesAdapter(poplarItemsList)
     holder.binding.recyclerviewChild.adapter = adapter
+    holder.binding.title.text=(R.string.popular).toString()
+    holder.binding.seeAll.text=(R.string.see_all).toString()
 }
 
-    fun onBindingEditorRcipesViewHolder(holder: EditorsViewHolder,position: Int){
+    private fun onBindingEditorRcipesViewHolder(holder: EditorsViewHolder, position: Int){
         val editorItemList=listHomeItem[position].item as List<Recipe>
         val adapter = EditorsAdapter(editorItemList)
-        holder.binding.recyclerviewChild.adapter = adapter
+        holder.binding.recyclerview.adapter = adapter
+        holder.binding.title.text=(R.string.editors).toString()
+        holder.binding.seeAll.text=(R.string.see_all).toString()
+
+
     }
     override fun getItemViewType(position: Int ) : Int {
         return when (listHomeItem[position].type) {
@@ -77,9 +81,6 @@ fun onBindingPopularRcipesViewHolder(holder: PopularRcipesViewHolder,position: I
 
             HomeItemType.HOME_EDITORS_TYPE ->
                 DataType.POPULAR_RECIPE
-
-
-            else -> throw java.lang.Exception("Get View Type Exception")
         }
     }
 
@@ -87,17 +88,14 @@ fun onBindingPopularRcipesViewHolder(holder: PopularRcipesViewHolder,position: I
 
     class PopularRcipesViewHolder(viewItem : View) : BaseViewHolder(viewItem) {
         val binding = PopularRecyclerviewLayoutBinding.bind(viewItem)
-
     }
     class EditorsViewHolder(viewItem : View) : BaseViewHolder(viewItem) {
-        val binding = EditorRecyclerviewLayoutBinding.bind(viewItem)
+        val binding= EditorRecyclerviewLayoutBinding.bind(viewItem)
     }
 }
 class DataType {
     companion object {
         const val POPULAR_RECIPE = 1
         const val EDITORS_CHOISE = 2
-
-
     }
 }
