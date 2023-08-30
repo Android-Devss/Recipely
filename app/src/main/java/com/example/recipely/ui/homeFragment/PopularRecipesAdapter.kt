@@ -15,6 +15,7 @@ class PopularRecipesAdapter (recipes: List<Recipe>)
         holder: BaseViewHolder<HomePopularCardBinding>,
         position: Int,
         currentItem:Recipe
+
     ) {
         holder.binding.apply {
             recipeName.text = currentItem.recipeName
