@@ -27,16 +27,16 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/recipe_name"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_title"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space24"
             android:layout_marginStart="@dimen/space16"
+            android:layout_marginTop="@dimen/space24"
+            android:lines="2"
             android:ellipsize="end"
-            android:fontFamily="@font/poppins_semi_bold"
-            android:lines="1"
+            android:fontFamily="@font/poppins_medium"
             android:text="@string/burgur"
             android:textColor="@color/black87"
-            android:textSize="@dimen/text18"
+            android:textSize="@dimen/text16"
             app:layout_constraintStart_toEndOf="@+id/recipe_image"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,13 +59,12 @@
             android:id="@+id/icon_arrow"
             android:layout_width="@dimen/image_icon_button"
             android:layout_height="@dimen/image_icon_button"
-            android:layout_marginStart="@dimen/space16"
+            android:layout_marginEnd="@dimen/space32"
             android:layout_marginBottom="@dimen/space32"
             android:background="@drawable/icon_image_backgorund"
             android:src="@drawable/baseline_arrow_forward_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/chef_name"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>

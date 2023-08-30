@@ -36,6 +36,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     ) : View? {
         _binding = bindingInflater(inflater, container, false)
         return requireNotNull(_binding).root
+        initialize()
     }
 
     override fun onViewCreated(view : View, savedInstanceState : Bundle?) {
