@@ -23,7 +23,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override val logTag: String = this.javaClass.simpleName
     private lateinit var adapter:HomeNestedAdapter
-    private lateinit var adaptertest:PopularRecipesAdapter
     override fun initialize() {
         val popularRecipes = dataManager.getPopularRecipes().distinct().take(14)
         val editorsList = dataManager.getEasyRecipes().distinct().take(14)
@@ -35,8 +34,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         adapter = HomeNestedAdapter(itemList)
         binding?.parentRecyclerView?.adapter = adapter
 
-        adaptertest= PopularRecipesAdapter(dataManager.getEasyRecipes())
-        binding?.parentRecyclerView?.adapter = adaptertest
 
     }
 
