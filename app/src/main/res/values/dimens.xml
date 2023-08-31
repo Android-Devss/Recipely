@@ -16,14 +16,20 @@
     <dimen name="text18">18sp</dimen>
     <dimen name="text24">24sp</dimen>
     <!--Other-->
+
+    <dimen name="first_card_image">102dp</dimen>
     <dimen name="first_card_height_home">152dp</dimen>
     <dimen name="first_card_width">140dp</dimen>
     <dimen name="second_card_height">140dp</dimen>
 
     <dimen name="corner_reduis">14dp</dimen>
     <dimen name="card_elevation">10dp</dimen>
-    <dimen name="first_card_image">102dp</dimen>
-    <dimen name="image_icon_button">32dp</dimen>
-    <dimen name="width_title">162dp</dimen>
+    <dimen name="corners14">14dp</dimen>
 
+    <dimen name="width_title">162dp</dimen>
+    <dimen name="height162">162dp</dimen>
+    <dimen name="height200">200dp</dimen>
+
+
+    <dimen name="image_icon_button">32dp</dimen>
 </resources>

@@ -1,11 +1,11 @@
 package com.example.recipely.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.recipely.data.source.model.Recipe
-import com.example.recipely.data.source.DataSourceImp
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import com.example.recipely.R
 import com.example.recipely.databinding.ActivityMainBinding
-import com.example.recipely.util.CsvParser
+import com.example.recipely.ui.seeAllHome.SeeAllFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
@@ -13,5 +13,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        addFragment(SeeAllFragment())
+    }
+
+    private fun addFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.add(R.id.fragment_container, fragment)
+        transaction.commit()
     }
 }
+

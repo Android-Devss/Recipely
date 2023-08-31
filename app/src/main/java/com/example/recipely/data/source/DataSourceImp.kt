@@ -12,7 +12,7 @@ class DataSourceImp(private val context : Context, private val csvParser : GetCs
 
     override fun getPopularRecipes(): List<Recipe> {
         return recipeList.filter {
-            it.ingredientsCount < 4
+            it.ingredientsCount > 4
         }.sortedBy {
             it.totalTimeInMinutes
         }    }
