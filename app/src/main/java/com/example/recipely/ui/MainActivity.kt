@@ -10,16 +10,17 @@ import com.example.recipely.util.CsvParser
 class MainActivity: AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var dataSource: DataSourceImp
+    val recipeDetailsFragment=RecipeDetailsFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         dataSource = DataSourceImp(this, CsvParser())
-        showRecipeDetailsFragment()
+
     }
-    private fun showRecipeDetailsFragment() {
-        val recipeDetailsFragment = RecipeDetailsFragment()
+    private fun showRecipeDetailsFragment(recipeId:Int) {
+        val recipeDetailsFragment = RecipeDetailsFragment.newInstance(recipeId)
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, recipeDetailsFragment)
             .commit()
