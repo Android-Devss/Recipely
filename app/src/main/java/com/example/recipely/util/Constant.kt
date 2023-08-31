@@ -17,8 +17,4 @@ object Constant {
     object FileName {
         const val CSV_FILE_NAME = "indian_food_v3.csv"
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> d1436ee (arrangement packages and reformating files)
 }

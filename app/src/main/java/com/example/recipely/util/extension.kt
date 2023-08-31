@@ -1,11 +1,9 @@
 package com.example.recipely.util
 
-import androidx.fragment.app.Fragment
-import com.example.recipely.R
+fun Int.toCountFormat() = "$this Items"
 
-fun Fragment.replaceFragment(fragment: Fragment) {
-    val fragmentManager = requireActivity().supportFragmentManager
-    val fragmentTransaction = fragmentManager.beginTransaction()
-    fragmentTransaction.replace(R.id.fragment_container, fragment).addToBackStack(null)
-    fragmentTransaction.commit()
-}
+fun Int.toTimeFormat() = "$this min"
+
+fun String.toIngredientsFormat() = this.replace(";", "\n• ")
+
+fun String.toInstructionsFormat() = this.replace(";", "\n✓ ")
