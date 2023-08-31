@@ -9,6 +9,7 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 
 class DataSourceImp(private val context : Context, private val csvParser : CsvParser) : DataSource {
+    private var id = 0
 
     override fun getAllRecipes() : List<Recipe> {
         val recipeList = (mutableListOf<Recipe>())
@@ -16,7 +17,7 @@ class DataSourceImp(private val context : Context, private val csvParser : CsvPa
             val inputStream = assets.open(CSV_FILE_NAME)
             val buffer = BufferedReader(InputStreamReader(inputStream))
             buffer.forEachLine {
-                val currentRecipe = csvParser.parseLine(it)
+                val currentRecipe = csvParser.parseLine(it,id++)
                 recipeList.add(currentRecipe)
                 Log.v("Main_Activity", it)
             }
