@@ -3,16 +3,17 @@ package com.example.recipely.ui.homeFragment
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.recipely.data.source.GetCsvDataSource
 import com.example.recipely.data.source.DataSource
 import com.example.recipely.data.source.DataSourceImp
+import com.example.recipely.data.source.GetCsvDataSource
 import com.example.recipely.databinding.FragmentHomeBinding
 import com.example.recipely.domain.HomeItem
 import com.example.recipely.domain.enums.HomeItemType
+import com.example.recipely.domain.enums.HomeRecyclerType
 import com.example.recipely.ui.base.BaseFragment
 import com.example.recipely.util.CsvParser
 
-class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(),HomeSeeAllListener{
     private val dataSource by lazy { GetCsvDataSource(requireContext(), CsvParser()) }
     private val dataManager: DataSource by lazy { DataSourceImp(requireContext(),dataSource) }
 
@@ -31,7 +32,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         itemList.add(HomeItem(editorsList,HomeItemType.HOME_EDITORS_TYPE))
 
         binding?.parentRecyclerView?.layoutManager = LinearLayoutManager(context)
-        adapter = HomeNestedAdapter(itemList)
+        adapter = HomeNestedAdapter(itemList,this)
         binding?.parentRecyclerView?.adapter = adapter
 
 
@@ -39,5 +40,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override fun addCallbacks() {
     }
+
+    override fun onClickSeeAll(type: HomeRecyclerType) {
+        TODO("Not yet implemented")
+    }
+
+
 }
 

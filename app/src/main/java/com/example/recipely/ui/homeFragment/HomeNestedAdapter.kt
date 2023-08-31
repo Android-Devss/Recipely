@@ -10,9 +10,11 @@ import com.example.recipely.databinding.EditorRecyclerviewLayoutBinding
 import com.example.recipely.databinding.PopularRecyclerviewLayoutBinding
 import com.example.recipely.domain.HomeItem
 import com.example.recipely.domain.enums.HomeItemType
+import com.example.recipely.domain.enums.HomeRecyclerType
 
 
-class HomeNestedAdapter(private var listHomeItem : List<HomeItem<Any>>) :
+class HomeNestedAdapter(private var listHomeItem : List<HomeItem<Any>>
+,private val seeAllListener: HomeSeeAllListener) :
     RecyclerView.Adapter<HomeNestedAdapter.BaseViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
@@ -60,18 +62,27 @@ class HomeNestedAdapter(private var listHomeItem : List<HomeItem<Any>>) :
 private fun onBindingPopularRcipesViewHolder(holder: PopularRcipesViewHolder, position: Int){
     val poplarItemsList=listHomeItem[position].item as List<Recipe>
     val adapter = PopularRecipesAdapter(poplarItemsList)
-    holder.binding.recyclerviewChild.adapter = adapter
     holder.binding.title.text=(R.string.popular).toString()
     holder.binding.seeAll.text=(R.string.see_all).toString()
-}
+    holder.binding.recyclerviewChild.adapter=adapter
+    holder.binding.seeAll.setOnClickListener {
+        seeAllListener.onClickSeeAll(HomeRecyclerType.HOME_POPULAR_TYPE)
+
+        }
+
+    }
 
     private fun onBindingEditorRcipesViewHolder(holder: EditorsViewHolder, position: Int){
         val editorItemList=listHomeItem[position].item as List<Recipe>
         val adapter = EditorsAdapter(editorItemList)
-        holder.binding.recyclerview.adapter = adapter
         holder.binding.title.text=(R.string.editors).toString()
         holder.binding.seeAll.text=(R.string.see_all).toString()
+        holder.binding.recyclerview.adapter = adapter
+        holder.binding.seeAll.setOnClickListener {
+            seeAllListener.onClickSeeAll(HomeRecyclerType.HOME_EDITORS_TYPE)
 
+
+        }
 
     }
     override fun getItemViewType(position: Int ) : Int {
@@ -91,7 +102,11 @@ private fun onBindingPopularRcipesViewHolder(holder: PopularRcipesViewHolder, po
     }
     class EditorsViewHolder(viewItem : View) : BaseViewHolder(viewItem) {
         val binding= EditorRecyclerviewLayoutBinding.bind(viewItem)
+
     }
+
+
+
 }
 class DataType {
     companion object {
@@ -99,3 +114,7 @@ class DataType {
         const val EDITORS_CHOISE = 2
     }
 }
+interface HomeSeeAllListener {
+    fun onClickSeeAll(type: HomeRecyclerType)
+}
+
