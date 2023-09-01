@@ -1,26 +1,28 @@
 package com.example.recipely.data.source
 
 import android.content.Context
+import android.util.Log
 import com.example.recipely.data.source.model.Recipe
+import com.example.recipely.util.Constant.FileName.CSV_FILE_NAME
+import com.example.recipely.util.CsvParser
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
-class DataSourceImp(private val context : Context, private val csvParser : GetCsvDataSource) : DataSource {
+class DataSourceImp(private val context: Context, private val csvParser: CsvParser) : DataSource {
+    private val tag = this::class.java.simpleName
+    private var id = 0
 
-    private val recipeList = csvParser.getAllRecipes()
     override fun getAllRecipes(): List<Recipe> {
-      return csvParser.getAllRecipes()
+        val recipeList = mutableListOf<Recipe>()
+
+        context.apply {
+            val inputStream = assets.open(CSV_FILE_NAME)
+            val buffer = BufferedReader(InputStreamReader(inputStream))
+            buffer.forEachLine {
+                val currentRecipe = csvParser.parseLine(it, id++)
+                recipeList.add(currentRecipe)
+            }
+        }
+        return recipeList
     }
-
-    override fun getPopularRecipes(): List<Recipe> {
-        return recipeList.filter {
-            it.ingredientsCount > 4
-        }.sortedBy {
-            it.totalTimeInMinutes
-        }    }
-
-    override fun getEasyRecipes(): List<Recipe> {
-        return recipeList.filter {
-            it.totalTimeInMinutes < 30
-        }.sortedBy { it.ingredientsCount }
-    }
-
 }
