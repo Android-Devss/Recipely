@@ -12,11 +12,11 @@ import androidx.recyclerview.widget.DiffUtil
  * @property checkIfSameItem A function that determines whether two items in the list are the same.
  * @property checkIfSameContent A function that determines whether the content of two items in the list is the same.
  */
-class BaseDiffUtil<T>(
-    private val oldList : List<T>,
-    private val newList : List<T>,
-    private val checkIfSameItem : (oldItem : T, newItem : T) -> Boolean,
-    private val checkIfSameContent : (oldItem : T, newItem : T) -> Boolean
+open class BaseDiffUtil<T>(
+    private val oldList: List<T>,
+    private val newList: List<T>,
+    private val checkIfSameItem: (oldItem: T, newItem: T) -> Boolean,
+    private val checkIfSameContent: (oldItem: T, newItem: T) -> Boolean
 ) : DiffUtil.Callback() {
 
     /**
@@ -36,7 +36,7 @@ class BaseDiffUtil<T>(
      * @param newItemPosition The new data item.
      * @return `true` if the items are the same, `false` otherwise. By default, it checks for equality using the `equals` method.
      */
-    override fun areItemsTheSame(oldItemPosition : Int, newItemPosition : Int) : Boolean {
+    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         return checkIfSameItem(oldList[oldItemPosition], newList[newItemPosition])
     }
 
@@ -49,7 +49,7 @@ class BaseDiffUtil<T>(
      * @return `true` if the content of the items is the same, `false` otherwise. By default, it always returns `true`.
      * Subclasses can override this method to provide custom content comparison logic.
      */
-    override fun areContentsTheSame(oldItemPosition : Int, newItemPosition : Int) : Boolean {
+    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         return checkIfSameContent(oldList[oldItemPosition], newList[newItemPosition])
     }
 }
