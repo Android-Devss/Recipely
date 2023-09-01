@@ -2,6 +2,7 @@
 <resources>
     <!--Primary Palette-->
     <color name="primary">#FF70B9BE</color>
+    <color name="primary50">#B5E8EC</color>
     <!--Secondary Palette-->
     <color name="secondary">#FF042628</color>
     <!--Black Palette-->
