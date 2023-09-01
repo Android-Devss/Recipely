@@ -4,9 +4,10 @@ import com.example.recipely.data.source.model.Recipe
 
 class CsvParser {
 
-    fun parseLine(line : String) : Recipe {
+    fun parseLine(line: String, id: Int): Recipe {
         val tokens = line.split(",")
         return Recipe(
+            id = id,
             recipeName = tokens[Constant.ColumnIndex.RECIPE_NAME],
             ingredients = tokens[Constant.ColumnIndex.INGREDIENTS],
             totalTimeInMinutes = tokens[Constant.ColumnIndex.TOTAL_TIME].toInt(),
