@@ -37,6 +37,7 @@ class SearchAdapter(
             tvRecipeName.text = currentRecipe.recipeName
             tvRecipeCuisine.text = currentRecipe.cuisine
             ivRecipeImage.load(currentRecipe.imageUrl) {
+                crossfade(true)
                 placeholder(R.drawable.ic_loading)
             }
             root.setOnClickListener { listener.onClickRecipe(currentRecipe.id) }

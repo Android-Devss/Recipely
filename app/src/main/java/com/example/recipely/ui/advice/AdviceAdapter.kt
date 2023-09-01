@@ -19,6 +19,7 @@ class AdviceAdapter(advices: List<Advice>) : BaseAdapter<Advice, ItemCardAdviceB
     ) {
         holder.binding.apply {
             adviceImg.load(currentItem.imgUrl) {
+                crossfade(true)
                 placeholder(R.drawable.ic_loading)
             }
             adviceInstruction.text = currentItem.description
