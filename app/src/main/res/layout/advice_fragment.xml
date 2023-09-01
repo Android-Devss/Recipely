@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:theme="@style/ColorFragmentBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@drawable/background_top_advice_fragment"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_advice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space32"
+            android:background="@android:color/transparent"
+            android:text="@string/advices"
+            android:textSize="@dimen/text24"
+            android:theme="@style/TextViewStyle"
+            app:layout_constraintBottom_toBottomOf="@id/title"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toTopOf="@id/title"></com.google.android.material.textview.MaterialTextView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_recipes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="Recipley Instructions"
+            android:textSize="@dimen/text16"
+            android:theme="@style/TextViewStyle"
+            app:layout_constraintBottom_toBottomOf="@id/title"
+            app:layout_constraintEnd_toEndOf="@+id/advice_animi"
+            app:layout_constraintStart_toStartOf="@+id/advice_animi"
+            app:layout_constraintTop_toBottomOf="@id/advice_animi"></com.google.android.material.textview.MaterialTextView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/advice_animi"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/space12"
+            android:layout_marginTop="@dimen/space24"
+            android:background="@android:color/transparent"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/tv_advice"
+            app:layout_constraintEnd_toEndOf="@id/title"
+            app:layout_constraintStart_toEndOf="@id/tv_advice"
+            app:layout_constraintTop_toTopOf="@id/tv_advice"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/advice" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_advice_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="@dimen/space4"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:itemCount="13"
+        tools:listitem="@layout/item_card_advice" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
