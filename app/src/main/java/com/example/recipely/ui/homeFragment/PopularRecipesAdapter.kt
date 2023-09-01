@@ -5,9 +5,10 @@ import android.view.ViewGroup
 import coil.load
 import com.example.recipely.data.source.model.Recipe
 import com.example.recipely.databinding.ItemHomePopularCardBinding
+import com.example.recipely.ui.base.BaseAdapter
 
 class PopularRecipesAdapter (recipes: List<Recipe>)
-    : HomeBaseAdapter<Recipe, ItemHomePopularCardBinding>(recipes) {
+    : BaseAdapter<Recipe, ItemHomePopularCardBinding>(recipes) {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> ItemHomePopularCardBinding
         get() = ItemHomePopularCardBinding::inflate
     override fun onBindViewHolder(

@@ -6,10 +6,11 @@ import coil.load
 import com.example.recipely.R
 import com.example.recipely.data.source.model.Recipe
 import com.example.recipely.databinding.ItemEditorHomeBinding
+import com.example.recipely.ui.base.BaseAdapter
 
 class EditorsAdapter(
     editorsRecipeList: List<Recipe>,
-) : HomeBaseAdapter<Recipe,ItemEditorHomeBinding>(editorsRecipeList) {
+) : BaseAdapter<Recipe,ItemEditorHomeBinding>(editorsRecipeList) {
 
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> ItemEditorHomeBinding

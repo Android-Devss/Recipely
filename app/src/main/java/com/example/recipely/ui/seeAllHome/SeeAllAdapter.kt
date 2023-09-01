@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import com.example.recipely.data.source.model.Recipe
 import com.example.recipely.databinding.ItemSeeAllCardBinding
 import com.example.recipely.ui.base.BaseAdapter
-import com.example.recipely.ui.homeFragment.HomeBaseAdapter
 import com.example.recipely.util.loadImageWithPlaceholderAndCrossFade
 
 class SeeAllAdapter (recipes: List<Recipe>)
@@ -23,7 +22,7 @@ class SeeAllAdapter (recipes: List<Recipe>)
         }
     }
 
-    interface RecipeInteractionListener : HomeBaseAdapter.BaseInteractionListener {
+    interface RecipeInteractionListener : BaseInteractionListener {
         fun onClickRecipe(recipeId: Int)
     }
 }

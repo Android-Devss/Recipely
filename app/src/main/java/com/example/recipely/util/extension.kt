@@ -6,10 +6,6 @@ import coil.load
 import com.example.recipely.R
 
 fun Int.toCountFormat() = "$this Items"
-
-fun Int.toTimeFormat() = "$this min"
-
-
 fun ImageView.loadImageWithPlaceholderAndCrossFade(url: String) {
     this.load(url) {
         crossfade(1000)
@@ -23,6 +19,22 @@ fun Fragment.replaceFragment(fragment: Fragment) {
     val fragmentTransaction = fragmentManager.beginTransaction()
     fragmentTransaction.replace(R.id.fragment_container, fragment).addToBackStack(null)
     fragmentTransaction.commit()
+
+fun Int.toTimeFormat() = "$this min"
+
+
+fun ImageView.loadImageWithPlaceholderAndCrossFade(url: String) {
+    this.load(url) {
+        crossfade(1000)
+        placeholder(R.drawable.recipe_image_placeholder)
+        error(R.drawable.recipe_image_error)
+    }
+}
+
+fun Fragment.replaceFragment(fragment: Fragment) {
+     requireActivity().supportFragmentManager.beginTransaction()
+         .replace(R.id.fragment_container, fragment).addToBackStack(null)
+          .commit()
 }
 fun String.toIngredientsFormat(): String {
     val ingredients = this.split(";")
@@ -36,3 +48,4 @@ fun String.toIngredientsFormat(): String {
     return formattedIngredients.joinToString("\n")
 }
 fun String.toInstructionsFormat() = this.replace(";", "\n✓ ")
+}
