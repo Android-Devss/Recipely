@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Recipely</string>
-    <string name="search">Search</string>
-    <string name="MasalaKarelaRecipe">Masala Karela Recipe</string>
+    <string name="search">Search about indian food</string>
     <string name="indianFood">Indian Food Breakfast</string>
+    <string name="image">image</string>
+    <string name="discover_recipes">Discover Recipes🍩🍿</string>
+    <string name="search_about_recipes">Search about recipes🍔</string>
+    <string name="no_recipes">No recipes matches your search 😪😪!</string>
+    <string name="enter_valid_data">Please enter valid data</string>
+    <string name="recipe_type">Recipe Type</string>
+    <string name="advices">Advices</string>
 </resources>

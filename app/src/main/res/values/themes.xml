@@ -6,14 +6,30 @@
     </style>
 
     <style name="Theme.Recipely" parent="Base.Theme.Recipely" />
-
     <!--    Style image card    -->
     <style name="img_card">
         <item name="cornerSize">@dimen/space16</item>
         <item name="android:scaleType">fitXY</item>
     </style>
 
-    <!--   Style text name for category    -->
+    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
+        <!--Primary-->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white_ff</item>
+        <item name="colorPrimaryContainer">@color/primary</item>
+        <item name="colorOnPrimaryContainer">@color/secondary</item>
+        <!--Secondary-->
+        <item name="colorSecondary">@color/black8</item>
+        <item name="colorOnSecondary">@color/white_ff</item>
+        <item name="colorSecondaryContainer">@color/primary</item>
+        <item name="colorOnSecondaryContainer">@color/black8</item>
+        <!--Tertiary-->
+        <item name="colorTertiary">@color/primary</item>
+        <item name="colorOnTertiary">@color/white_ff</item>
+        <item name="colorTertiaryContainer">@color/primary</item>
+        <item name="colorOnTertiaryContainer">@color/primary</item>
+    </style>
+    <!--   Style text name for category item card    -->
     <style name="CategoryTextName">
         <item name="android:layout_marginStart">@dimen/space4</item>
         <item name="android:layout_marginBottom">@dimen/space4</item>
@@ -23,5 +39,49 @@
         <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
     </style>
+    <!--   TextView  Style -->
+    <style name="TextViewStyle">
+        <item name="android:layout_marginStart">@dimen/space16</item>
+        <item name="android:layout_marginTop">@dimen/space8</item>
+        <item name="android:layout_marginBottom">@dimen/space8</item>
+        <item name="android:fontFamily">@font/poppins_semi_bold</item>
+        <item name="android:textColor">@color/black87</item>
+        <item name="android:textSize">@dimen/text16</item>
+    </style>
 
+    <style name="textDiscover">
+        <item name="android:layout_marginStart">@dimen/space16</item>
+        <item name="android:layout_marginTop">@dimen/space8</item>
+        <item name="android:layout_marginBottom">@dimen/space8</item>
+        <item name="android:fontFamily">@font/poppins_semi_bold</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">@dimen/text16</item>
+    </style>
+    <!-- Image Style Item Card -->
+    <style name="CardImageStyle">
+        <item name="cornerSize">16dp</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="ColorFragmentBackground">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="adviceTextInstruction">
+        <item name="android:textColor">@color/white_ff</item>
+        <item name="android:textSize">@dimen/text12</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="backgroundItemCardAdvice">
+        <item name="android:background">@drawable/background_img_card_advice</item>
+    </style>
+
+    <style name="InfoTextStyle">
+        <item name="android:textColor">@color/black87</item>
+    </style>
+
+    <style name="adviceTextStyle">
+        <item name="android:textColor">@color/white_ff_dark</item>
+    </style>
 </resources>
