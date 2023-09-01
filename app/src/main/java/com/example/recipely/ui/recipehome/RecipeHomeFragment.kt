@@ -17,7 +17,6 @@ class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>() {
         get() = FragmentRecipeHomeBinding::inflate
     override val logTag : String = this.javaClass.simpleName
     private lateinit var homeAdapter : HomeAdapter
-
     private val dataSource by lazy { DataSourceImp(requireContext(), CsvParser()) }
     private val repository by lazy { RepositoryImp(dataSource) }
     override fun onViewCreated(view : View, savedInstanceState : Bundle?) {

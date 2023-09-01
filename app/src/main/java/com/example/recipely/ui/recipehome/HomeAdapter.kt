@@ -73,7 +73,7 @@ class HomeAdapter(private var items : List<Recipe>) :
 
             is ItemHorizontalViewHolder -> {
                 holder.binding.apply {
-                    bindHorizontalItems(binding, item)
+                    bindHorizontalItems(holder, position)
                 }
 
             }
@@ -93,20 +93,21 @@ class HomeAdapter(private var items : List<Recipe>) :
         }
     }
 
-    private fun bindHorizontalItems(binding : HorizontalCardHomeBinding, item : Recipe) {
+    private fun bindHorizontalItems(holder : ItemHorizontalViewHolder,  position : Int) {
+        val currentItem = items[position]
         with(binding) {
-            horizontalRecipeNameHome.text = item.recipeName
-            binding.horizontalRecipeImageHome.load(item.imageUrl)
+            horizontalRecipeNameHome.text = currentItem.recipeName
+            binding.horizontalRecipeImageHome.load(currentItem.imageUrl)
             root.setOnClickListener {
             }
         }
     }
     private fun bindVerticalItems(holder : ItemVerticalViewHolder, position : Int) {
-        val recipe = items[position]
+        val currentItem = items[position]
         holder.binding.apply {
-            verticalRecipeImage.load(recipe.imageUrl)
-            verticalRecipeCuisine.text = recipe.cuisine
-            verticalRecipeName.text = recipe.recipeName
+            verticalRecipeImage.load(currentItem.imageUrl)
+            verticalRecipeCuisine.text = currentItem.cuisine
+            verticalRecipeName.text = currentItem.recipeName
         }
     }
     override fun getItemViewType(position : Int) : Int {
