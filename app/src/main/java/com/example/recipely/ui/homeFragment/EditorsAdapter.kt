@@ -5,18 +5,18 @@ import android.view.ViewGroup
 import coil.load
 import com.example.recipely.R
 import com.example.recipely.data.source.model.Recipe
-import com.example.recipely.databinding.HomeEditorsCardBinding
+import com.example.recipely.databinding.ItemEditorHomeBinding
 
 class EditorsAdapter(
     editorsRecipeList: List<Recipe>,
-) : HomeBaseAdapter<Recipe,HomeEditorsCardBinding>(editorsRecipeList) {
+) : HomeBaseAdapter<Recipe,ItemEditorHomeBinding>(editorsRecipeList) {
 
 
-    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> HomeEditorsCardBinding
-        get() = HomeEditorsCardBinding::inflate
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> ItemEditorHomeBinding
+        get() = ItemEditorHomeBinding::inflate
 
     override fun onBindViewHolder(
-        holder: BaseViewHolder<HomeEditorsCardBinding>,
+        holder: BaseViewHolder<ItemEditorHomeBinding>,
         position: Int,
         currentItem: Recipe
     ) {

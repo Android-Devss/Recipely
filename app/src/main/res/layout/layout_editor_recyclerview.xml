@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_margin="@dimen/space4"
+    android:orientation="vertical"
+    android:background="@color/white_ff"
     android:padding="@dimen/space4"
     android:layout_height="wrap_content">
 
@@ -16,7 +16,7 @@
             android:id="@+id/title"
             android:layout_width="@dimen/space_zero"
             android:layout_height="wrap_content"
-            android:text="@string/popular"
+            android:text="@string/editors"
             android:layout_weight="1"
             android:fontFamily="@font/poppins_medium"
             android:layout_marginStart="@dimen/space12"
@@ -38,16 +38,17 @@
     </LinearLayout>
 
 
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_child"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
             android:padding="@dimen/space4"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/home_popular_card"
+            tools:listitem="@layout/item_editor_home"
             android:background="@color/white_ff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
         </androidx.recyclerview.widget.RecyclerView>
 
-    </LinearLayout>
+
+</LinearLayout>

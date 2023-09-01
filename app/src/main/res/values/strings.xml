@@ -11,4 +11,10 @@
     <string name="editors">Editor\'s Choise</string>
     <string name="see_all">View More</string>
     <string name="kitchen_name">Indian Cuisine</string>
+    <string name="recipe_details">Recipe Details</string>
+    <string name="recipe_ingredients">Recipe Ingredients</string>
+    <string name="instructions">Instructions</string>
+    <string name="healthy_ingredients">Healthy Ingredients</string>
+    <string name="ingredients_count">Ingredients Count</string>
+    <string name="ingredients">Ingredients</string>
 </resources>

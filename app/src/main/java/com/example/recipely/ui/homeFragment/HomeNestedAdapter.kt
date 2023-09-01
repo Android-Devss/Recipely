@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipely.R
 import com.example.recipely.data.source.model.Recipe
-import com.example.recipely.databinding.EditorRecyclerviewLayoutBinding
-import com.example.recipely.databinding.PopularRecyclerviewLayoutBinding
+import com.example.recipely.databinding.LayoutEditorRecyclerviewBinding
+import com.example.recipely.databinding.LayoutPopularRecyclerviewBinding
 import com.example.recipely.domain.HomeItem
 import com.example.recipely.domain.enums.HomeItemType
 import com.example.recipely.domain.enums.HomeRecyclerType
@@ -23,7 +23,7 @@ class HomeNestedAdapter(private var listHomeItem : List<HomeItem<Any>>
             {
 
                 val view = LayoutInflater.from(parent.context).inflate(
-                    R.layout.home_popular_card,
+                    R.layout.item_home_popular_card,
                     parent,
                     false)
                 return PopularRcipesViewHolder(view)
@@ -32,7 +32,7 @@ class HomeNestedAdapter(private var listHomeItem : List<HomeItem<Any>>
             DataType.EDITORS_CHOISE ->
             {
                 val view = LayoutInflater.from(parent.context).inflate(
-                    R.layout.home_editors_card,
+                    R.layout.item_editor_home,
                     parent,
                     false)
                 return EditorsViewHolder(view)
@@ -98,10 +98,10 @@ private fun onBindingPopularRcipesViewHolder(holder: PopularRcipesViewHolder, po
     abstract class BaseViewHolder(viewItem : View) : RecyclerView.ViewHolder(viewItem)
 
     class PopularRcipesViewHolder(viewItem : View) : BaseViewHolder(viewItem) {
-        val binding = PopularRecyclerviewLayoutBinding.bind(viewItem)
+        val binding = LayoutPopularRecyclerviewBinding.bind(viewItem)
     }
     class EditorsViewHolder(viewItem : View) : BaseViewHolder(viewItem) {
-        val binding= EditorRecyclerviewLayoutBinding.bind(viewItem)
+        val binding= LayoutEditorRecyclerviewBinding.bind(viewItem)
 
     }
 

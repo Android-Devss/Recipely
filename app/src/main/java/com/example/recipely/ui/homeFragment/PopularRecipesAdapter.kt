@@ -4,14 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import coil.load
 import com.example.recipely.data.source.model.Recipe
-import com.example.recipely.databinding.HomePopularCardBinding
+import com.example.recipely.databinding.ItemHomePopularCardBinding
 
 class PopularRecipesAdapter (recipes: List<Recipe>)
-    : HomeBaseAdapter<Recipe, HomePopularCardBinding>(recipes) {
-    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> HomePopularCardBinding
-        get() = HomePopularCardBinding::inflate
+    : HomeBaseAdapter<Recipe, ItemHomePopularCardBinding>(recipes) {
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> ItemHomePopularCardBinding
+        get() = ItemHomePopularCardBinding::inflate
     override fun onBindViewHolder(
-        holder: BaseViewHolder<HomePopularCardBinding>,position: Int
+        holder: BaseViewHolder<ItemHomePopularCardBinding>,position: Int
         ,currentItem:Recipe
 
     ) {

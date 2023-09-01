@@ -15,6 +15,6 @@
         android:padding="@dimen/space12"
         app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
         app:spanCount="2"
-        tools:listitem="@layout/all_popular_card_home" />
+        tools:listitem="@layout/item_see_all_card" />
 
 </LinearLayout>

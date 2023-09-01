@@ -3,19 +3,22 @@ package com.example.recipely.ui.homeFragment
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.recipely.data.source.DataSource
+import com.example.recipely.data.repository.RepositoryImp
 import com.example.recipely.data.source.DataSourceImp
-import com.example.recipely.data.source.GetCsvDataSource
 import com.example.recipely.databinding.FragmentHomeBinding
 import com.example.recipely.domain.HomeItem
 import com.example.recipely.domain.enums.HomeItemType
 import com.example.recipely.domain.enums.HomeRecyclerType
+import com.example.recipely.domain.usecase.home.GetFastRecipesUseCase
+import com.example.recipely.domain.usecase.home.GetPopularRecipesUseCase
 import com.example.recipely.ui.base.BaseFragment
 import com.example.recipely.util.CsvParser
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(),HomeSeeAllListener{
-    private val dataSource by lazy { GetCsvDataSource(requireContext(), CsvParser()) }
-    private val dataManager: DataSource by lazy { DataSourceImp(requireContext(),dataSource) }
+    private val dataSource by lazy { DataSourceImp(requireContext(), CsvParser()) }
+    private val repository by lazy { RepositoryImp(dataSource) }
+    private val getPopularRecipesUseCase by lazy { GetPopularRecipesUseCase(repository) }
+    private val getFastRecipesUseCase by lazy { GetFastRecipesUseCase(repository) }
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentHomeBinding =
         FragmentHomeBinding::inflate
@@ -25,8 +28,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(),HomeSeeAllListener{
     override val logTag: String = this.javaClass.simpleName
     private lateinit var adapter:HomeNestedAdapter
     override fun initialize() {
-        val popularRecipes = dataManager.getPopularRecipes().distinct().take(14)
-        val editorsList = dataManager.getEasyRecipes().distinct().take(14)
+        val popularRecipes =getPopularRecipesUseCase()
+        val editorsList = getFastRecipesUseCase()
 
         itemList.add(HomeItem(popularRecipes, HomeItemType.HOME_POPULAR_TYPE))
         itemList.add(HomeItem(editorsList,HomeItemType.HOME_EDITORS_TYPE))
