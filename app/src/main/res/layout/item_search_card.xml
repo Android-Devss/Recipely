@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="220dp"
     android:layout_margin="@dimen/space4"
+    android:backgroundTint="@color/white_ff"
     app:cardCornerRadius="@dimen/space12"
-    app:strokeWidth="0dp"
-    android:backgroundTint="@color/white_ff">
+    app:strokeWidth="0dp">
 
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -43,7 +43,7 @@
             android:layout_marginStart="@dimen/space8"
             android:layout_marginEnd="@dimen/space8"
             android:layout_marginBottom="0dp"
-            android:text="@string/MasalaKarelaRecipe" />
+            android:text="@string/recipe_type" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_recipe_cuisine"

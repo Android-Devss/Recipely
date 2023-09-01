@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="260dp"
+    android:layout_marginHorizontal="@dimen/space8"
+    android:layout_marginVertical="@dimen/space16"
+    android:theme="@style/backgroundItemCardAdvice"
+    app:cardCornerRadius="@dimen/space16"
+    app:layout_constraintCircleRadius="@dimen/space16">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/img_advice"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:layout_constraintCircleRadius="@dimen/space16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/advice_img"
+            style="@style/img_card"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/indian_food" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/shadow"
+            style="@style/CardImageStyle"
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/advice_instruction"
+        style="@style/adviceTextInstruction"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/space4"
+        android:layout_marginVertical="@dimen/space4"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="5"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_advice"
+        tools:text="Advice for you to eat healthy food" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
