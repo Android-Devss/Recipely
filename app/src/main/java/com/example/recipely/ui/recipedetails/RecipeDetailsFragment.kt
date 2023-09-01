@@ -16,6 +16,7 @@ import com.example.recipely.util.toIngredientsFormat
 import com.example.recipely.util.toInstructionsFormat
 import com.example.recipely.util.toTimeFormat
 
+
 class RecipeDetailsFragment : BaseFragment<FragmentRecipeDetailsBinding>() {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) ->
     FragmentRecipeDetailsBinding = FragmentRecipeDetailsBinding::inflate
