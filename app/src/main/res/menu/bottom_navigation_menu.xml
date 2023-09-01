@@ -13,9 +13,9 @@
         android:title="@string/search" />
 
     <item
-        android:id="@+id/navigation_settings"
+        android:id="@+id/navigation_cuisine"
         android:enabled="true"
         android:icon="@drawable/icon_ingredients"
-        android:title="@string/recipes" />
+        android:title="@string/cuisines" />
 
 </menu>

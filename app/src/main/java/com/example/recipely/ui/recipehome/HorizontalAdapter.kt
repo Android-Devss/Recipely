@@ -5,27 +5,28 @@ import android.view.ViewGroup
 import coil.load
 import com.example.recipely.R
 import com.example.recipely.data.source.model.Recipe
-import com.example.recipely.databinding.HorizontalCardHomeBinding
+import com.example.recipely.databinding.ItemPopularRecipeBinding
 import com.example.recipely.ui.base.BaseAdapter
 
-class HorizontalAdapter ( private var items: List<Recipe>):BaseAdapter<Recipe, HorizontalCardHomeBinding>(items){
-    override val bindingInflater : (LayoutInflater, ViewGroup?, Boolean) -> HorizontalCardHomeBinding
-        get() = HorizontalCardHomeBinding::inflate
+class HorizontalAdapter(items: List<Recipe>) :
+    BaseAdapter<Recipe, ItemPopularRecipeBinding>(items) {
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> ItemPopularRecipeBinding
+        get() = ItemPopularRecipeBinding::inflate
 
     override fun onBindViewHolder(
-        holder : BaseViewHolder<HorizontalCardHomeBinding>,
-        position : Int,
-        currentItem : Recipe
+        holder: BaseViewHolder<ItemPopularRecipeBinding>,
+        position: Int,
+        currentItem: Recipe
     ) {
-        val currentItem = items[position]
-
         holder.binding.apply {
-            horizontalRecipeNameHome.text=currentItem.recipeName
+            horizontalRecipeNameHome.text = currentItem.recipeName
+            horizontalRecipeCuisineHome.text = currentItem.cuisine
             horizontalRecipeImageHome.load(currentItem.imageUrl) {
                 crossfade(true)
+                crossfade(500)
                 placeholder(R.drawable.recipe_image_placeholder)
                 error(R.drawable.recipe_image_error)
-        }
+            }
         }
     }
 }

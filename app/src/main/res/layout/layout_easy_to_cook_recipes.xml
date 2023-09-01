@@ -2,19 +2,20 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/horizontal_recycler_view"
+        android:id="@+id/vertical_recycler_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/white_fa"
         android:clipToPadding="false"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/space16"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/horizontal_card_home"></androidx.recyclerview.widget.RecyclerView>
+        tools:listitem="@layout/item_easy_to_cook_recipe" />
 </androidx.constraintlayout.widget.ConstraintLayout>
