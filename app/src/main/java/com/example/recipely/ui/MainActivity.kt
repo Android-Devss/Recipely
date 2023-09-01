@@ -19,17 +19,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
     }
-    private fun addFragment(fragment: Fragment) {
+    private fun replaceFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.fragmentContainerView, fragment)
+        transaction.replace(R.id.fragmentContainerView, fragment)
         transaction.commit()
     }
     fun on(view: View) {
-        addFragment(searchFragment)
+        replaceFragment(searchFragment)
     }
 
     fun onClick(view: View) {
-        addFragment(adviceFragment)
+        replaceFragment(adviceFragment)
     }
 
 }
