@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="160dp"
     android:layout_height="wrap_content"
+    android:id="@+id/horizontal_recipe"
     app:cardCornerRadius="@dimen/space16"
     app:strokeWidth="@dimen/space_zero">
 

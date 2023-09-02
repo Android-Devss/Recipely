@@ -23,8 +23,9 @@ class VerticalAdapter(items: List<Recipe>, private val listener : HomeAdapter.Ho
             verticalRecipeImage.loadImageWithPlaceholderAndCrossFade(currentItem.imageUrl)
             verticalRecipeCuisine.text = currentItem.cuisine
             verticalRecipeName.text = currentItem.recipeName
-           listener.onClickRecipe(currentItem.id)
-
+            root.setOnClickListener {
+                listener.onClickRecipe(currentItem.id)
+            }
         }
     }
 }

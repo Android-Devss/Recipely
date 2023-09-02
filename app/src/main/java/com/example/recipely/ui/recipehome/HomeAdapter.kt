@@ -68,7 +68,7 @@ class HomeAdapter(private var items: List<HomeItem<Any>>,private val listener : 
 
     private fun bindHorizontalItems(holder: ItemHorizontalViewHolder, position: Int) {
         val currentItem = items[position].item as List<Recipe>
-        val horizontalAdapter = HorizontalAdapter(currentItem,this.listener)
+        val horizontalAdapter = HorizontalAdapter(currentItem,listener)
         horizontalAdapter.setItems(currentItem)
         holder.binding.apply {
             horizontalRecyclerView.adapter = horizontalAdapter
@@ -77,7 +77,7 @@ class HomeAdapter(private var items: List<HomeItem<Any>>,private val listener : 
 
     private fun bindVerticalItems(holder: ItemVerticalViewHolder, position: Int) {
         val currentItem = items[position].item as List<Recipe>
-        val verticalAdapter = VerticalAdapter(currentItem,this.listener)
+        val verticalAdapter = VerticalAdapter(currentItem,listener)
         verticalAdapter.setItems(currentItem)
         holder.binding.apply {
             verticalRecyclerView.adapter = verticalAdapter
