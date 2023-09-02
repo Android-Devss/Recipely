@@ -10,8 +10,10 @@ import com.example.recipely.data.source.DataSourceImp
 import com.example.recipely.databinding.FragmentRecipeDetailsBinding
 import com.example.recipely.domain.usecase.GetRecipeById
 import com.example.recipely.ui.base.BaseFragment
+import com.example.recipely.ui.recipehome.RecipeHomeFragment
 import com.example.recipely.util.CsvParser
 import com.example.recipely.util.loadImageWithPlaceholderAndCrossFade
+import com.example.recipely.util.replaceFragment
 import com.example.recipely.util.toCountFormat
 import com.example.recipely.util.toIngredientsFormat
 import com.example.recipely.util.toInstructionsFormat
@@ -33,6 +35,10 @@ class RecipeDetailsFragment : BaseFragment<FragmentRecipeDetailsBinding>() {
     }
 
     override fun addCallbacks() {
+        binding?.icKeyboardArrow?.setOnClickListener {
+            val homeFragment= RecipeHomeFragment()
+            replaceFragment(homeFragment)
+        }
 
     }
 
