@@ -6,4 +6,68 @@
     </style>
 
     <style name="Theme.Recipely" parent="Base.Theme.Recipely" />
+
+    <style name="subCards">
+        <item name="android:layout_marginHorizontal">@dimen/space16</item>
+        <item name="cardCornerRadius">@dimen/space24</item>
+    </style>
+
+    <style name="firstSubCardViewText">
+        <item name="android:layout_marginStart">@dimen/space16</item>
+        <item name="android:layout_marginTop">@dimen/space12</item>
+        <item name="android:layout_marginBottom">@dimen/space8</item>
+        <item name="android:drawablePadding">@dimen/space4</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">@dimen/text14</item>
+        <item name="android:textColor">@color/black87</item>
+    </style>
+
+    <style name="secondSubCardViewHeader">
+        <item name="fontFamily">@font/poppins_semi_bold</item>
+        <item name="android:textSize">@dimen/text16</item>
+        <item name="android:textColor">@color/secondary</item>
+    </style>
+
+    <style name="secondSubCardViewContent">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">@dimen/text14</item>
+        <item name="android:textColor">@color/black87</item>
+    </style>
+
+    <style name="recyclerViewItemsRecipeNames">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/black87</item>
+    </style>
+
+    <style name="recyclerViewItemsRecipeCuisine">
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
+        <item name="android:textColor">@color/black60</item>
+    </style>
+
+    <style name="headersLinearLayout">
+        <item name="android:layout_marginHorizontal">@dimen/space16</item>
+        <item name="background">@color/white_fa</item>
+    </style>
+
+    <style name="headersText">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">@dimen/text20</item>
+        <item name="android:textColor">@color/secondary</item>
+    </style>
+
+    <style name="viewAllText">
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">@dimen/text14</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textAlignment">textEnd</item>
+    </style>
+
+    <style name="recyclerViewLayouts">
+        <item name="background">@color/white_fa</item>
+        <item name="android:padding">@dimen/space16</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
 </resources>

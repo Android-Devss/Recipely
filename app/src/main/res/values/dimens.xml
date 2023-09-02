@@ -17,5 +17,6 @@
     <dimen name="text18">18sp</dimen>
     <dimen name="text20">20sp</dimen>
     <dimen name="text24">24sp</dimen>
+    <dimen name="first_sub_card_view_height">120dp</dimen>
     <!--Other-->
 </resources>
