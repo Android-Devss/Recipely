@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_constrain_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white_e1">
+    android:background="@color/white_e1"
+    app:layoutDescription="@xml/fragment_recipe_details_scene2">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/main_card_view"
@@ -66,6 +67,7 @@
         android:id="@+id/first_sub_card_view"
         android:layout_width="match_parent"
         android:layout_height="120dp"
+        android:padding="@dimen/space8"
         android:layout_marginHorizontal="@dimen/space16"
         android:layout_marginTop="200dp"
         app:cardCornerRadius="@dimen/space24"
@@ -116,6 +118,7 @@
                 android:layout_marginTop="@dimen/space12"
                 android:drawableStart="@drawable/icon_time"
                 android:drawablePadding="@dimen/space4"
+                android:layout_marginEnd="@dimen/space8"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
                 android:text="15 Mins"
@@ -282,19 +285,16 @@
                             android:id="@+id/recipe_details_health_ingredients"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/space24"
                             android:fontFamily="@font/poppins_medium"
                             android:text="salt;amchur (dry mango powder);karela (bitter gourd pavakkai);red chilli powder;gram flour (besan);onion;cumin seeds (jeera);coriander powder;turmeric powder;sunflower oil"
                             android:textColor="@color/black87"
                             android:textSize="@dimen/text14" />
                     </LinearLayout>
-
-
                 </LinearLayout>
-
-
             </ScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>
