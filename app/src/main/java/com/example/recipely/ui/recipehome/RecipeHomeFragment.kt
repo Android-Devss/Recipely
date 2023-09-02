@@ -6,14 +6,17 @@ import com.example.recipely.R
 import com.example.recipely.data.repository.RepositoryImp
 import com.example.recipely.data.source.DataSourceImp
 import com.example.recipely.databinding.FragmentRecipeHomeBinding
-import com.example.recipely.domain.usecase.home.GetPopularRecipesUseCase
+import com.example.recipely.domain.enums.SeeAllTypes
 import com.example.recipely.domain.usecase.home.GetEasyRecipesUseCase
+import com.example.recipely.domain.usecase.home.GetPopularRecipesUseCase
 import com.example.recipely.ui.base.BaseFragment
 import com.example.recipely.ui.recipehome.homemodel.HomeItem
 import com.example.recipely.ui.recipehome.homemodel.HomeItemType
+import com.example.recipely.ui.seeAllHome.SeeAllFragment
 import com.example.recipely.util.CsvParser
+import com.example.recipely.util.replaceFragment
 
-class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>() {
+class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),HomeAdapter.HomeSeeAllListener {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentRecipeHomeBinding
         get() = FragmentRecipeHomeBinding::inflate
     override val logTag: String = this.javaClass.simpleName
@@ -33,11 +36,15 @@ class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>() {
         itemsList.add(HomeItem(R.string.easy_to_cook, HomeItemType.ITEM_EDITOR_CHOICE))
         itemsList.add(HomeItem(verticaItems(10), HomeItemType.ITEM_VERTICAL))
 
-        homeAdapter = HomeAdapter(itemsList)
+        homeAdapter = HomeAdapter(itemsList,this)
         binding?.recyclerViewHome?.adapter = homeAdapter
     }
 
     override fun addCallbacks() {
 
     }
+
+    override fun onClickHomeSeeAll(type: SeeAllTypes) {
+        val seeAllRecipesFragment = SeeAllFragment.newInstance(type)
+        replaceFragment(seeAllRecipesFragment)    }
 }

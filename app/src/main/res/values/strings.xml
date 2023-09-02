@@ -1,23 +1,13 @@
 <resources>
     <string name="app_name">Recipely</string>
     <string name="burgur">Beef Burgur</string>
-    <string name="chef_name">Alina Spader</string>
     <string name="home">Home</string>
-    <string name="breakfast">BreakFast</string>
-    <string name="lunch">Lunch</string>
-    <string name="dinner">Dinner</string>
-    <string name="popular">Popular Recipe</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="editors">Editor\'s Choise</string>
-    <string name="see_all">View More</string>
-    <string name="kitchen_name">Indian Cuisine</string>
     <string name="recipe_details">Recipe Details</string>
     <string name="recipe_ingredients">Recipe Ingredients</string>
     <string name="instructions">Instructions</string>
     <string name="healthy_ingredients">Healthy Ingredients</string>
     <string name="ingredients_count">Ingredients Count</string>
     <string name="ingredients">Ingredients</string>
-    <string name="settings">Settings</string>
     <string name="search">Search</string>
     <string name="cuisines">Cuisines</string>
     <string name="popular_recipes">Popular Recipes</string>

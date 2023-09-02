@@ -3,8 +3,6 @@ package com.example.recipely.ui.recipedetails
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import coil.load
-import com.example.recipely.R
 import com.example.recipely.data.repository.RepositoryImp
 import com.example.recipely.data.source.DataSourceImp
 import com.example.recipely.databinding.FragmentRecipeDetailsBinding

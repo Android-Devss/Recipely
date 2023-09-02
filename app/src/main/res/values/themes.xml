@@ -9,13 +9,4 @@
 
     <style name="Theme.Recipely" parent="Base.Theme.Recipely" />
 
-    <style name="Chip_Style" parent="Widget.MaterialComponents.Chip.Filter">
-        <item name="android:fontFamily">@font/poppins_regular</item>
-        <item name="textFillColor">@color/black87</item>
-        <item name="android:textAlignment">center</item>
-        <item name="android:textSize">@dimen/text16</item>
-        <item name="android:layout_width">@dimen/space_zero</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">@dimen/space8</item>
-    </style>
 </resources>

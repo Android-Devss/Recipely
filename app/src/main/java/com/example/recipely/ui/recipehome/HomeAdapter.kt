@@ -10,11 +10,14 @@ import com.example.recipely.databinding.ItemEasyToCookHeaderBinding
 import com.example.recipely.databinding.ItemPopularRecipeHeaderBinding
 import com.example.recipely.databinding.LayoutEasyToCookRecipesBinding
 import com.example.recipely.databinding.LayoutPopularRecipesBinding
+import com.example.recipely.domain.enums.SeeAllTypes
 import com.example.recipely.ui.recipehome.homemodel.HomeItem
 import com.example.recipely.ui.recipehome.homemodel.HomeItemType
 
 @Suppress("UNCHECKED_CAST")
-class HomeAdapter(private var items: List<HomeItem<Any>>) :
+class HomeAdapter(private var items: List<HomeItem<Any>>,
+                  private val seeAllListener: HomeSeeAllListener
+) :
     RecyclerView.Adapter<HomeAdapter.BaseViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
@@ -50,13 +53,17 @@ class HomeAdapter(private var items: List<HomeItem<Any>>) :
         when (holder) {
             is ItemPopularViewHolder -> {
                 holder.binding.apply {
-                    popularRecipesViewAll.setOnClickListener { }
+                    popularRecipesViewAll.setOnClickListener {
+                     seeAllListener.onClickHomeSeeAll(SeeAllTypes.TYPE_HOME_POPULAR)
+                    }
                 }
             }
 
             is ItemEditorChoiceViewHolder -> {
                 holder.binding.apply {
-                    editorChoiceViewAll.setOnClickListener { }
+                    editorChoiceViewAll.setOnClickListener {
+                       seeAllListener.onClickHomeSeeAll(SeeAllTypes.TYPE_HOME_EASY)
+                    }
                 }
             }
 
@@ -110,6 +117,9 @@ class HomeAdapter(private var items: List<HomeItem<Any>>) :
         }
     }
 
+    interface HomeSeeAllListener {
+        fun onClickHomeSeeAll(type: SeeAllTypes)
+    }
 
     companion object {
         const val ITEM_POPULAR = 0
