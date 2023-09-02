@@ -5,10 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import com.example.recipely.R
-import com.example.recipely.data.repository.RepositoryImp
 import com.example.recipely.data.source.DataSourceImp
 import com.example.recipely.databinding.FragmentSearchBinding
-import com.example.recipely.domain.Repository
+import com.example.recipely.domain.usecase.search.SearchUseCase
 import com.example.recipely.ui.base.BaseFragment
 import com.example.recipely.util.CsvParser
 
@@ -16,8 +15,8 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ActionListener,
     SearchView.OnQueryTextListener, SearchAdapter.RecipeInteractionListener {
 
     private val dataSource by lazy { DataSourceImp(requireContext(), CsvParser()) }
-    private val dataManager: Repository by lazy { RepositoryImp(dataSource) }
     private lateinit var adapter: SearchAdapter
+    private val searchUseCase: SearchUseCase = SearchUseCase(dataSource)
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentSearchBinding
         get() = FragmentSearchBinding::inflate
@@ -44,13 +43,13 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ActionListener,
     }
 
     private fun setDataOnAdapter(query: String) {
-        val resultOfSearch = dataManager.searchAboutRecipes(query)
+        val resultOfSearch = searchUseCase.searchAboutRecipes(query)
         adapter.setData(resultOfSearch)
         binding?.recyclerviewSearchList?.adapter = adapter
     }
 
     private fun visibilityOfImageAndRecyclerInSearchFragment(query: String?) {
-        val result = query?.let { dataManager.searchAboutRecipes(it) }
+        val result = query?.let { searchUseCase.searchAboutRecipes(it) }
         binding?.apply {
             query?.let { visibility(it) }
             if (query?.isNotEmpty() == true) recyclerviewSearchList.show() else recyclerviewSearchList.hide()
@@ -71,16 +70,20 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ActionListener,
     }
 
     private fun FragmentSearchBinding.visibility(query: String) {
-        if (query.isEmpty()) {
-            imgSearchAnimi.show()
-            tvDiscover.show()
-            tvInfo.show()
-            imgSearchNotFound.hide()
-        } else {
-            imgSearchAnimi.hide()
-            tvDiscover.hide()
-            tvInfo.hide()
-            imgSearchNotFound.hide()
+        when (query.isEmpty()) {
+            true -> {
+                imgSearchAnimi.show()
+                tvDiscover.show()
+                tvInfo.show()
+                imgSearchNotFound.hide()
+            }
+
+            else -> {
+                imgSearchAnimi.hide()
+                tvDiscover.hide()
+                tvInfo.hide()
+                imgSearchNotFound.hide()
+            }
         }
     }
 
