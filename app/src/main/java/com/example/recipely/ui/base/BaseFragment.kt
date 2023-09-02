@@ -34,6 +34,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
         container : ViewGroup?,
         savedInstanceState : Bundle?
     ) : View? {
+        initialize()
         _binding = bindingInflater(inflater, container, false)
         return requireNotNull(_binding).root
     }
