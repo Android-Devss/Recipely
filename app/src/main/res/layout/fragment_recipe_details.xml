@@ -55,7 +55,6 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/space16"
                     android:layout_marginTop="@dimen/space32"
-                    android:elevation="@dimen/space2"
                     app:layout_constraintStart_toStartOf="@id/recipe_details_image"
                     app:layout_constraintTop_toTopOf="@id/recipe_details_image"
                     app:srcCompat="@drawable/icon_keyboard_arrow" />
