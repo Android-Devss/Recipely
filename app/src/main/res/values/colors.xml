@@ -2,6 +2,7 @@
 <resources>
     <!--Primary Palette-->
     <color name="primary">#FF70B9BE</color>
+    <color name="primary50">#B5E8EC</color>
     <!--Secondary Palette-->
     <color name="secondary">#FF042628</color>
     <!--Black Palette-->
@@ -15,5 +16,6 @@
     <color name="white_fa">#FFFAFAFA</color>
     <color name="white_ec">#FFECECEC</color>
     <color name="white_e1">#FFE1E1E1</color>
-
+    <!--Other-->
+    <color name="card_background">#FFF6F6F6</color>
 </resources>

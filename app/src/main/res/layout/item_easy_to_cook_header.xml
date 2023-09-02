@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/space16"
+    android:background="@color/white_fa"
+    android:weightSum="3">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/editor_choice_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/easy_to_cook"
+        android:textColor="@color/secondary"
+        android:textSize="@dimen/text20" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/editor_choice_view_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/view_all"
+        android:textAlignment="textEnd"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/text14" />
+</LinearLayout>

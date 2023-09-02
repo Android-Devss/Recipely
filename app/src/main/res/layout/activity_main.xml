@@ -3,57 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white_ff"
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/cuisineName"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/home_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space24"
+        android:layout_marginTop="@dimen/space16"
         android:fontFamily="@font/poppins_semi_bold"
-        android:text="@string/home"
+        android:text="@string/home_title"
+        android:layout_marginStart="@dimen/space16"
         android:textColor="@color/black87"
         android:textSize="@dimen/text24"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.utils.widget.ImageFilterButton
-        android:layout_width="@dimen/image_icon_button"
-        android:layout_height="@dimen/image_icon_button"
-        android:layout_marginStart="@dimen/space24"
-        android:layout_marginTop="@dimen/space32"
-        android:background="@color/white_ff"
-        android:src="@drawable/baseline_arrow_back_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/space16"
         android:layout_height="0dp"
-        android:layout_margin="@dimen/space4"
-        android:visibility="visible"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cuisineName" />
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_bar"
+        app:layout_constraintTop_toBottomOf="@+id/home_text"
+        tools:layout="@layout/fragment_recipe_home" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
+        android:id="@+id/bottom_navigation_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+        android:background="@color/white_ff"
+        app:itemIconTint="@color/black87"
+        app:itemRippleColor="@color/primary"
+        app:itemTextColor="@color/black60"
         app:labelVisibilityMode="selected"
-        android:background="@drawable/nav_bar_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_menu"
-        tools:ignore="VisualLintBottomNav" />
+        app:menu="@menu/bottom_navigation_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
