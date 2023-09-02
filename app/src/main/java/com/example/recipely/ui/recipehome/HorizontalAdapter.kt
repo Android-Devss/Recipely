@@ -23,6 +23,10 @@ class HorizontalAdapter(items: List<Recipe>) :
             horizontalRecipeNameHome.text = currentItem.recipeName
             horizontalRecipeCuisineHome.text = currentItem.cuisine
             horizontalRecipeImageHome.loadImageWithPlaceholderAndCrossFade(currentItem.imageUrl)
+
         }
+    }
+    interface homeInteractionListener:BaseInteractionListener{
+         fun onClickRecipe(id:Int)
     }
 }
