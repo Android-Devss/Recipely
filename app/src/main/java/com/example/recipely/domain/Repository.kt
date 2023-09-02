@@ -5,9 +5,6 @@ import com.example.recipely.data.source.model.Recipe
 
 interface Repository {
     fun getRecipes(): List<Recipe>
-    fun searchAboutRecipes(searchWord: String): List<Recipe>
+    fun searchAboutRecipes(searchQuery: String): List<Recipe>
     fun getRecipe(id: Int): Recipe
-    fun getAdvices(): List<Advice>
-
-
 }

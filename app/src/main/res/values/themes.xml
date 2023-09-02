@@ -57,6 +57,12 @@
         <item name="android:textColor">@color/primary</item>
         <item name="android:textSize">@dimen/text16</item>
     </style>
+
+    <style name="InfoTextStyle">
+        <item name="android:textColor">@color/black87</item>
+        <item name="android:textSize">@dimen/text16</item>
+    </style>
+
     <!-- Image Style Item Card -->
     <style name="CardImageStyle">
         <item name="cornerSize">16dp</item>
@@ -68,7 +74,7 @@
     </style>
 
     <style name="adviceTextInstruction">
-        <item name="android:textColor">@color/white_ff</item>
+        <item name="android:textColor">@color/black87</item>
         <item name="android:textSize">@dimen/text12</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
@@ -77,11 +83,15 @@
         <item name="android:background">@drawable/background_img_card_advice</item>
     </style>
 
-    <style name="InfoTextStyle">
+    <style name="adviceTextStyle">
         <item name="android:textColor">@color/black87</item>
     </style>
 
-    <style name="adviceTextStyle">
-        <item name="android:textColor">@color/white_ff_dark</item>
+    <style name="SearchEditTextStyle">
+        <item name="android:maxLines">1</item>
+        <item name="android:inputType">textFilter</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textColor">@color/black87</item>
     </style>
 </resources>

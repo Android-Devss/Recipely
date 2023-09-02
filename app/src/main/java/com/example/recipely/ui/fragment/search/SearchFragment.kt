@@ -50,11 +50,11 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ActionListener,
     }
 
     private fun visibilityOfImageAndRecyclerInSearchFragment(query: String?) {
-        val result = dataManager.searchAboutRecipes(query!!)
+        val result = query?.let { dataManager.searchAboutRecipes(it) }
         binding?.apply {
-            visibility(query)
-            if (query.isNotEmpty()) recyclerviewSearchList.show() else recyclerviewSearchList.hide()
-            if (result.isEmpty()) {
+            query?.let { visibility(it) }
+            if (query?.isNotEmpty() == true) recyclerviewSearchList.show() else recyclerviewSearchList.hide()
+            if (result?.isEmpty() == true) {
                 tvDiscover.show()
                 imgSearchAnimi.show()
                 tvInfo.show()
@@ -76,13 +76,11 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ActionListener,
             tvDiscover.show()
             tvInfo.show()
             imgSearchNotFound.hide()
-        } else if (true) {
+        } else {
             imgSearchAnimi.hide()
             tvDiscover.hide()
             tvInfo.hide()
             imgSearchNotFound.hide()
-        } else {
-            imgSearchNotFound.show()
         }
     }
 

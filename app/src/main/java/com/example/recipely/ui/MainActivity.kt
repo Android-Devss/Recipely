@@ -1,6 +1,7 @@
 package com.example.recipely.ui
 
 import android.os.Bundle
+import android.os.StrictMode
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+//        StrictMode.getThreadPolicy()
 
     }
     private fun replaceFragment(fragment: Fragment) {
