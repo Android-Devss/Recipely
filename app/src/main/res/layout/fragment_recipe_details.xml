@@ -44,7 +44,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/space16"
                 android:layout_marginTop="@dimen/space16"
-                android:elevation="@dimen/space4"
                 android:outlineSpotShadowColor="@color/black87"
                 app:layout_constraintEnd_toEndOf="@id/recipe_details_image"
                 app:layout_constraintStart_toStartOf="@id/recipe_details_image"
@@ -56,10 +55,10 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/space16"
                     android:layout_marginTop="@dimen/space32"
+                    android:elevation="@dimen/space2"
                     app:layout_constraintStart_toStartOf="@id/recipe_details_image"
                     app:layout_constraintTop_toTopOf="@id/recipe_details_image"
-                    app:srcCompat="@drawable/icon_keyboard_arrow"
-                    android:tint="@color/white_ff"/>
+                    app:srcCompat="@drawable/icon_keyboard_arrow" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/recipe_details_text"
@@ -68,6 +67,10 @@
                     android:layout_marginTop="@dimen/space32"
                     android:fontFamily="@font/poppins_semi_bold"
                     android:gravity="center"
+                    android:shadowColor="@color/black37"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
                     android:text="@string/recipe_details"
                     android:textColor="@color/white_ff"
                     android:textSize="@dimen/text18"
@@ -86,7 +89,7 @@
         style="@style/subCards"
         android:layout_width="match_parent"
         android:layout_height="@dimen/first_sub_card_view_height"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="210dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
