@@ -26,7 +26,7 @@ class HorizontalAdapter(items: List<Recipe>) :
 
         }
     }
-    interface homeInteractionListener:BaseInteractionListener{
+    interface homeInteractionListener: BaseInteractionListener{
          fun onClickRecipe(id:Int)
     }
 }

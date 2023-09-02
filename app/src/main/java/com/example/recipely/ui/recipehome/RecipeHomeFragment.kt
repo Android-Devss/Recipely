@@ -13,7 +13,7 @@ import com.example.recipely.ui.recipehome.homemodel.HomeItem
 import com.example.recipely.ui.recipehome.homemodel.HomeItemType
 import com.example.recipely.util.CsvParser
 
-class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>() {
+class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),HorizontalAdapter.homeInteractionListener {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentRecipeHomeBinding
         get() = FragmentRecipeHomeBinding::inflate
     override val logTag: String = this.javaClass.simpleName
@@ -39,5 +39,9 @@ class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>() {
 
     override fun addCallbacks() {
 
+    }
+
+    override fun onClickRecipe(id : Int) {
+        val horizontalAdapter:HorizontalAdapter()
     }
 }
