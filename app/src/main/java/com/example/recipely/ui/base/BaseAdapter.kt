@@ -68,6 +68,7 @@ abstract class BaseAdapter<T, VB : ViewBinding>(
     }
 
     open fun areItemsSame(oldItem : T, newItem : T) = oldItem?.equals(newItem) == true
+
     interface BaseInteractionListener
 
     open fun areContentSame(oldPosition : T, newPosition : T) = true
