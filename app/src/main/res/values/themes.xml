@@ -1,12 +1,23 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Base.Theme.Recipely" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Recipely" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
          <item name="colorPrimary">@color/white_ff</item>
         <item name="colorOnPrimary">@color/primary</item>
-    </style>
+        <item name="colorSecondaryContainer">@color/primary50</item>
+ </style>
 
     <style name="Theme.Recipely" parent="Base.Theme.Recipely" />
+
+    <style name="Chip_Style" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="textFillColor">@color/black87</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/text16</item>
+        <item name="android:layout_width">@dimen/space_zero</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/space8</item>
+    </style>
     <!--    Style image card    -->
     <style name="img_card">
         <item name="cornerSize">@dimen/space16</item>

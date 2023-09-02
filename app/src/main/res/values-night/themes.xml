@@ -1,3 +1,4 @@
+
 <resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.Recipely" parent="Theme.Material3.DayNight.NoActionBar">

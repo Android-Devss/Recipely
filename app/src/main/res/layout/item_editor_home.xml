@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="@dimen/space4"
+    android:layout_height="@dimen/second_card_height"
+    android:layout_margin="@dimen/space8"
+    app:cardCornerRadius="@dimen/corner_reduis"
+    tools:ignore="TextSizeCheck">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/recipe_image"
+            android:layout_width="@dimen/first_card_image"
+            android:layout_height="@dimen/first_card_image"
+            android:layout_margin="@dimen/space16"
+            android:background="@drawable/burgur"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:roundPercent=".3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/recipe_name"
+            android:layout_width="@dimen/width_title"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space16"
+            android:layout_marginTop="@dimen/space24"
+            android:lines="2"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/burgur"
+            android:textColor="@color/black87"
+            android:textSize="@dimen/text16"
+            app:layout_constraintStart_toEndOf="@+id/recipe_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/chef_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_medium"
+            android:lines="1"
+            android:layout_marginStart="@dimen/space16"
+            android:layout_marginTop="@dimen/space8"
+            android:text="@string/chef_name"
+            android:textColor="@color/black37"
+            android:textSize="@dimen/text18"
+            app:layout_constraintStart_toEndOf="@+id/recipe_image"
+            app:layout_constraintTop_toBottomOf="@+id/recipe_name" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterButton
+            android:id="@+id/icon_arrow"
+            android:layout_width="@dimen/image_icon_button"
+            android:layout_height="@dimen/image_icon_button"
+            android:layout_marginEnd="@dimen/space32"
+            android:layout_marginBottom="@dimen/space32"
+            android:background="@drawable/icon_image_backgorund"
+            android:src="@drawable/baseline_arrow_forward_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

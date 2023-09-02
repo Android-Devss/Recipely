@@ -55,7 +55,7 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:listitem="@layout/popular_recyclerview_layout" />
+            tools:listitem="@layout/layout_popular_recyclerview" />
 
 
     </LinearLayout>
