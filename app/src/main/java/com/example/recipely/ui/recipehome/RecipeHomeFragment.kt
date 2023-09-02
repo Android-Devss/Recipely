@@ -16,7 +16,8 @@ import com.example.recipely.util.CsvParser
 import com.example.recipely.util.addFragment
 import com.example.recipely.util.replaceFragment
 
-class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),HomeAdapter.HomeInteractionListener {
+class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),
+    HomeAdapter.HomeInteractionListener {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentRecipeHomeBinding
         get() = FragmentRecipeHomeBinding::inflate
     override val logTag: String = this.javaClass.simpleName
@@ -24,7 +25,11 @@ class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),HomeAdapter
     private lateinit var homeAdapter: HomeAdapter
     private val dataSource by lazy { DataSourceImp(requireContext(), CsvParser()) }
     private val repository by lazy { RepositoryImp(dataSource) }
-    private val horizontalItems: GetPopularRecipesUseCase by lazy { GetPopularRecipesUseCase(repository) }
+    private val horizontalItems: GetPopularRecipesUseCase by lazy {
+        GetPopularRecipesUseCase(
+            repository
+        )
+    }
     private val verticaItems: GetEasyRecipesUseCase by lazy { GetEasyRecipesUseCase(repository) }
 
 
@@ -36,7 +41,7 @@ class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),HomeAdapter
         itemsList.add(HomeItem(R.string.easy_to_cook, HomeItemType.ITEM_EDITOR_CHOICE))
         itemsList.add(HomeItem(verticaItems(10), HomeItemType.ITEM_VERTICAL))
 
-        homeAdapter = HomeAdapter(itemsList,this)
+        homeAdapter = HomeAdapter(itemsList, this)
         binding?.recyclerViewHome?.adapter = homeAdapter
     }
 
@@ -44,8 +49,8 @@ class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),HomeAdapter
 
     }
 
-    override fun onClickRecipe(id : Int) {
-        val recipeDetails = RecipeDetailsFragment.newInstance(id)
-        addFragment(recipeDetails)
+    override fun onClickRecipe(recipeName: String) {
+        val recipeDetails = RecipeDetailsFragment.newInstance(recipeName)
+        replaceFragment(recipeDetails)
     }
 }

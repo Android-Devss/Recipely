@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_constrain_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white_e1">
+    android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/main_card_view"
@@ -41,7 +40,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/space16"
                 android:layout_marginTop="@dimen/space32"
-                android:background="@drawable/arrow_back_to_home"
                 app:layout_constraintStart_toStartOf="@id/recipe_details_image"
                 app:layout_constraintTop_toTopOf="@id/recipe_details_image"
                 app:srcCompat="@drawable/icon_keyboard_arrow" />

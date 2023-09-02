@@ -12,12 +12,13 @@ fun ImageView.loadImageWithPlaceholderAndCrossFade(url: String) {
         error(R.drawable.recipe_image_error)
     }
 }
+
 fun Int.toTimeFormat() = "$this min"
 
 fun Fragment.replaceFragment(fragment: Fragment) {
-     requireActivity().supportFragmentManager.beginTransaction()
-    .replace(R.id.fragment_container, fragment).addToBackStack(null)
-     .commit()
+    requireActivity().supportFragmentManager.beginTransaction()
+        .replace(R.id.fragment_container, fragment).addToBackStack(null)
+        .commit()
 }
 
 fun Fragment.addFragment(fragment: Fragment) {
@@ -39,4 +40,5 @@ fun String.toIngredientsFormat(): String {
     }
     return formattedIngredients.joinToString("\n")
 }
+
 fun String.toInstructionsFormat() = this.replace(";", "\n✓ ")

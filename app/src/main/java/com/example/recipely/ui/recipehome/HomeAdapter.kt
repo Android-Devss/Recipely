@@ -15,7 +15,10 @@ import com.example.recipely.ui.recipehome.homemodel.HomeItem
 import com.example.recipely.ui.recipehome.homemodel.HomeItemType
 
 @Suppress("UNCHECKED_CAST")
-class HomeAdapter(private var items: List<HomeItem<Any>>,private val listener : HomeInteractionListener) :
+class HomeAdapter(
+    private var items: List<HomeItem<Any>>,
+    private val listener: HomeInteractionListener
+) :
     RecyclerView.Adapter<HomeAdapter.BaseViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
@@ -68,7 +71,7 @@ class HomeAdapter(private var items: List<HomeItem<Any>>,private val listener : 
 
     private fun bindHorizontalItems(holder: ItemHorizontalViewHolder, position: Int) {
         val currentItem = items[position].item as List<Recipe>
-        val horizontalAdapter = HorizontalAdapter(currentItem,listener)
+        val horizontalAdapter = HorizontalAdapter(currentItem, listener)
         horizontalAdapter.setItems(currentItem)
         holder.binding.apply {
             horizontalRecyclerView.adapter = horizontalAdapter
@@ -77,7 +80,7 @@ class HomeAdapter(private var items: List<HomeItem<Any>>,private val listener : 
 
     private fun bindVerticalItems(holder: ItemVerticalViewHolder, position: Int) {
         val currentItem = items[position].item as List<Recipe>
-        val verticalAdapter = VerticalAdapter(currentItem,listener)
+        val verticalAdapter = VerticalAdapter(currentItem, listener)
         verticalAdapter.setItems(currentItem)
         holder.binding.apply {
             verticalRecyclerView.adapter = verticalAdapter
@@ -86,11 +89,11 @@ class HomeAdapter(private var items: List<HomeItem<Any>>,private val listener : 
 
     abstract class BaseViewHolder(viewItem: View) : RecyclerView.ViewHolder(viewItem)
 
-    class ItemPopularViewHolder(viewItem: View): BaseViewHolder(viewItem) {
+    class ItemPopularViewHolder(viewItem: View) : BaseViewHolder(viewItem) {
         val binding = ItemPopularRecipeHeaderBinding.bind(viewItem)
     }
 
-    class ItemHorizontalViewHolder(viewItem: View): BaseViewHolder(viewItem) {
+    class ItemHorizontalViewHolder(viewItem: View) : BaseViewHolder(viewItem) {
         val binding = LayoutPopularRecipesBinding.bind(viewItem)
     }
 
@@ -110,8 +113,9 @@ class HomeAdapter(private var items: List<HomeItem<Any>>,private val listener : 
             HomeItemType.ITEM_VERTICAL -> ITEM_VERTICAL
         }
     }
-    interface HomeInteractionListener: BaseAdapter.BaseInteractionListener {
-        fun onClickRecipe(id:Int)
+
+    interface HomeInteractionListener : BaseAdapter.BaseInteractionListener {
+        fun onClickRecipe(recipeName: String)
     }
 
 
