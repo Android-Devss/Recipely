@@ -11,8 +11,8 @@
         android:id="@+id/main_card_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="@dimen/space16"
-        android:layout_marginVertical="@dimen/space24"
+        android:layout_marginHorizontal="@dimen/space8"
+        android:layout_marginVertical="@dimen/space8"
         app:cardCornerRadius="@dimen/space24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,9 +65,9 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/first_sub_card_view"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginHorizontal="@dimen/space24"
-        android:layout_marginTop="220dp"
+        android:layout_height="120dp"
+        android:layout_marginHorizontal="@dimen/space16"
+        android:layout_marginTop="200dp"
         app:cardCornerRadius="@dimen/space24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +76,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/first_sub_constraint"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/sub_cardview_border">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/recipe_details_name"
@@ -84,14 +85,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/space24"
                 android:layout_marginTop="@dimen/space16"
-                android:drawableStart="@drawable/icon_cooking_food"
-                android:drawablePadding="@dimen/space8"
                 android:fontFamily="@font/poppins_semi_bold"
-                android:text="Black Bean Burrito"
                 android:textColor="@color/black87"
                 android:textSize="@dimen/text14"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/first_sub_constraint"
-                app:layout_constraintTop_toTopOf="@id/first_sub_constraint" />
+                app:layout_constraintTop_toTopOf="@id/first_sub_constraint"
+                tools:text="Black Bean Burrito" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/recipe_details_cuisine"
@@ -113,7 +113,6 @@
                 android:id="@+id/recipe_details_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/space24"
                 android:layout_marginTop="@dimen/space12"
                 android:drawableStart="@drawable/icon_time"
                 android:drawablePadding="@dimen/space4"
@@ -122,7 +121,8 @@
                 android:text="15 Mins"
                 android:textColor="@color/black87"
                 android:textSize="@dimen/text14"
-                app:layout_constraintStart_toEndOf="@id/recipe_details_cuisine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/recipe_details_cuisine"
                 app:layout_constraintTop_toBottomOf="@id/recipe_details_name" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -132,8 +132,8 @@
         android:id="@+id/second_sub_card_view"
         android:layout_width="match_parent"
         android:layout_height="@dimen/space_zero"
-        android:layout_marginHorizontal="@dimen/space24"
-        android:layout_marginTop="@dimen/space32"
+        android:layout_marginHorizontal="@dimen/space16"
+        android:layout_marginTop="@dimen/space24"
         android:layout_marginBottom="@dimen/space8"
         app:cardCornerRadius="@dimen/space24"
         app:layout_constraintBottom_toBottomOf="@+id/main_card_view"
@@ -145,7 +145,7 @@
             android:id="@+id/second_sub_constraint"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/second_sub_cardview_border">
+            android:background="@drawable/sub_cardview_border">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/ic_ingredients_text"
