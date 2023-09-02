@@ -9,11 +9,14 @@ import com.example.recipely.databinding.FragmentRecipeHomeBinding
 import com.example.recipely.domain.usecase.home.GetPopularRecipesUseCase
 import com.example.recipely.domain.usecase.home.GetEasyRecipesUseCase
 import com.example.recipely.ui.base.BaseFragment
+import com.example.recipely.ui.recipedetails.RecipeDetailsFragment
 import com.example.recipely.ui.recipehome.homemodel.HomeItem
 import com.example.recipely.ui.recipehome.homemodel.HomeItemType
 import com.example.recipely.util.CsvParser
+import com.example.recipely.util.addFragment
+import com.example.recipely.util.replaceFragment
 
-class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),HorizontalAdapter.homeInteractionListener {
+class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),HorizontalAdapter.HomeInteractionListener {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentRecipeHomeBinding
         get() = FragmentRecipeHomeBinding::inflate
     override val logTag: String = this.javaClass.simpleName
@@ -42,6 +45,7 @@ class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),HorizontalA
     }
 
     override fun onClickRecipe(id : Int) {
-        val horizontalAdapter:HorizontalAdapter()
+        val recipeDetails = RecipeDetailsFragment.newInstance(id)
+        addFragment(recipeDetails)
     }
 }

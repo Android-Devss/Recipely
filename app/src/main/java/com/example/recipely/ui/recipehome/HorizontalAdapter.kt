@@ -9,7 +9,7 @@ import com.example.recipely.databinding.ItemPopularRecipeBinding
 import com.example.recipely.ui.base.BaseAdapter
 import com.example.recipely.util.loadImageWithPlaceholderAndCrossFade
 
-class HorizontalAdapter(items: List<Recipe>) :
+class HorizontalAdapter(items: List<Recipe>,val listener : HomeInteractionListener) :
     BaseAdapter<Recipe, ItemPopularRecipeBinding>(items) {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> ItemPopularRecipeBinding
         get() = ItemPopularRecipeBinding::inflate
@@ -23,10 +23,10 @@ class HorizontalAdapter(items: List<Recipe>) :
             horizontalRecipeNameHome.text = currentItem.recipeName
             horizontalRecipeCuisineHome.text = currentItem.cuisine
             horizontalRecipeImageHome.loadImageWithPlaceholderAndCrossFade(currentItem.imageUrl)
-
+            listener.onClickRecipe(currentItem.id)
         }
     }
-    interface homeInteractionListener: BaseInteractionListener{
+    interface HomeInteractionListener: BaseInteractionListener{
          fun onClickRecipe(id:Int)
     }
 }

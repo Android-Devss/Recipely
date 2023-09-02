@@ -35,6 +35,5 @@ class SeeAllFragment : BaseFragment<FragmentSeeAllBinding>(),
     }
 
     override fun onClickRecipe(recipeId: Int) {
-
     }
 }

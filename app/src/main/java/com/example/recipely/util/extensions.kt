@@ -20,6 +20,12 @@ fun Fragment.replaceFragment(fragment: Fragment) {
      .commit()
 }
 
+fun Fragment.addFragment(fragment: Fragment) {
+    requireActivity().supportFragmentManager.beginTransaction()
+        .add(R.id.fragment_container, fragment).addToBackStack(null)
+        .commit()
+}
+
 fun Int.toCountFormat() = "$this Items"
 
 fun String.toIngredientsFormat(): String {
