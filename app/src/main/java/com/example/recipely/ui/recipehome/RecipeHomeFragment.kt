@@ -16,7 +16,7 @@ import com.example.recipely.util.CsvParser
 import com.example.recipely.util.addFragment
 import com.example.recipely.util.replaceFragment
 
-class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),HorizontalAdapter.HomeInteractionListener {
+class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),HomeAdapter.HomeInteractionListener {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentRecipeHomeBinding
         get() = FragmentRecipeHomeBinding::inflate
     override val logTag: String = this.javaClass.simpleName
@@ -36,7 +36,7 @@ class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),HorizontalA
         itemsList.add(HomeItem(R.string.easy_to_cook, HomeItemType.ITEM_EDITOR_CHOICE))
         itemsList.add(HomeItem(verticaItems(10), HomeItemType.ITEM_VERTICAL))
 
-        homeAdapter = HomeAdapter(itemsList)
+        homeAdapter = HomeAdapter(itemsList,this)
         binding?.recyclerViewHome?.adapter = homeAdapter
     }
 
