@@ -9,6 +9,7 @@ import coil.load
 import com.example.recipely.R
 import com.example.recipely.data.source.model.Recipe
 import com.example.recipely.databinding.ItemSearchCardBinding
+import com.example.recipely.util.loadImageWithPlaceholderAndCrossFade
 
 class SearchAdapter(
     private val listener: RecipeInteractionListener
@@ -36,9 +37,7 @@ class SearchAdapter(
         holder.binding.apply {
             tvRecipeName.text = currentRecipe.recipeName
             tvRecipeCuisine.text = currentRecipe.cuisine
-            ivRecipeImage.load(currentRecipe.imageUrl) {
-                placeholder(R.drawable.ic_loading)
-            }
+            ivRecipeImage.loadImageWithPlaceholderAndCrossFade(currentRecipe.imageUrl)
             root.setOnClickListener { listener.onClickRecipe(currentRecipe.id) }
         }
 

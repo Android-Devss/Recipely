@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import com.example.recipely.R
+import com.example.recipely.data.repository.RepositoryImp
 import com.example.recipely.data.source.DataSourceImp
 import com.example.recipely.databinding.FragmentSearchBinding
 import com.example.recipely.domain.usecase.search.SearchUseCase
@@ -15,8 +16,9 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ActionListener,
     SearchView.OnQueryTextListener, SearchAdapter.RecipeInteractionListener {
 
     private val dataSource by lazy { DataSourceImp(requireContext(), CsvParser()) }
+    private val repository by lazy { RepositoryImp(dataSource) }
     private lateinit var adapter: SearchAdapter
-    private val searchUseCase: SearchUseCase = SearchUseCase(dataSource)
+    private val searchUseCase: SearchUseCase = SearchUseCase(repository)
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentSearchBinding
         get() = FragmentSearchBinding::inflate

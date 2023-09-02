@@ -25,4 +25,10 @@
     <string name="home_title">Find best recipes \nfor cooking</string>
     <string name="easy_to_cook">Easy to Cook</string>
     <string name="advices">Advices</string>
+    <string name="burgur">burgur</string>
+    <string name="editors">editors</string>
+    <string name="breakfast">breakfast</string>
+    <string name="chef_name">chef_name</string>
+    <string name="popular">popular</string>
+    <string name="home">Home</string>
 </resources>
