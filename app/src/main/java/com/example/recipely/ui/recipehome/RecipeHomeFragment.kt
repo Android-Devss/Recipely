@@ -26,9 +26,7 @@ class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),
     private val dataSource by lazy { DataSourceImp(requireContext(), CsvParser()) }
     private val repository by lazy { RepositoryImp(dataSource) }
     private val horizontalItems: GetPopularRecipesUseCase by lazy {
-        GetPopularRecipesUseCase(
-            repository
-        )
+        GetPopularRecipesUseCase(repository)
     }
     private val verticaItems: GetEasyRecipesUseCase by lazy { GetEasyRecipesUseCase(repository) }
 
@@ -51,6 +49,6 @@ class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),
 
     override fun onClickRecipe(recipeName: String) {
         val recipeDetails = RecipeDetailsFragment.newInstance(recipeName)
-        replaceFragment(recipeDetails)
+        addFragment(recipeDetails)
     }
 }
