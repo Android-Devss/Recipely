@@ -12,7 +12,6 @@ import com.example.recipely.ui.seeAllHome.SeeAllFragment
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val recipeHomeFragment by lazy { RecipeHomeFragment() }
-    private val seeAllFragment by lazy { SeeAllFragment() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,11 +32,14 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.navigation_search -> {
-                    replaceFragment(seeAllFragment)
                     true
                 }
 
                 R.id.navigation_cuisine -> {
+                    true
+                }
+
+                R.id.navigation_advice -> {
                     true
                 }
 
