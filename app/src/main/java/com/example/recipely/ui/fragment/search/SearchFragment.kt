@@ -18,7 +18,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ActionListener,
     private val dataSource by lazy { DataSourceImp(requireContext(), CsvParser()) }
     private val repository by lazy { RepositoryImp(dataSource) }
     private lateinit var adapter: SearchAdapter
-    private val searchUseCase: SearchUseCase = SearchUseCase(repository)
+//    private val searchUseCase: SearchUseCase = SearchUseCase(repository)
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentSearchBinding
         get() = FragmentSearchBinding::inflate
@@ -45,13 +45,13 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ActionListener,
     }
 
     private fun setDataOnAdapter(query: String) {
-        val resultOfSearch = searchUseCase.searchAboutRecipes(query)
+        val resultOfSearch = repository.searchAboutRecipes(query)
         adapter.setData(resultOfSearch)
         binding?.recyclerviewSearchList?.adapter = adapter
     }
 
     private fun visibilityOfImageAndRecyclerInSearchFragment(query: String?) {
-        val result = query?.let { searchUseCase.searchAboutRecipes(it) }
+        val result = query?.let { repository.searchAboutRecipes(it) }
         binding?.apply {
             query?.let { visibility(it) }
             if (query?.isNotEmpty() == true) recyclerviewSearchList.show() else recyclerviewSearchList.hide()
@@ -72,20 +72,16 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ActionListener,
     }
 
     private fun FragmentSearchBinding.visibility(query: String) {
-        when (query.isEmpty()) {
-            true -> {
-                imgSearchAnimi.show()
-                tvDiscover.show()
-                tvInfo.show()
-                imgSearchNotFound.hide()
-            }
-
-            else -> {
-                imgSearchAnimi.hide()
-                tvDiscover.hide()
-                tvInfo.hide()
-                imgSearchNotFound.hide()
-            }
+        if (query.isEmpty()) {
+            imgSearchAnimi.show()
+            tvDiscover.show()
+            tvInfo.show()
+            imgSearchNotFound.hide()
+        } else {
+            imgSearchAnimi.hide()
+            tvDiscover.hide()
+            tvInfo.hide()
+            imgSearchNotFound.hide()
         }
     }
 
@@ -106,12 +102,12 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ActionListener,
     override fun onClickRecipe(recipeId: Int) {
         TODO("Not yet implemented")
     }
+}
 
-    private fun View.hide() {
-        visibility = View.INVISIBLE
-    }
+private fun View.hide() {
+    visibility = View.INVISIBLE
+}
 
-    private fun View.show() {
-        visibility = View.VISIBLE
-    }
+private fun View.show() {
+    visibility = View.VISIBLE
 }
