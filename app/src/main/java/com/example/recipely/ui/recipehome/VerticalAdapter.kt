@@ -8,7 +8,7 @@ import com.example.recipely.data.source.model.Recipe
 import com.example.recipely.databinding.ItemEasyToCookRecipeBinding
 import com.example.recipely.ui.base.BaseAdapter
 
-class VerticalAdapter(items: List<Recipe>) :
+class VerticalAdapter(items: List<Recipe>,private val listener : OnHomeClickListener) :
     BaseAdapter<Recipe, ItemEasyToCookRecipeBinding>(items) {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> ItemEasyToCookRecipeBinding
         get() = ItemEasyToCookRecipeBinding::inflate
@@ -19,13 +19,21 @@ class VerticalAdapter(items: List<Recipe>) :
         currentItem: Recipe
     ) {
         holder.binding.apply {
-            verticalRecipeImage.load(currentItem.imageUrl) {
-                crossfade(true)
-                placeholder(R.drawable.recipe_image_placeholder)
-                error(R.drawable.recipe_image_error)
-            }
             verticalRecipeCuisine.text = currentItem.cuisine
             verticalRecipeName.text = currentItem.recipeName
+            verticalRecipeImage.load(currentItem.imageUrl) {
+                crossfade(true)
+                crossfade(500)
+                placeholder(R.drawable.recipe_image_placeholder)
+                error(R.drawable.recipe_image_error)
+
+            }
+            root.setOnClickListener {
+                listener.onRecipeClicked(currentItem.id)
+            }
+
         }
     }
+
+
 }

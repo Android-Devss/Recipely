@@ -61,8 +61,8 @@
                 android:textColor="@color/black60"
                 android:textSize="@dimen/text16"
                 app:drawableStartCompat="@drawable/icon_spoon"
-                android:drawableTint="@color/black60"
-                tools:text="Egypt Cuisine" />
+                tools:text="Egypt Cuisine"
+                app:drawableTint="@color/black60" />
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

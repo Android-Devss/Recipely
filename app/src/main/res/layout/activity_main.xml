@@ -14,7 +14,7 @@
         android:fontFamily="@font/poppins_semi_bold"
         android:text="@string/home_title"
         android:layout_marginStart="@dimen/space16"
-        android:textColor="@color/black87"
+        android:textColor="@color/secondary"
         android:textSize="@dimen/text24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,16 +22,16 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/space16"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_bar"
+        android:layout_marginTop="@dimen/space16"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_text"
         tools:layout="@layout/fragment_recipe_home" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/space_zero"
         android:background="@color/white_ff"
         app:itemIconTint="@color/black87"
         app:itemRippleColor="@color/primary"

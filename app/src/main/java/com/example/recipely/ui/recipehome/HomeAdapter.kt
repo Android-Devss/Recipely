@@ -14,7 +14,7 @@ import com.example.recipely.ui.recipehome.homemodel.HomeItem
 import com.example.recipely.ui.recipehome.homemodel.HomeItemType
 
 @Suppress("UNCHECKED_CAST")
-class HomeAdapter(private var items: List<HomeItem<Any>>) :
+class HomeAdapter(private var items: List<HomeItem<Any>>,private val listener : OnHomeClickListener) :
     RecyclerView.Adapter<HomeAdapter.BaseViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
@@ -30,9 +30,9 @@ class HomeAdapter(private var items: List<HomeItem<Any>>) :
                 ItemHorizontalViewHolder(view)
             }
 
-            ITEM_EDITOR_CHOICE -> {
+            ITEM_EASY_COOK -> {
                 val view = inflater.inflate(R.layout.item_easy_to_cook_header, parent, false)
-                ItemEditorChoiceViewHolder(view)
+                ItemEasyToCookViewHolder(view)
             }
 
             ITEM_VERTICAL -> {
@@ -54,7 +54,7 @@ class HomeAdapter(private var items: List<HomeItem<Any>>) :
                 }
             }
 
-            is ItemEditorChoiceViewHolder -> {
+            is ItemEasyToCookViewHolder -> {
                 holder.binding.apply {
                     editorChoiceViewAll.setOnClickListener { }
                 }
@@ -67,7 +67,7 @@ class HomeAdapter(private var items: List<HomeItem<Any>>) :
 
     private fun bindHorizontalItems(holder: ItemHorizontalViewHolder, position: Int) {
         val currentItem = items[position].item as List<Recipe>
-        val horizontalAdapter = HorizontalAdapter(currentItem)
+        val horizontalAdapter = HorizontalAdapter(currentItem,listener)
         horizontalAdapter.setItems(currentItem)
         holder.binding.apply {
             horizontalRecyclerView.adapter = horizontalAdapter
@@ -76,7 +76,7 @@ class HomeAdapter(private var items: List<HomeItem<Any>>) :
 
     private fun bindVerticalItems(holder: ItemVerticalViewHolder, position: Int) {
         val currentItem = items[position].item as List<Recipe>
-        val verticalAdapter = VerticalAdapter(currentItem)
+        val verticalAdapter = VerticalAdapter(currentItem,listener)
         verticalAdapter.setItems(currentItem)
         holder.binding.apply {
             verticalRecyclerView.adapter = verticalAdapter
@@ -93,7 +93,7 @@ class HomeAdapter(private var items: List<HomeItem<Any>>) :
         val binding = LayoutPopularRecipesBinding.bind(viewItem)
     }
 
-    class ItemEditorChoiceViewHolder(viewItem: View) : BaseViewHolder(viewItem) {
+    class ItemEasyToCookViewHolder(viewItem: View) : BaseViewHolder(viewItem) {
         val binding = ItemEasyToCookHeaderBinding.bind(viewItem)
     }
 
@@ -105,7 +105,7 @@ class HomeAdapter(private var items: List<HomeItem<Any>>) :
         return when (items[position].type) {
             HomeItemType.ITEM_POPULAR -> ITEM_POPULAR
             HomeItemType.ITEM_HORIZONTAL -> ITEM_HORIZONTAL
-            HomeItemType.ITEM_EDITOR_CHOICE -> ITEM_EDITOR_CHOICE
+            HomeItemType.ITEM_EASY_COOK -> ITEM_EASY_COOK
             HomeItemType.ITEM_VERTICAL -> ITEM_VERTICAL
         }
     }
@@ -114,7 +114,7 @@ class HomeAdapter(private var items: List<HomeItem<Any>>) :
     companion object {
         const val ITEM_POPULAR = 0
         const val ITEM_HORIZONTAL = 1
-        const val ITEM_EDITOR_CHOICE = 2
+        const val ITEM_EASY_COOK = 2
         const val ITEM_VERTICAL = 3
     }
 }
