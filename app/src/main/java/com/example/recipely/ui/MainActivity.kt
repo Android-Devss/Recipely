@@ -7,10 +7,12 @@ import androidx.fragment.app.Fragment
 import com.example.recipely.R
 import com.example.recipely.databinding.ActivityMainBinding
 import com.example.recipely.ui.recipehome.RecipeHomeFragment
+import com.example.recipely.ui.seeAllHome.SeeAllFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val recipeHomeFragment by lazy { RecipeHomeFragment() }
+    private val seeAllFragment by lazy { SeeAllFragment() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.navigation_search -> {
+                    replaceFragment(seeAllFragment)
                     true
                 }
 

@@ -7,6 +7,7 @@ import com.example.recipely.R
 import com.example.recipely.data.source.model.Recipe
 import com.example.recipely.databinding.ItemPopularRecipeBinding
 import com.example.recipely.ui.base.BaseAdapter
+import com.example.recipely.util.loadImageWithPlaceholderAndCrossFade
 
 class HorizontalAdapter(items: List<Recipe>) :
     BaseAdapter<Recipe, ItemPopularRecipeBinding>(items) {
@@ -21,12 +22,7 @@ class HorizontalAdapter(items: List<Recipe>) :
         holder.binding.apply {
             horizontalRecipeNameHome.text = currentItem.recipeName
             horizontalRecipeCuisineHome.text = currentItem.cuisine
-            horizontalRecipeImageHome.load(currentItem.imageUrl) {
-                crossfade(true)
-                crossfade(500)
-                placeholder(R.drawable.recipe_image_placeholder)
-                error(R.drawable.recipe_image_error)
-            }
+            horizontalRecipeImageHome.loadImageWithPlaceholderAndCrossFade(currentItem.imageUrl)
         }
     }
 }

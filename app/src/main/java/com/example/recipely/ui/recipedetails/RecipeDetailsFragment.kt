@@ -11,6 +11,7 @@ import com.example.recipely.databinding.FragmentRecipeDetailsBinding
 import com.example.recipely.domain.usecase.GetRecipeById
 import com.example.recipely.ui.base.BaseFragment
 import com.example.recipely.util.CsvParser
+import com.example.recipely.util.loadImageWithPlaceholderAndCrossFade
 import com.example.recipely.util.toCountFormat
 import com.example.recipely.util.toIngredientsFormat
 import com.example.recipely.util.toInstructionsFormat
@@ -42,11 +43,7 @@ class RecipeDetailsFragment : BaseFragment<FragmentRecipeDetailsBinding>() {
             recipeDetailsCuisine.text = recipe.cuisine
             recipeDetailsIngredientsCount.text = recipe.ingredientsCount.toCountFormat()
             recipeDetailsIngredients.text = recipe.ingredients.toIngredientsFormat()
-            recipeDetailsImage.load(recipe.imageUrl) {
-                crossfade(true)
-                placeholder(R.drawable.recipe_image_placeholder)
-                error(R.drawable.recipe_image_error)
-            }
+            recipeDetailsImage.loadImageWithPlaceholderAndCrossFade(recipe.imageUrl)
             recipeDetailsInstructions.text = recipe.instructions.toInstructionsFormat()
             recipeDetailsHealthIngredients.text = recipe.cleanedIngredients.toIngredientsFormat()
         }
