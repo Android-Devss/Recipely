@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import com.example.recipely.data.repository.RepositoryImp
 import com.example.recipely.data.source.DataSourceImp
 import com.example.recipely.databinding.FragmentRecipeDetailsBinding
-import com.example.recipely.domain.usecase.GetRecipeById
+import com.example.recipely.domain.usecase.GetRecipeByName
 import com.example.recipely.ui.base.BaseFragment
 import com.example.recipely.util.CsvParser
 import com.example.recipely.util.loadImageWithPlaceholderAndCrossFade
@@ -23,7 +23,7 @@ class RecipeDetailsFragment : BaseFragment<FragmentRecipeDetailsBinding>() {
 
     private val dataSource by lazy { DataSourceImp(requireContext(), CsvParser()) }
     private val repository by lazy { RepositoryImp(dataSource) }
-    private val recipe by lazy { GetRecipeById(repository).invoke(getRecipeId() ?: 0) }
+    private val recipe by lazy { GetRecipeByName(repository).invoke(getRecipeName() ?: "") }
 
 
     override fun initialize() {
@@ -47,15 +47,15 @@ class RecipeDetailsFragment : BaseFragment<FragmentRecipeDetailsBinding>() {
         }
     }
 
-    private fun getRecipeId(): Int? {
-        return arguments?.getInt(ID)
+    private fun getRecipeName(): String? {
+        return arguments?.getString(RECIPE_NAME)
     }
 
     companion object {
-        private const val ID = "id"
-        fun newInstance(id: Int) = RecipeDetailsFragment().apply {
+        private const val RECIPE_NAME = "recipeName"
+        fun newInstance(recipeName: String) = RecipeDetailsFragment().apply {
             arguments = Bundle().apply {
-                putInt(ID, id)
+                putString(RECIPE_NAME, recipeName)
             }
         }
     }

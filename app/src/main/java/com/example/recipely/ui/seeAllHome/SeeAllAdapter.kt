@@ -19,11 +19,11 @@ class SeeAllAdapter (recipes: List<Recipe>, private val listener: RecipeInteract
         holder.binding.apply {
             Name.text = currentItem.recipeName
             recipeImage.loadImageWithPlaceholderAndCrossFade(currentItem.imageUrl)
-            root.setOnClickListener { listener.onClickRecipe(currentItem.id) }
+            root.setOnClickListener { listener.onClickRecipeName(currentItem.recipeName) }
         }
     }
 
     interface RecipeInteractionListener : BaseInteractionListener {
-        fun onClickRecipe(recipeId: Int)
+        fun onClickRecipeName(recipeName: String)
     }
 }

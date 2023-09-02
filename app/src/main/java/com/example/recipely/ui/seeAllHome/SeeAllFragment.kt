@@ -76,11 +76,13 @@ class SeeAllFragment : BaseFragment<FragmentSeeAllBinding>(),
     override fun addCallbacks() {
 
     }
-    private fun startRecipeDetailsFragment(recipeId: Int) {
-        replaceFragment(  RecipeDetailsFragment.newInstance(recipeId))
+    private fun startRecipeDetailsFragment(recipeName: String) {
+        replaceFragment(  RecipeDetailsFragment.newInstance(recipeName))
     }
-    override fun onClickRecipe(recipeId: Int) {
-        startRecipeDetailsFragment(recipeId)
+      override fun onClickRecipeName(recipeName: String) {
+        startRecipeDetailsFragment(recipeName)
     }
+
+
 
 }
