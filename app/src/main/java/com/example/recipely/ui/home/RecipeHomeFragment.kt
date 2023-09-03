@@ -10,12 +10,12 @@ import com.example.recipely.domain.enums.SeeAllTypes
 import com.example.recipely.domain.usecase.home.GetEasyRecipesUseCase
 import com.example.recipely.domain.usecase.home.GetPopularRecipesUseCase
 import com.example.recipely.ui.base.BaseFragment
-import com.example.recipely.ui.recipedetails.RecipeDetailsFragment
 import com.example.recipely.ui.home.homemodel.HomeItem
 import com.example.recipely.ui.home.homemodel.HomeItemType
+import com.example.recipely.ui.recipedetails.RecipeDetailsFragment
 import com.example.recipely.ui.seeAllHome.SeeAllFragment
 import com.example.recipely.util.CsvParser
-import com.example.recipely.util.addFragment
+import com.example.recipely.util.replaceFragment
 
 class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),
     HomeAdapter.HomeInteractionListener {
@@ -50,11 +50,11 @@ class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),
 
     override fun onClickRecipe(recipeName: String) {
         val recipeDetails = RecipeDetailsFragment.newInstance(recipeName)
-        addFragment(recipeDetails)
+        replaceFragment(recipeDetails)
     }
 
     override fun onClickHomeSeeAll(type: SeeAllTypes) {
         val seeAllRecipesFragment = SeeAllFragment.newInstance(type)
-        addFragment(seeAllRecipesFragment)
+        replaceFragment(seeAllRecipesFragment)
     }
 }

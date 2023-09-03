@@ -61,24 +61,28 @@ class DataSourceImp(private val context: Context, private val csvParser: CsvPars
                 description = "Don't be afraid to ask for help. If you're struggling to make healthy changes to your diet, talk to your doctor or a registered dietitian. They can help you create a plan that fits your individual needs and goals."
             ),
             Advice(
-                imgUrl = "https://www.verywellhealth.com/thmb/ef6E7hyfjddPVi5p0RaeoDtvahQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/2507165-article-diet-and-chronic-pancreatitis-5a5e6e3996f7d00037173956.png",
-                description = ""
+                imgUrl = "https://foodcnr.com/wp-content/uploads/2018/12/grilling-1.jpg",
+                description = "Use healthy cooking methods. When cooking, opt for methods that don't add unnecessary fat or calories, such as grilling, baking, or roasting."
             ),
             Advice(
-                imgUrl = "https://goodparentingbrighterchildren.com/wp-content/uploads/2015/04/Water-infographic-1-1.png",
-                description = ""
+                imgUrl = "https://itsnotcomplicatedrecipes.com/wp-content/uploads/2020/08/infused-water-01.jpg",
+                description = "Infused water: This is a great way to add flavor to your water and get some extra nutrients. You can infuse your water with fruits, vegetables, or herbs. Some popular combinations include cucumber-lemon, strawberry-mint, and watermelon-lime."
             ),
             Advice(
                 imgUrl = "https://www.budgetbytes.com/wp-content/uploads/2019/06/Flexible-Recipes-for-Vegetarians-and-Meat-Eaters-H.jpg",
                 description = "Enjoy your food! Healthy eating doesn't have to be boring. There are many delicious and satisfying healthy recipes out there. Find the ones you enjoy and make them part of your regular diet."
             ),
             Advice(
-                imgUrl = "https://healthjade.com/wp-content/uploads/2016/12/healthy-fats-list.jpg",
-                description = ""
+                imgUrl = "https://addisonmagazine.com/wp-content/uploads/2018/01/iStock-172999861.jpg",
+                description = "Soups: Soups are a hearty and satisfying way to stay hydrated. They are also a good source of nutrients, such as vitamins, minerals, and antioxidants. Be sure to choose soups that are low in sodium and fat."
             ),
             Advice(
-                imgUrl = "https://news.cancerresearchuk.org/wp-content/uploads/2021/05/151026-iarc-meat-rating-hero_image_for_press_release_news.jpg",
-                description = ""
+                imgUrl = "https://mayuris-jikoni.com/wp-content/uploads/2020/06/Rainbow-Salad-1.jpg",
+                description = "Salads: Salads are a refreshing and healthy way to start your day or enjoy as a meal. Be sure to include a variety of colorful vegetables, such as leafy greens, tomatoes, carrots, and cucumbers. You can also add protein, such as grilled chicken or tofu, and healthy fats, such as avocado."
+            ),
+            Advice(
+                imgUrl = "https://static.toiimg.com/thumb/71702474.cms?width=680&height=512&imgsize=125211",
+                description = "Drink plenty of water throughout the day. The amount of water you need depends on your individual factors, such as your activity level, climate, and health. A good rule of thumb is to drink eight glasses of water per day, but you may need more or less than that."
             )
         )
 }

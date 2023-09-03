@@ -16,15 +16,17 @@ fun ImageView.loadImageWithPlaceholderAndCrossFade(url: String) {
 fun Int.toTimeFormat() = "$this min"
 
 fun Fragment.replaceFragment(fragment: Fragment) {
-    requireActivity().supportFragmentManager.beginTransaction()
-        .replace(R.id.fragment_container, fragment).addToBackStack(null)
-        .commit()
+    if (!(fragment.isAdded))
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment).addToBackStack(null)
+            .commit()
 }
 
 fun Fragment.addFragment(fragment: Fragment) {
-    requireActivity().supportFragmentManager.beginTransaction()
-        .add(R.id.fragment_container, fragment).addToBackStack(null)
-        .commit()
+    if (!(fragment.isAdded))
+        requireActivity().supportFragmentManager.beginTransaction()
+            .add(R.id.fragment_container, fragment).addToBackStack(null)
+            .commit()
 }
 
 fun Int.toCountFormat() = "$this Items"
