@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.recipely.data.repository.RepositoryImp
 import com.example.recipely.data.source.DataSourceImp
+import com.example.recipely.data.source.model.Recipe
 import com.example.recipely.databinding.FragmentRecipeCuisinesBinding
 import com.example.recipely.databinding.FragmentRecipeCuisinesDetailsBinding
 import com.example.recipely.databinding.FragmentRecipeDetailsBinding
@@ -40,14 +41,15 @@ class RecipeCuisinesDetailsFragment: BaseFragment<FragmentRecipeCuisinesDetailsB
 
     override fun onClickRecipe(recipeName : String) {
         val recipeDetails = RecipeDetailsFragment.newInstance(recipeName)
-        addFragment(recipeDetails)
-    }
+        addFragment(recipeDetails)    }
+
     companion object {
-        private const val RECIPE_CUISINE = "recipeCuisine"
-        fun newInstance(recipeName: String) = RecipeCuisinesDetailsFragment().apply {
+        private const val CUISINE_NAME = "cuisineName"
+        fun newInstance(cuisineName: String) = RecipeCuisinesDetailsFragment().apply {
             arguments = Bundle().apply {
-                putString(RECIPE_CUISINE, recipeName)
+                putString(CUISINE_NAME, cuisineName)
             }
         }
     }
+
 }

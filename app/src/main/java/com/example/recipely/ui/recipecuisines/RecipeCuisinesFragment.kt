@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.recipely.data.repository.RepositoryImp
 import com.example.recipely.data.source.DataSourceImp
+import com.example.recipely.data.source.model.Recipe
 import com.example.recipely.databinding.FragmentRecipeCuisinesBinding
 import com.example.recipely.domain.usecase.GetCuisinesUseCase
 import com.example.recipely.ui.base.BaseFragment
@@ -35,8 +36,10 @@ class RecipeCuisinesFragment: BaseFragment<FragmentRecipeCuisinesBinding>(),Cuis
     override fun addCallbacks() {
     }
 
-    override fun onClickCuisine(recipeName : String) {
-        val recipeCuisinesDetailsFragment =RecipeCuisinesDetailsFragment.newInstance(recipeName)
+    override fun onClickCuisine(recipe : Recipe) {
+        val cuisineName = recipe.cuisine
+        val recipeCuisinesDetailsFragment =RecipeCuisinesDetailsFragment
+            .newInstance(cuisineName)
         replaceFragment(recipeCuisinesDetailsFragment)
     }
 }

@@ -22,12 +22,12 @@ class CuisinesAdapter(private val recipes: List<Recipe>,private val listener: Cu
             cuisineImage.loadImageWithPlaceholderAndCrossFade(currentItem.imageUrl)
             cuisineName.text = currentItem.cuisine
             root.setOnClickListener{
-                listener.onClickCuisine(currentItem.recipeName)
+                listener.onClickCuisine(currentItem)
             }
         }
     }
     interface CuisinesInteractionListener : BaseAdapter.BaseInteractionListener {
-        fun onClickCuisine(recipeName: String)
+        fun onClickCuisine(recipe : Recipe)
     }
 
 
