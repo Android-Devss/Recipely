@@ -25,7 +25,6 @@ class SeeAllFragment : BaseFragment<FragmentSeeAllBinding>(),
 
     override fun initialize() {
         val popularRecipes = getPopularRecipesUseCase(20)
-
         adapter = SeeAllAdapter(popularRecipes)
         binding?.recyclerRecipes?.adapter = adapter
     }

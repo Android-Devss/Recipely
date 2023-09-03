@@ -6,12 +6,15 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
 import com.example.recipely.R
 import com.example.recipely.databinding.ActivityMainBinding
+import com.example.recipely.ui.recipecuisines.RecipeCuisinesFragment
 import com.example.recipely.ui.recipehome.RecipeHomeFragment
 import com.example.recipely.ui.seeAllHome.SeeAllFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val recipeHomeFragment by lazy { RecipeHomeFragment() }
+    private val recipeCuisinesFragment by lazy { RecipeCuisinesFragment() }
+    private val seeAllFragment by lazy { SeeAllFragment() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,10 +35,12 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.navigation_search -> {
+
                     true
                 }
 
                 R.id.navigation_cuisine -> {
+                    replaceFragment(recipeCuisinesFragment)
                     true
                 }
 

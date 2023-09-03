@@ -11,7 +11,7 @@
         android:id="@+id/recycler_cuisine"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
         android:padding="@dimen/space12"
         app:layout_constraintEnd_toEndOf="parent"
         android:clipToPadding="false"
