@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import com.example.recipely.R
 import com.example.recipely.databinding.ActivityMainBinding
 import com.example.recipely.ui.recipecuisines.RecipeCuisinesFragment
-import com.example.recipely.ui.recipecuisines.cuisinesdetails.RecipeCuisinesDetailsFragment
+import com.example.recipely.ui.cuisinesdetails.RecipeCuisinesDetailsFragment
 import com.example.recipely.ui.recipehome.RecipeHomeFragment
 import com.example.recipely.ui.seeAllHome.SeeAllFragment
 

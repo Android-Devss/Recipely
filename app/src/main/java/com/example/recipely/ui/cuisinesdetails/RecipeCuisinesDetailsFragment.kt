@@ -1,4 +1,4 @@
-package com.example.recipely.ui.recipecuisines.cuisinesdetails
+package com.example.recipely.ui.cuisinesdetails
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import com.example.recipely.data.repository.RepositoryImp
 import com.example.recipely.data.source.DataSourceImp
 import com.example.recipely.databinding.FragmentRecipeCuisinesDetailsBinding
 import com.example.recipely.domain.enums.SeeAllTypes
-import com.example.recipely.domain.usecase.home.GetPopularRecipesUseCase
+import com.example.recipely.domain.usecase.cuisine.GetCuisineRecipesUseCase
 import com.example.recipely.ui.base.BaseFragment
 import com.example.recipely.ui.recipecuisines.RecipeCuisinesFragment
 import com.example.recipely.ui.recipedetails.RecipeDetailsFragment
@@ -24,12 +24,14 @@ class RecipeCuisinesDetailsFragment : BaseFragment<FragmentRecipeCuisinesDetails
     private lateinit var cuisinesDetailsAdapter: CuisinesDetailsAdapter
     private val dataSource by lazy { DataSourceImp(requireContext(), CsvParser()) }
     private val repository by lazy { RepositoryImp(dataSource) }
-    private val getPopularRecipesUseCase by lazy { GetPopularRecipesUseCase(repository) }
+    private val getCuisineRecipesUseCase: GetCuisineRecipesUseCase by lazy {
+        GetCuisineRecipesUseCase(repository)
+    }
     private val recipeCuisinesFragment by lazy { RecipeCuisinesFragment() }
 
 
     override fun initialize() {
-        val cuisineDetailsItems = getPopularRecipesUseCase(300)
+        val cuisineDetailsItems = getCuisineRecipesUseCase(getCuisineName() ?: "")
         cuisinesDetailsAdapter = CuisinesDetailsAdapter(cuisineDetailsItems, this)
         binding?.recyclerCuisines?.adapter = cuisinesDetailsAdapter
     }
@@ -41,6 +43,9 @@ class RecipeCuisinesDetailsFragment : BaseFragment<FragmentRecipeCuisinesDetails
         }
     }
 
+    private fun getCuisineName(): String? {
+        return arguments?.getString(CUISINE_NAME)
+    }
 
     companion object {
         private const val CUISINE_NAME = "cuisineName"

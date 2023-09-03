@@ -1,4 +1,4 @@
-package com.example.recipely.ui.recipecuisines.cuisinesdetails
+package com.example.recipely.ui.cuisinesdetails
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -30,5 +30,4 @@ class CuisinesDetailsAdapter(
             }
         }
     }
-
 }
