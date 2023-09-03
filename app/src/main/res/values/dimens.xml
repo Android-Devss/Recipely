@@ -32,6 +32,7 @@
     <dimen name="height162">162dp</dimen>
     <dimen name="height200">200dp</dimen>
 
-
     <dimen name="image_icon_button">32dp</dimen>
+    <dimen name="first_sub_card_view_height">120dp</dimen>
+    <dimen name="first_sub_card_view_margin_top">210dp</dimen>
 </resources>
