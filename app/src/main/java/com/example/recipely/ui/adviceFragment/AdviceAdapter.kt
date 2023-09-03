@@ -2,8 +2,6 @@ package com.example.recipely.ui.adviceFragment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import coil.load
-import com.example.recipely.R
 import com.example.recipely.data.source.model.Advice
 import com.example.recipely.databinding.ItemCardAdviceBinding
 import com.example.recipely.ui.base.BaseAdapter
