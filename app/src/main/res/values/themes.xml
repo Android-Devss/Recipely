@@ -82,4 +82,11 @@
         <item name="android:padding">@dimen/space16</item>
         <item name="android:clipToPadding">false</item>
     </style>
+
+    <style name="whiteTextShadow">
+        <item name="android:shadowColor">@color/black87</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
 </resources>

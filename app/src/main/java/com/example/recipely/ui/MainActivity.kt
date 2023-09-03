@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.navigation_search -> {
-
+                    replaceFragment(seeAllFragment)
                     true
                 }
 

@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/space8"
     android:layout_marginVertical="@dimen/space8"
-    android:backgroundTint="@color/white_fa"
+    android:backgroundTint="@color/primary"
     app:cardCornerRadius="@dimen/space24">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,25 +16,27 @@
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/cuisine_image"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tool:src="@drawable/food_image"/>
-        <TextView
+            tool:src="@drawable/food_image" />
+
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/cuisine_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="@dimen/text16"
             android:fontFamily="@font/poppins_semi_bold"
+            android:gravity="center"
+            android:padding="@dimen/space8"
             android:textColor="@color/white_ff"
-            app:layout_constraintBottom_toBottomOf="@+id/cuisine_image"
-            app:layout_constraintEnd_toEndOf="@+id/cuisine_image"
-            app:layout_constraintStart_toStartOf="@+id/cuisine_image"
-            app:layout_constraintTop_toTopOf="@+id/cuisine_image"
+            android:textSize="@dimen/text16"
+            style="@style/whiteTextShadow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cuisine_image"
             tool:text="Indian" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
