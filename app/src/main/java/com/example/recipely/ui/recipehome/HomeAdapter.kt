@@ -10,13 +10,15 @@ import com.example.recipely.databinding.ItemEasyToCookHeaderBinding
 import com.example.recipely.databinding.ItemPopularRecipeHeaderBinding
 import com.example.recipely.databinding.LayoutEasyToCookRecipesBinding
 import com.example.recipely.databinding.LayoutPopularRecipesBinding
+import com.example.recipely.ui.base.BaseAdapter
 import com.example.recipely.domain.enums.SeeAllTypes
 import com.example.recipely.ui.recipehome.homemodel.HomeItem
 import com.example.recipely.ui.recipehome.homemodel.HomeItemType
 
 @Suppress("UNCHECKED_CAST")
-class HomeAdapter(private var items: List<HomeItem<Any>>,
-                  private val seeAllListener: HomeSeeAllListener
+class HomeAdapter(
+    private var items: List<HomeItem<Any>>,
+    private val listener: HomeInteractionListener
 ) :
     RecyclerView.Adapter<HomeAdapter.BaseViewHolder>() {
 
@@ -74,7 +76,7 @@ class HomeAdapter(private var items: List<HomeItem<Any>>,
 
     private fun bindHorizontalItems(holder: ItemHorizontalViewHolder, position: Int) {
         val currentItem = items[position].item as List<Recipe>
-        val horizontalAdapter = HorizontalAdapter(currentItem)
+        val horizontalAdapter = HorizontalAdapter(currentItem, listener)
         horizontalAdapter.setItems(currentItem)
         holder.binding.apply {
             horizontalRecyclerView.adapter = horizontalAdapter
@@ -83,7 +85,7 @@ class HomeAdapter(private var items: List<HomeItem<Any>>,
 
     private fun bindVerticalItems(holder: ItemVerticalViewHolder, position: Int) {
         val currentItem = items[position].item as List<Recipe>
-        val verticalAdapter = VerticalAdapter(currentItem)
+        val verticalAdapter = VerticalAdapter(currentItem, listener)
         verticalAdapter.setItems(currentItem)
         holder.binding.apply {
             verticalRecyclerView.adapter = verticalAdapter
@@ -92,11 +94,11 @@ class HomeAdapter(private var items: List<HomeItem<Any>>,
 
     abstract class BaseViewHolder(viewItem: View) : RecyclerView.ViewHolder(viewItem)
 
-    class ItemPopularViewHolder(viewItem: View): BaseViewHolder(viewItem) {
+    class ItemPopularViewHolder(viewItem: View) : BaseViewHolder(viewItem) {
         val binding = ItemPopularRecipeHeaderBinding.bind(viewItem)
     }
 
-    class ItemHorizontalViewHolder(viewItem: View): BaseViewHolder(viewItem) {
+    class ItemHorizontalViewHolder(viewItem: View) : BaseViewHolder(viewItem) {
         val binding = LayoutPopularRecipesBinding.bind(viewItem)
     }
 
@@ -117,8 +119,10 @@ class HomeAdapter(private var items: List<HomeItem<Any>>,
         }
     }
 
-    interface HomeSeeAllListener {
+    interface HomeInteractionListener : BaseAdapter.BaseInteractionListener {
+        fun onClickRecipe(recipeName: String)
         fun onClickHomeSeeAll(type: SeeAllTypes)
+
     }
 
     companion object {

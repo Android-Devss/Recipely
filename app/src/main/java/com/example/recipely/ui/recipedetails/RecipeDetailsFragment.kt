@@ -31,7 +31,9 @@ class RecipeDetailsFragment : BaseFragment<FragmentRecipeDetailsBinding>() {
     }
 
     override fun addCallbacks() {
-
+        binding?.icKeyboardArrow?.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
     }
 
     private fun displayRecipeDetails() {
