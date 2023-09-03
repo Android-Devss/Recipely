@@ -65,14 +65,15 @@
         <item name="android:layout_marginStart">@dimen/space16</item>
         <item name="android:layout_marginTop">@dimen/space8</item>
         <item name="android:layout_marginBottom">@dimen/space8</item>
-        <item name="android:fontFamily">@font/poppins_semi_bold</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
         <item name="android:textColor">@color/primary</item>
         <item name="android:textSize">@dimen/text16</item>
     </style>
 
-    <style name="InfoTextStyle">
+    <style name="InfoTextStyle" parent="textDiscover">
         <item name="android:textColor">@color/black87</item>
         <item name="android:textSize">@dimen/text16</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
 
     <!-- Image Style Item Card -->

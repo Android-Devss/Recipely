@@ -9,6 +9,7 @@ import com.example.recipely.data.repository.RepositoryImp
 import com.example.recipely.data.source.DataSourceImp
 import com.example.recipely.data.source.model.Recipe
 import com.example.recipely.databinding.FragmentSearchBinding
+import com.example.recipely.domain.usecase.search.SearchUseCase
 import com.example.recipely.ui.base.BaseFragment
 import com.example.recipely.ui.recipedetails.RecipeDetailsFragment
 import com.example.recipely.util.CsvParser
@@ -21,6 +22,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ActionListener,
     private val repository by lazy { RepositoryImp(dataSource) }
     private lateinit var adapter: SearchAdapter
     private val recipeList = mutableListOf<Recipe>()
+    private val searchUseCase by lazy { SearchUseCase(repository) }
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentSearchBinding
         get() = FragmentSearchBinding::inflate
@@ -47,13 +49,13 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ActionListener,
     }
 
     private fun setDataOnAdapter(query: String) {
-        val resultOfSearch = repository.searchAboutRecipes(query)
+        val resultOfSearch = searchUseCase(query)
         adapter.setItems(resultOfSearch)
         binding?.recyclerviewSearchList?.adapter = adapter
     }
 
     private fun visibilityOfImageAndRecyclerInSearchFragment(query: String?) {
-        val result = query?.let { repository.searchAboutRecipes(it) }
+        val result = query?.let { searchUseCase(it) }
         binding?.apply {
             query?.let { visibility(it) }
             if (query?.isNotEmpty() == true)

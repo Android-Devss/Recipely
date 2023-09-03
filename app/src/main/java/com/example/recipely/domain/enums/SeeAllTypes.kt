@@ -8,5 +8,4 @@ import kotlinx.parcelize.Parcelize
 enum class SeeAllTypes : Parcelable {
     TYPE_HOME_POPULAR,
     TYPE_HOME_EASY
-
 }

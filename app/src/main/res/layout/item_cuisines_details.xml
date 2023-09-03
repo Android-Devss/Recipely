@@ -31,7 +31,6 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/cuisine_details_recipe_name"
-            style="@style/whiteTextShadow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/space8"

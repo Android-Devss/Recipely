@@ -75,7 +75,7 @@ class SeeAllFragment : BaseFragment<FragmentSeeAllBinding>(),
 
     private fun startRecipeDetailsFragment(recipeName: String) {
         val recipeDetails = RecipeDetailsFragment.newInstance(recipeName)
-        addFragment(recipeDetails)
+        replaceFragment(recipeDetails)
     }
 
     override fun onClickRecipeName(recipeName: String) {

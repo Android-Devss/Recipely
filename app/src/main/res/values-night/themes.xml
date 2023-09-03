@@ -71,5 +71,6 @@
         <item name="android:textColor">@color/white_ff</item>
         <item name="android:textSize">@dimen/text16</item>
         <item name="android:background">@android:color/transparent</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
 </resources>

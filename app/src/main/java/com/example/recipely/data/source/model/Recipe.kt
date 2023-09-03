@@ -11,4 +11,4 @@ data class Recipe(
     val cleanedIngredients: String,
     val imageUrl: String,
     val ingredientsCount: Int,
-    )
+)
