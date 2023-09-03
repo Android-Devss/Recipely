@@ -22,12 +22,6 @@ class RecipeCuisinesFragment: BaseFragment<FragmentRecipeCuisinesBinding>() {
         GetCuisinesUseCase(repository)
     }
 
-    override fun onViewCreated(view : View, savedInstanceState : Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        initialize()
-    }
-
-
     override fun initialize() {
         val cuisineItems = cuisines()
         cuisinesAdapter = CuisinesAdapter(cuisineItems)
@@ -36,5 +30,4 @@ class RecipeCuisinesFragment: BaseFragment<FragmentRecipeCuisinesBinding>() {
 
     override fun addCallbacks() {
     }
-
 }

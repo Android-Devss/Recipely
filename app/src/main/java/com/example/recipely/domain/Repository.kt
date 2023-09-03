@@ -6,5 +6,4 @@ interface Repository {
 
     fun getAllRecipes(): List<Recipe>
     fun getAllCuisines() : List<Recipe>
-
 }
