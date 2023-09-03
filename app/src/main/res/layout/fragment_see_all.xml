@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/space4"
+    android:background="@color/white_ff"
     tools:context=".ui.seeAllHome.SeeAllFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
-        android:padding="@dimen/space12"
+        android:padding="@dimen/space16"
         app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
         app:spanCount="2"
         tools:listitem="@layout/item_see_all_card" />

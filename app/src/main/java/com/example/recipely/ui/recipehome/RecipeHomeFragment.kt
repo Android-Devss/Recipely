@@ -15,11 +15,9 @@ import com.example.recipely.ui.recipehome.homemodel.HomeItem
 import com.example.recipely.ui.recipehome.homemodel.HomeItemType
 import com.example.recipely.ui.seeAllHome.SeeAllFragment
 import com.example.recipely.util.CsvParser
-import com.example.recipely.util.replaceFragment
 import com.example.recipely.util.addFragment
 import com.example.recipely.util.replaceFragment
 
-class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),HomeAdapter.HomeSeeAllListener {
 class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),
     HomeAdapter.HomeInteractionListener {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentRecipeHomeBinding
@@ -58,5 +56,6 @@ class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),
 
     override fun onClickHomeSeeAll(type: SeeAllTypes) {
         val seeAllRecipesFragment = SeeAllFragment.newInstance(type)
-        replaceFragment(seeAllRecipesFragment)    }
+        addFragment(seeAllRecipesFragment)
+    }
 }

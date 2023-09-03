@@ -56,7 +56,7 @@ class HomeAdapter(
             is ItemPopularViewHolder -> {
                 holder.binding.apply {
                     popularRecipesViewAll.setOnClickListener {
-                     seeAllListener.onClickHomeSeeAll(SeeAllTypes.TYPE_HOME_POPULAR)
+                     listener.onClickHomeSeeAll(SeeAllTypes.TYPE_HOME_POPULAR)
                     }
                 }
             }
@@ -64,7 +64,7 @@ class HomeAdapter(
             is ItemEditorChoiceViewHolder -> {
                 holder.binding.apply {
                     editorChoiceViewAll.setOnClickListener {
-                       seeAllListener.onClickHomeSeeAll(SeeAllTypes.TYPE_HOME_EASY)
+                       listener.onClickHomeSeeAll(SeeAllTypes.TYPE_HOME_EASY)
                     }
                 }
             }
@@ -122,7 +122,6 @@ class HomeAdapter(
     interface HomeInteractionListener : BaseAdapter.BaseInteractionListener {
         fun onClickRecipe(recipeName: String)
         fun onClickHomeSeeAll(type: SeeAllTypes)
-
     }
 
     companion object {
