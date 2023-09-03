@@ -7,6 +7,7 @@ import com.example.recipely.R
 import com.example.recipely.data.source.model.Advice
 import com.example.recipely.databinding.ItemCardAdviceBinding
 import com.example.recipely.ui.base.BaseAdapter
+import com.example.recipely.util.loadImageWithPlaceholderAndCrossFade
 
 class AdviceAdapter(advices: List<Advice>) : BaseAdapter<Advice, ItemCardAdviceBinding>(advices) {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> ItemCardAdviceBinding
@@ -18,10 +19,7 @@ class AdviceAdapter(advices: List<Advice>) : BaseAdapter<Advice, ItemCardAdviceB
         currentItem: Advice
     ) {
         holder.binding.apply {
-            adviceImg.load(currentItem.imgUrl) {
-                crossfade(true)
-                placeholder(R.drawable.ic_loading)
-            }
+            adviceImg.loadImageWithPlaceholderAndCrossFade(currentItem.imgUrl)
             adviceInstruction.text = currentItem.description
         }
     }
