@@ -1,56 +1,32 @@
 package com.example.recipely.ui.fragment.search
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.RecyclerView
-import coil.load
-import com.example.recipely.R
 import com.example.recipely.data.source.model.Recipe
 import com.example.recipely.databinding.ItemSearchCardBinding
+import com.example.recipely.ui.base.BaseAdapter
 import com.example.recipely.util.loadImageWithPlaceholderAndCrossFade
 
-class SearchAdapter(
-    private val listener: RecipeInteractionListener
-) : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
+class SearchAdapter(private var recipes: List<Recipe>, private val onClickAction: ActionListener) :
+    BaseAdapter<Recipe, ItemSearchCardBinding>(recipes) {
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> ItemSearchCardBinding
+        get() = ItemSearchCardBinding::inflate
 
-    private var recipes = arrayListOf<Recipe>()
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int,
-    ): SearchViewHolder {
-        val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_search_card, parent, false)
-        return SearchViewHolder(view)
-    }
-
-    fun setData(newRecipesList: List<Recipe>) {
-        val diffCallback = RecipeDiffUtil(recipes, newRecipesList)
-        val diffResult = DiffUtil.calculateDiff(diffCallback)
-        recipes = newRecipesList as ArrayList<Recipe>
-        diffResult.dispatchUpdatesTo(this)
-    }
-
-    override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
-        val currentRecipe = recipes[position]
+    override fun onBindViewHolder(
+        holder: BaseViewHolder<ItemSearchCardBinding>,
+        position: Int,
+        currentItem: Recipe
+    ) {
         holder.binding.apply {
-            tvRecipeName.text = currentRecipe.recipeName
-            tvRecipeCuisine.text = currentRecipe.cuisine
-            ivRecipeImage.loadImageWithPlaceholderAndCrossFade(currentRecipe.imageUrl)
-            root.setOnClickListener { listener.onClickRecipe(currentRecipe.id) }
+            tvRecipeName.text = currentItem.recipeName
+            tvRecipeCuisine.text = currentItem.cuisine
+            ivRecipeImage.loadImageWithPlaceholderAndCrossFade(currentItem.imageUrl)
+            root.setOnClickListener { onClickAction.onRecipeClick(currentItem.recipeName) }
         }
-
     }
 
-    override fun getItemCount() = recipes.size
-
-    class SearchViewHolder(viewItem: View) : RecyclerView.ViewHolder(viewItem) {
-        val binding = ItemSearchCardBinding.bind(itemView)
+    override fun setItems(newItems: List<Recipe>) {
+        recipes = newItems
+        super.setItems(newItems)
     }
-
-    interface RecipeInteractionListener {
-        fun onClickRecipe(recipeId: Int)
-    }
-
 }
