@@ -2,7 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="160dp"
+    android:layout_width="@dimen/width160"
     android:layout_height="wrap_content"
     app:cardCornerRadius="@dimen/space16"
     app:strokeWidth="@dimen/space_zero">
@@ -17,7 +17,7 @@
         <androidx.constraintlayout.utils.widget.ImageFilterView
             android:id="@+id/horizontal_recipe_image_home"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="@dimen/height140"
             android:scaleType="centerCrop"
             app:round="@dimen/space16"
             tools:src="@drawable/food_image" />
@@ -34,7 +34,7 @@
             android:textSize="@dimen/text14"
             tools:text="Baked Chicken Baked Chicken" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/horizontal_recipe_cuisine_home"
             style="@style/recyclerViewItemsRecipeCuisine"
             android:layout_width="wrap_content"
