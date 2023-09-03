@@ -10,8 +10,8 @@
         android:id="@+id/card_advice"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:layout_constraintCircleRadius="@dimen/space16"
         android:layout_margin="@dimen/space8"
+        app:layout_constraintCircleRadius="@dimen/space16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -21,8 +21,8 @@
             style="@style/img_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"
             android:background="@drawable/background_img_card_advice"
+            android:scaleType="fitXY"
             app:shapeAppearanceOverlay="@style/circle"
             app:srcCompat="@drawable/eat_indian" />
 
@@ -36,24 +36,23 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/advice_instruction"
+            style="@style/adviceTextInstruction"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/space12"
+            android:background="@android:color/transparent"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingLeft="@dimen/space12"
+            android:paddingRight="@dimen/space12"
+            app:layout_constraintBottom_toBottomOf="@id/advice_img"
+            app:layout_constraintEnd_toEndOf="@id/advice_img"
+            app:layout_constraintStart_toStartOf="@id/advice_img"
+            tools:text="Advice for you to eat healthy food" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/advice_instruction"
-        style="@style/adviceTextInstruction"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/space4"
-        android:layout_marginVertical="@dimen/space4"
-        android:background="@android:color/transparent"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:maxLines="5"
-        app:layout_constraintBottom_toBottomOf="@id/card_advice"
-        app:layout_constraintEnd_toEndOf="@id/card_advice"
-        app:layout_constraintStart_toStartOf="@id/card_advice"
-        app:layout_constraintTop_toTopOf="@+id/card_advice"
-        tools:text="Advice for you to eat healthy food" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
