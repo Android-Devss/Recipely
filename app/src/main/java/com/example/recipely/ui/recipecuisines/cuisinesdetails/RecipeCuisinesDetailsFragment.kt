@@ -12,6 +12,7 @@ import com.example.recipely.databinding.FragmentRecipeDetailsBinding
 import com.example.recipely.domain.usecase.GetCuisinesUseCase
 import com.example.recipely.domain.usecase.home.GetPopularRecipesUseCase
 import com.example.recipely.ui.base.BaseFragment
+import com.example.recipely.ui.recipecuisines.RecipeCuisinesFragment
 import com.example.recipely.ui.recipedetails.RecipeDetailsFragment
 import com.example.recipely.ui.recipehome.HomeAdapter
 import com.example.recipely.util.CsvParser
@@ -28,15 +29,21 @@ class RecipeCuisinesDetailsFragment: BaseFragment<FragmentRecipeCuisinesDetailsB
     private val repository by lazy { RepositoryImp(dataSource) }
     private val cuisines: GetCuisinesUseCase by lazy { GetCuisinesUseCase(repository) }
     private val getPopularRecipesUseCase by lazy { GetPopularRecipesUseCase(repository) }
+    private val recipeCuisinesFragment by lazy { RecipeCuisinesFragment() }
+
 
 
     override fun initialize() {
         val cuisineDetailsItems = getPopularRecipesUseCase(300)
         cuisinesDetailsAdapter = CuisinesDetailsAdapter(cuisineDetailsItems,this)
         binding?.recyclerCuisines?.adapter = cuisinesDetailsAdapter
-    }
+        }
+
 
     override fun addCallbacks() {
+        binding?.arrowBackToCuisines?.setOnClickListener {
+            addFragment(recipeCuisinesFragment)
+        }
     }
 
 

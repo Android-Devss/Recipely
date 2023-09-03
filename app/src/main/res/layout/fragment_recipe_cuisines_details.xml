@@ -6,17 +6,42 @@
     android:layout_height="match_parent"
     android:layout_margin="@dimen/space4">
 
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/back_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space24"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="@string/back_to_cuisines"
+        android:textSize="@dimen/text16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toEndOf="@+id/arrow_back_to_cuisines"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_cuisines"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/space_zero"
         android:clipToPadding="false"
         android:padding="@dimen/space12"
         app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_text"
         app:spanCount="2"
         tools:listitem="@layout/item_cuisines_details" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/arrow_back_to_cuisines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space16"
+        android:layout_marginTop="@dimen/space24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:tint="@color/secondary"
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
