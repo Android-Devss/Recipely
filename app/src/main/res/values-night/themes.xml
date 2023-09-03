@@ -1,4 +1,3 @@
-
 <resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.Recipely" parent="Theme.Material3.DayNight.NoActionBar">
@@ -72,19 +71,5 @@
         <item name="android:textColor">@color/white_ff</item>
         <item name="android:textSize">@dimen/text16</item>
         <item name="android:background">@android:color/transparent</item>
-    </style>
-
-    <style name="adviceTextInstruction">
-        <item name="android:textColor">@color/white_ff</item>
-        <item name="android:textSize">@dimen/text12</item>
-        <item name="android:fontFamily">@font/poppins_medium</item>
-    </style>
-
-    <style name="backgroundItemCardAdvice">
-        <item name="android:background">@drawable/background_img_card_advice</item>
-    </style>
-
-    <style name="adviceTextStyle">
-        <item name="android:textColor">@color/white_ff_dark</item>
     </style>
 </resources>

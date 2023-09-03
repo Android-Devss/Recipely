@@ -2,10 +2,10 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Recipely" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
-         <item name="colorPrimary">@color/white_ff</item>
+        <item name="colorPrimary">@color/white_ff</item>
         <item name="colorOnPrimary">@color/primary</item>
         <item name="colorSecondaryContainer">@color/primary50</item>
- </style>
+    </style>
 
     <style name="Theme.Recipely" parent="Base.Theme.Recipely" />
 
@@ -83,20 +83,6 @@
 
     <style name="ColorFragmentBackground">
         <item name="android:background">@android:color/transparent</item>
-    </style>
-
-    <style name="adviceTextInstruction">
-        <item name="android:textColor">@color/black87</item>
-        <item name="android:textSize">@dimen/text12</item>
-        <item name="android:fontFamily">@font/poppins_medium</item>
-    </style>
-
-    <style name="backgroundItemCardAdvice">
-        <item name="android:background">@drawable/background_img_card_advice</item>
-    </style>
-
-    <style name="adviceTextStyle">
-        <item name="android:textColor">@color/black87</item>
     </style>
 
     <style name="SearchEditTextStyle">
