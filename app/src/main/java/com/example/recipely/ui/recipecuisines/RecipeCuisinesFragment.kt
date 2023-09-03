@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import com.example.recipely.data.repository.RepositoryImp
 import com.example.recipely.data.source.DataSourceImp
 import com.example.recipely.databinding.FragmentRecipeCuisinesBinding
-import com.example.recipely.domain.usecase.GetCuisines
-import com.example.recipely.domain.usecase.home.GetPopularRecipesUseCase
+import com.example.recipely.domain.usecase.GetCuisinesUseCase
 import com.example.recipely.ui.base.BaseFragment
 import com.example.recipely.util.CsvParser
 
@@ -19,9 +18,8 @@ class RecipeCuisinesFragment: BaseFragment<FragmentRecipeCuisinesBinding>() {
     private lateinit var cuisinesAdapter: CuisinesAdapter
     private val dataSource by lazy { DataSourceImp(requireContext(), CsvParser()) }
     private val repository by lazy { RepositoryImp(dataSource) }
-    private val getPopularRecipesUseCase by lazy { GetPopularRecipesUseCase(repository) }
-    private val cuisines: GetCuisines by lazy {
-        GetCuisines(repository)
+    private val cuisines: GetCuisinesUseCase by lazy {
+        GetCuisinesUseCase(repository)
     }
 
     override fun onViewCreated(view : View, savedInstanceState : Bundle?) {
@@ -31,8 +29,7 @@ class RecipeCuisinesFragment: BaseFragment<FragmentRecipeCuisinesBinding>() {
 
 
     override fun initialize() {
-        val cuisineItems = getPopularRecipesUseCase(300)
-        //val cuisineItems = cuisines()
+        val cuisineItems = cuisines()
         cuisinesAdapter = CuisinesAdapter(cuisineItems)
         binding?.recyclerCuisine?.adapter = cuisinesAdapter
     }

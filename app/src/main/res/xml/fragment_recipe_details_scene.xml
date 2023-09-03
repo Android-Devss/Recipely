@@ -10,6 +10,7 @@
        <KeyFrameSet>
        </KeyFrameSet>
         <OnClick motion:targetId="@+id/second_sub_card_view" />
+        <OnClick motion:targetId="@+id/first_sub_card_view" />
     </Transition>
 
     <ConstraintSet android:id="@+id/start">

@@ -5,4 +5,6 @@ import com.example.recipely.data.source.model.Recipe
 interface Repository {
 
     fun getAllRecipes(): List<Recipe>
+    fun getAllCuisines() : List<Recipe>
+
 }

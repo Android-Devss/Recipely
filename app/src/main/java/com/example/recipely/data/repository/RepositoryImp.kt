@@ -9,4 +9,10 @@ class RepositoryImp(private val dataSource: DataSource) : Repository {
     override fun getAllRecipes(): List<Recipe> {
         return dataSource.getAllRecipes()
     }
+    override fun getAllCuisines(): List<Recipe> {
+        return dataSource.getAllRecipes()
+            .distinctBy {
+                it.cuisine
+            }
+    }
 }
