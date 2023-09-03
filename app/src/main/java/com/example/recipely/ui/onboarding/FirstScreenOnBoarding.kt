@@ -25,7 +25,6 @@ class FirstScreenOnBoarding : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        // inflate the layout and bind to the _binding
     binding = FragmentFirstScreenOnBoardingBinding.inflate(inflater, container, false)
        binding?.next?.setOnClickListener{
            replaceFragment(SecondScreenOnBoarding())

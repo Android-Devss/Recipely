@@ -15,16 +15,12 @@ import com.example.recipely.util.replaceFragment
 class SecondScreenOnBoarding : Fragment() {
     private var binding: FragmentSecondScreenOnBoardingBinding? = null
 
-    // with the backing property of the kotlin we extract
-    // the non null value of the _binding
-
     override fun onCreateView(
 
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
-        // inflate the layout and bind to the _binding
         binding = FragmentSecondScreenOnBoardingBinding.inflate(inflater, container, false)
         binding?.next?.setOnClickListener {
             activity?.let{

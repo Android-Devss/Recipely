@@ -28,10 +28,8 @@ class OnboardingActivity : FragmentActivity() {
         onboardingManager = OnboardingManager(this)
 
         if (onboardingManager.isOnboardingComplete()) {
-            // Onboarding is already complete, go to the main activity
             startMainActivity()
         } else {
-            // Display the first onboarding fragment
             showOnboardingFragment(FirstScreenOnBoarding())
         }
 //        if (currentPage == 0)
@@ -57,7 +55,6 @@ class OnboardingActivity : FragmentActivity() {
        }
 
     fun startMainActivity() {
-        // Mark onboarding as complete and start the main activity
         onboardingManager.setOnboardingComplete()
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
