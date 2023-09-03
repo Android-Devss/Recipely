@@ -19,14 +19,12 @@ import com.example.recipely.util.replaceFragment
 class RecipeCuisinesFragment: BaseFragment<FragmentRecipeCuisinesBinding>(),CuisinesAdapter.CuisinesInteractionListener {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentRecipeCuisinesBinding = FragmentRecipeCuisinesBinding::inflate
     override val logTag: String = this.javaClass.simpleName
-
     private lateinit var cuisinesAdapter: CuisinesAdapter
     private val dataSource by lazy { DataSourceImp(requireContext(), CsvParser()) }
     private val repository by lazy { RepositoryImp(dataSource) }
     private val cuisines: GetCuisinesUseCase by lazy {
         GetCuisinesUseCase(repository)
     }
-
     override fun initialize() {
         val cuisineItems = cuisines()
         cuisinesAdapter = CuisinesAdapter(cuisineItems,this)

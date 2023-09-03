@@ -39,9 +39,6 @@ class RecipeCuisinesDetailsFragment: BaseFragment<FragmentRecipeCuisinesDetailsB
     override fun addCallbacks() {
     }
 
-    override fun onClickRecipe(recipeName : String) {
-        val recipeDetails = RecipeDetailsFragment.newInstance(recipeName)
-        addFragment(recipeDetails)    }
 
     companion object {
         private const val CUISINE_NAME = "cuisineName"
@@ -52,4 +49,8 @@ class RecipeCuisinesDetailsFragment: BaseFragment<FragmentRecipeCuisinesDetailsB
         }
     }
 
+    override fun onClickRecipe(recipeName : String) {
+        val recipeDetails = RecipeDetailsFragment.newInstance(recipeName)
+        addFragment(recipeDetails)
+    }
 }
