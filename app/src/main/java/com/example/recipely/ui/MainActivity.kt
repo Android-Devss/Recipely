@@ -1,6 +1,10 @@
 package com.example.recipely.ui
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
@@ -8,6 +12,8 @@ import com.example.recipely.R
 import com.example.recipely.databinding.ActivityMainBinding
 import com.example.recipely.ui.recipecuisines.RecipeCuisinesFragment
 import com.example.recipely.ui.cuisinesdetails.RecipeCuisinesDetailsFragment
+import com.example.recipely.ui.onboarding.OnboardingActivity
+import com.example.recipely.ui.onboarding.OnboardingManager
 import com.example.recipely.ui.recipehome.RecipeHomeFragment
 import com.example.recipely.ui.seeAllHome.SeeAllFragment
 
@@ -17,13 +23,16 @@ class MainActivity : AppCompatActivity() {
     private val recipeCuisinesFragment by lazy { RecipeCuisinesFragment() }
     private val recipeCuisinesDetailsFragment by lazy { RecipeCuisinesDetailsFragment() }
     private val seeAllFragment by lazy { SeeAllFragment() }
+    private lateinit var onboardingManager: OnboardingManager
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        starActivity()
         initSubView()
         addNavigationListener()
     }
@@ -58,6 +67,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initSubView() {
         addFragment(recipeHomeFragment)
+
     }
 
     private fun addFragment(fragment: Fragment) {
@@ -71,4 +81,13 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.fragment_container, fragment)
             .commit()
     }
+
+
+    private fun starActivity() {
+        val handler = Handler(Looper.getMainLooper())
+        handler.postDelayed({
+            val intent = Intent(this@MainActivity, OnboardingActivity::class.java)
+            startActivity(intent)
+        }, 3000)
+}
 }

@@ -2,16 +2,17 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id ("kotlin-parcelize")
+
 }
 
 android {
     namespace = "com.example.recipely"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.recipely"
         minSdk = 29
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -40,6 +41,7 @@ android {
 }
 
 dependencies {
+    implementation("androidx.core:core-ktx:+")
     val fragmentVersion = "1.6.1"
     val coilVersion = "2.4.0"
     val lottieVersion = "6.0.1"

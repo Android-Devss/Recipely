@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,9 +15,12 @@
         android:theme="@style/Theme.Recipely"
         tools:targetApi="31">
         <activity
+            android:name=".ui.onboarding.OnboardingActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.MainActivity"
-            android:theme="@style/Theme.Recipely.Splash"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Recipely.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
