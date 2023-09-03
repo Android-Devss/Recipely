@@ -7,14 +7,17 @@ import androidx.fragment.app.Fragment
 import com.example.recipely.R
 import com.example.recipely.databinding.ActivityMainBinding
 import com.example.recipely.ui.adviceFragment.AdviceFragment
+import com.example.recipely.ui.cuisinesdetails.RecipeCuisinesDetailsFragment
+import com.example.recipely.ui.fragment.search.SearchFragment
+import com.example.recipely.ui.recipecuisines.RecipeCuisinesFragment
 import com.example.recipely.ui.recipehome.RecipeHomeFragment
-import com.example.recipely.ui.seeAllHome.SeeAllFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val recipeHomeFragment by lazy { RecipeHomeFragment() }
     private val adviceFragment by lazy { AdviceFragment() }
-
+    private val recipeCuisinesFragment by lazy { RecipeCuisinesFragment() }
+    private val searchFragment by lazy { SearchFragment() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,10 +38,12 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.navigation_search -> {
+                    replaceFragment(searchFragment)
                     true
                 }
 
                 R.id.navigation_cuisine -> {
+                    replaceFragment(recipeCuisinesFragment)
                     true
                 }
 

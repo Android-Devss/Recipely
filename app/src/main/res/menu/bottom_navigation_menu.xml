@@ -15,13 +15,13 @@
     <item
         android:id="@+id/navigation_cuisine"
         android:enabled="true"
-        android:icon="@drawable/icon_ingredients"
+        android:icon="@drawable/icon_cuisine"
         android:title="@string/cuisines" />
 
     <item
         android:id="@+id/navigation_advice"
         android:enabled="true"
-        android:icon="@drawable/icon_ingredients"
+        android:icon="@drawable/icon_advice"
         android:title="@string/advices" />
 
 </menu>

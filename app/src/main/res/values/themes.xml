@@ -1,6 +1,21 @@
 <resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.Recipely" parent="Theme.Material3.Light.NoActionBar">
+        <!--Primary-->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white_ff</item>
+        <item name="colorPrimaryContainer">@color/primary</item>
+        <item name="colorOnPrimaryContainer">@color/secondary</item>
+        <!--Secondary-->
+        <item name="colorSecondary">@color/black8</item>
+        <item name="colorOnSecondary">@color/white_ff</item>
+        <item name="colorSecondaryContainer">@color/primary</item>
+        <item name="colorOnSecondaryContainer">@color/black8</item>
+        <!--Tertiary-->
+        <item name="colorTertiary">@color/primary</item>
+        <item name="colorOnTertiary">@color/white_ff</item>
+        <item name="colorTertiaryContainer">@color/primary</item>
+        <item name="colorOnTertiaryContainer">@color/primary</item>
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/white_ff</item>
         <item name="colorOnPrimary">@color/primary</item>
@@ -9,6 +24,144 @@
 
     <style name="Theme.Recipely" parent="Base.Theme.Recipely" />
 
+    <style name="Chip_Style" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="textFillColor">@color/black87</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/text16</item>
+        <item name="android:layout_width">@dimen/space_zero</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/space8</item>
+    </style>
+    <!--    Style image card    -->
+    <style name="img_card">
+        <item name="cornerSize">@dimen/space16</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <!--   Style text name for category item card    -->
+    <style name="CategoryTextName">
+        <item name="android:layout_marginStart">@dimen/space4</item>
+        <item name="android:layout_marginBottom">@dimen/space4</item>
+        <item name="android:textColor">@color/white_ff</item>
+        <item name="android:textSize">@dimen/text14</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+    <!--   TextView  Style -->
+    <style name="TextViewStyle">
+        <item name="android:layout_marginStart">@dimen/space16</item>
+        <item name="android:layout_marginTop">@dimen/space8</item>
+        <item name="android:layout_marginBottom">@dimen/space8</item>
+        <item name="android:fontFamily">@font/poppins_semi_bold</item>
+        <item name="android:textColor">@color/black87</item>
+        <item name="android:textSize">@dimen/text16</item>
+    </style>
+
+    <style name="textDiscover">
+        <item name="android:layout_marginStart">@dimen/space16</item>
+        <item name="android:layout_marginTop">@dimen/space8</item>
+        <item name="android:layout_marginBottom">@dimen/space8</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">@dimen/text16</item>
+    </style>
+
+    <style name="InfoTextStyle" parent="textDiscover">
+        <item name="android:textColor">@color/black87</item>
+        <item name="android:textSize">@dimen/text16</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <!-- Image Style Item Card -->
+    <style name="CardImageStyle">
+        <item name="cornerSize">16dp</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="ColorFragmentBackground">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="SearchEditTextStyle">
+        <item name="android:maxLines">1</item>
+        <item name="android:inputType">textFilter</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textColor">@color/black87</item>
+    </style>
+
+    <style name="subCards">
+        <item name="android:layout_marginHorizontal">@dimen/space16</item>
+        <item name="cardCornerRadius">@dimen/space24</item>
+    </style>
+
+    <style name="firstSubCardViewText">
+        <item name="android:layout_marginStart">@dimen/space16</item>
+        <item name="android:layout_marginTop">@dimen/space8</item>
+        <item name="android:layout_marginBottom">@dimen/space12</item>
+        <item name="android:drawablePadding">@dimen/space4</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">@dimen/text14</item>
+        <item name="android:textColor">@color/black87</item>
+    </style>
+
+    <style name="secondSubCardViewHeader">
+        <item name="fontFamily">@font/poppins_semi_bold</item>
+        <item name="android:textSize">@dimen/text16</item>
+        <item name="android:textColor">@color/secondary</item>
+    </style>
+
+    <style name="secondSubCardViewContent">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">@dimen/text14</item>
+        <item name="android:textColor">@color/black87</item>
+    </style>
+
+    <style name="recyclerViewItemsRecipeNames">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/black87</item>
+    </style>
+
+    <style name="recyclerViewItemsRecipeCuisine">
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
+        <item name="android:textColor">@color/black60</item>
+    </style>
+
+    <style name="headersLinearLayout">
+        <item name="android:layout_marginHorizontal">@dimen/space16</item>
+        <item name="background">@color/white_fa</item>
+    </style>
+
+    <style name="headersText">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">@dimen/text20</item>
+        <item name="android:textColor">@color/secondary</item>
+    </style>
+
+    <style name="viewAllText">
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">@dimen/text14</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textAlignment">textEnd</item>
+    </style>
+
+    <style name="recyclerViewLayouts">
+        <item name="background">@color/white_fa</item>
+        <item name="android:padding">@dimen/space16</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+
+    <style name="whiteTextShadow">
+        <item name="android:shadowColor">@color/black87</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
     <style name="CardImageStyle">
         <item name="cornerSize">16dp</item>
         <item name="android:scaleType">centerCrop</item>

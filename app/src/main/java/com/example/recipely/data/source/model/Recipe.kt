@@ -10,5 +10,5 @@ data class Recipe(
     val url: String,
     val cleanedIngredients: String,
     val imageUrl: String,
-    val ingredientsCount: Int
+    val ingredientsCount: Int,
 )

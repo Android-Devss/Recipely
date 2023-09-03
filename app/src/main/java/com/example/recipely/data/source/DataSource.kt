@@ -6,8 +6,6 @@ import com.example.recipely.data.source.model.Recipe
 interface DataSource {
 
     fun getAllRecipes() : List<Recipe>
+
     fun getAdvices(): List<Advice>
-
 }
-
-

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="120dp"
-    android:backgroundTint="@color/white_ec"
     android:layout_marginBottom="@dimen/space8"
+    android:backgroundTint="@color/white_ec"
     app:cardCornerRadius="@dimen/space16"
     app:strokeWidth="@dimen/space_zero">
 
@@ -36,13 +36,11 @@
 
             <TextView
                 android:id="@+id/vertical_recipe_name"
+                style="@style/recyclerViewItemsRecipeNames"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:ellipsize="end"
-                android:fontFamily="@font/poppins_medium"
                 android:maxLines="2"
-                android:textColor="@color/black87"
                 android:textSize="@dimen/text18"
                 app:layout_constraintEnd_toStartOf="@+id/vertical_ic_arrow_right"
                 app:layout_constraintStart_toEndOf="@+id/vertical_recipe_image"
@@ -51,17 +49,14 @@
 
             <TextView
                 android:id="@+id/vertical_recipe_cuisine"
+                style="@style/recyclerViewItemsRecipeCuisine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/space16"
                 android:drawablePadding="@dimen/space8"
-                android:ellipsize="end"
-                android:fontFamily="@font/poppins_regular"
-                android:lines="1"
-                android:textColor="@color/black60"
                 android:textSize="@dimen/text16"
                 app:drawableStartCompat="@drawable/icon_spoon"
-                android:drawableTint="@color/black60"
+                app:drawableTint="@color/black60"
                 tools:text="Egypt Cuisine" />
         </LinearLayout>
     </LinearLayout>

@@ -1,0 +1,76 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Recipely" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item reciepeName="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+    <!--    Style image card    -->
+    <style name="img_card">
+        <item name="cornerSize">@dimen/space16</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.Material3.Dark.NoActionBar">
+        <!--Primary-->
+        <item name="colorPrimary">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white_ff_dark</item>
+        <item name="colorPrimaryContainer">@color/primary_dark</item>
+        <item name="colorOnPrimaryContainer">@color/secondary_dark</item>
+        <!--Secondary-->
+        <item name="colorSecondary">@color/black8_dark</item>
+        <item name="colorOnSecondary">@color/white_ff_dark</item>
+        <item name="colorSecondaryContainer">@color/primary_dark</item>
+        <item name="colorOnSecondaryContainer">@color/black8_dark</item>
+        <!--Tertiary-->
+        <item name="colorTertiary">@color/primary_dark</item>
+        <item name="colorOnTertiary">@color/white_ff_dark</item>
+        <item name="colorTertiaryContainer">@color/primary_dark</item>
+        <item name="colorOnTertiaryContainer">@color/primary_dark</item>
+    </style>
+    <!--   Style text name for category item card    -->
+    <style name="CategoryTextName">
+        <item name="android:layout_marginStart">@dimen/space4</item>
+        <item name="android:layout_marginBottom">@dimen/space4</item>
+        <item name="android:textColor">@color/white_ff</item>
+        <item name="android:textSize">@dimen/text14</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+    <!--   TextView  Style -->
+    <style name="TextViewStyle">
+        <item name="android:layout_marginStart">@dimen/space16</item>
+        <item name="android:layout_marginTop">@dimen/space8</item>
+        <item name="android:layout_marginBottom">@dimen/space8</item>
+        <item name="android:fontFamily">@font/poppins_semi_bold</item>
+        <item name="android:textColor">@color/black60_dark</item>
+        <item name="android:textSize">@dimen/text16</item>
+    </style>
+
+    <!-- Image Style Item Card -->
+    <style name="CardImageStyle">
+        <item name="cornerSize">16dp</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="ColorFragmentBackground">
+        <item name="android:background">@color/primary_dark</item>
+    </style>
+
+    <style name="textDiscover">
+        <item name="android:layout_marginStart">@dimen/space16</item>
+        <item name="android:layout_marginTop">@dimen/space8</item>
+        <item name="android:layout_marginBottom">@dimen/space8</item>
+        <item name="android:fontFamily">@font/poppins_semi_bold</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">@dimen/text16</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="InfoTextStyle">
+        <item name="android:textColor">@color/white_ff</item>
+        <item name="android:textSize">@dimen/text16</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+</resources>

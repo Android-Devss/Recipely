@@ -31,7 +31,7 @@ class SeeAllFragment : BaseFragment<FragmentSeeAllBinding>(),
     private val getPopularRecipesUseCase by lazy { GetAllPopularRecipesUseCase(repository) }
     private val getEasyRecipesUseCase by lazy { GetAllEasyRecipesUseCase(repository) }
     private lateinit var adapter: SeeAllAdapter
-    private lateinit var recipeType: SeeAllTypes
+    private var recipeType: SeeAllTypes = SeeAllTypes.TYPE_HOME_POPULAR
 
     override fun initialize() {
         returnListType()
@@ -75,7 +75,7 @@ class SeeAllFragment : BaseFragment<FragmentSeeAllBinding>(),
 
     private fun startRecipeDetailsFragment(recipeName: String) {
         val recipeDetails = RecipeDetailsFragment.newInstance(recipeName)
-        addFragment(recipeDetails)
+        replaceFragment(recipeDetails)
     }
 
     override fun onClickRecipeName(recipeName: String) {
