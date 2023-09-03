@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        starActivity()
         initSubView()
         addNavigationListener()
     }
@@ -82,6 +83,11 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-
+    private fun starActivity() {
+        val handler = Handler(Looper.getMainLooper())
+        handler.postDelayed({
+            val intent = Intent(this@MainActivity, OnboardingActivity::class.java)
+            startActivity(intent)
+        }, 2000)
+}
 }
