@@ -19,17 +19,18 @@
     </style>
 
     <style name="adviceTextInstruction">
-        <item name="android:textColor">@color/black87</item>
-        <item name="android:textSize">@dimen/text12</item>
+        <item name="android:textColor">@color/white_ff</item>
+        <item name="android:textSize">@dimen/text14</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
 
     <style name="backgroundItemCardAdvice">
-        <item name="android:background">@drawable/background_img_card_advice</item>
+        <item name="android:background">@android:color/transparent</item>
     </style>
 
     <style name="adviceTextStyle">
-        <item name="android:textColor">@color/black87</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">@dimen/text16</item>
     </style>
 
     <style name="img_card">
@@ -43,5 +44,8 @@
         <item name="android:fontFamily">@font/poppins_semi_bold</item>
         <item name="android:textColor">@color/black87</item>
         <item name="android:textSize">@dimen/text16</item>
+    </style>
+    <style name="circle">
+        <item name="cornerSize">24dp</item>
     </style>
 </resources>

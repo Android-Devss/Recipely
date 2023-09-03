@@ -62,11 +62,13 @@ class DataSourceImp(private val context: Context, private val csvParser: CsvPars
             ),
             Advice(
                 imgUrl = "https://www.verywellhealth.com/thmb/ef6E7hyfjddPVi5p0RaeoDtvahQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/2507165-article-diet-and-chronic-pancreatitis-5a5e6e3996f7d00037173956.png",
-                description = "Make small changes that you can stick to. Don't try to overhaul your entire diet overnight. Start by making small changes, such as adding more fruits and vegetables to your meals or cutting back on sugary drinks."
+//                description = "Make small changes that you can stick to. Don't try to overhaul your entire diet overnight. Start by making small changes, such as adding more fruits and vegetables to your meals or cutting back on sugary drinks."
+                description = ""
             ),
             Advice(
                 imgUrl = "https://goodparentingbrighterchildren.com/wp-content/uploads/2015/04/Water-infographic-1-1.png",
-                description = "Drink plenty of water. Water is essential for good health. It helps to keep your body hydrated and can help you lose weight"
+//                description = "Drink plenty of water. Water is essential for good health. It helps to keep your body hydrated and can help you lose weight"
+                description = ""
             ),
             Advice(
                 imgUrl = "https://www.budgetbytes.com/wp-content/uploads/2019/06/Flexible-Recipes-for-Vegetarians-and-Meat-Eaters-H.jpg",
@@ -74,15 +76,13 @@ class DataSourceImp(private val context: Context, private val csvParser: CsvPars
             ),
             Advice(
                 imgUrl = "https://healthjade.com/wp-content/uploads/2016/12/healthy-fats-list.jpg",
-                description = "Choose healthy fats over unhealthy fats. Healthy fats, such as those found in avocados, nuts, and seeds, can help lower cholesterol and protect your heart health. Unhealthy fats, such as those found in processed foods and fried foods, can raise cholesterol and increase your risk of heart disease."
+//                description = "Choose healthy fats over unhealthy fats. Healthy fats, such as those found in avocados, nuts, and seeds, can help lower cholesterol and protect your heart health. Unhealthy fats, such as those found in processed foods and fried foods, can raise cholesterol and increase your risk of heart disease."
+                description = ""
             ),
             Advice(
                 imgUrl = "https://news.cancerresearchuk.org/wp-content/uploads/2021/05/151026-iarc-meat-rating-hero_image_for_press_release_news.jpg",
-                description = "Limit your intake of red meat and processed meats. Red meat and processed meats have been linked to an increased risk of heart disease, cancer, and other chronic diseases. Instead, choose lean protein sources such as chicken, fish, beans, and lentils."
-            ),
-            Advice(
-                imgUrl = "",
-                description = "Limit your intake of red meat and processed meats. Red meat and processed meats have been linked to an increased risk of heart disease, cancer, and other chronic diseases. Instead, choose lean protein sources such as chicken, fish, beans, and lentils."
+//                description = "Limit your intake of red meat and processed meats. Red meat and processed meats have been linked to an increased risk of heart disease, cancer, and other chronic diseases. Instead, choose lean protein sources such as chicken, fish, beans, and lentils."
+                description = ""
             )
         )
 }

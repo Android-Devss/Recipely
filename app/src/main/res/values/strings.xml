@@ -15,4 +15,5 @@
     <string name="home_title">Find best recipes \nfor cooking</string>
     <string name="easy_to_cook">Easy to Cook</string>
     <string name="advices">Advices</string>
+    <string name="recipley_instructions">Recipley Instructions</string>
 </resources>
