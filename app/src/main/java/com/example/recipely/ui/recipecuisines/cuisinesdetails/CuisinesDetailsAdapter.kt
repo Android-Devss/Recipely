@@ -7,9 +7,12 @@ import com.example.recipely.databinding.ItemCuisinesBinding
 import com.example.recipely.databinding.ItemCuisinesDetailsBinding
 import com.example.recipely.databinding.ItemPopularRecipeBinding
 import com.example.recipely.ui.base.BaseAdapter
+import com.example.recipely.ui.recipehome.HomeAdapter
 import com.example.recipely.util.loadImageWithPlaceholderAndCrossFade
 
-class CuisinesDetailsAdapter(private val recipes: List<Recipe>):BaseAdapter<Recipe,ItemCuisinesDetailsBinding>(recipes) {
+class CuisinesDetailsAdapter(
+    private val recipes: List<Recipe>,
+    private val listener: HomeAdapter.HomeInteractionListener) :BaseAdapter<Recipe,ItemCuisinesDetailsBinding>(recipes) {
     override val bindingInflater : (LayoutInflater, ViewGroup?, Boolean) -> ItemCuisinesDetailsBinding
         get() = ItemCuisinesDetailsBinding::inflate
 
@@ -22,6 +25,9 @@ class CuisinesDetailsAdapter(private val recipes: List<Recipe>):BaseAdapter<Reci
             cuisineDetailsCuisineName.text=currentItem.cuisine
             cuisineDetailsRecipeName.text=currentItem.recipeName
             cuisineDetailsRecipeImage.loadImageWithPlaceholderAndCrossFade(currentItem.imageUrl)
+            root.setOnClickListener {
+                listener.onClickRecipe(currentItem.recipeName)
+            }
         }
     }
 

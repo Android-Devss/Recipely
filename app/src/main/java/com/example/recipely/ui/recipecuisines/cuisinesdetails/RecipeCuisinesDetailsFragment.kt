@@ -1,5 +1,6 @@
 package com.example.recipely.ui.recipecuisines.cuisinesdetails
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.recipely.data.repository.RepositoryImp
@@ -10,9 +11,13 @@ import com.example.recipely.databinding.FragmentRecipeDetailsBinding
 import com.example.recipely.domain.usecase.GetCuisinesUseCase
 import com.example.recipely.domain.usecase.home.GetPopularRecipesUseCase
 import com.example.recipely.ui.base.BaseFragment
+import com.example.recipely.ui.recipedetails.RecipeDetailsFragment
+import com.example.recipely.ui.recipehome.HomeAdapter
 import com.example.recipely.util.CsvParser
+import com.example.recipely.util.addFragment
 
-class RecipeCuisinesDetailsFragment: BaseFragment<FragmentRecipeCuisinesDetailsBinding>() {
+class RecipeCuisinesDetailsFragment: BaseFragment<FragmentRecipeCuisinesDetailsBinding>(),
+    HomeAdapter.HomeInteractionListener  {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentRecipeCuisinesDetailsBinding =
         FragmentRecipeCuisinesDetailsBinding::inflate
     override val logTag : String = this.javaClass.simpleName
@@ -26,10 +31,23 @@ class RecipeCuisinesDetailsFragment: BaseFragment<FragmentRecipeCuisinesDetailsB
 
     override fun initialize() {
         val cuisineDetailsItems = getPopularRecipesUseCase(300)
-        cuisinesDetailsAdapter = CuisinesDetailsAdapter(cuisineDetailsItems)
+        cuisinesDetailsAdapter = CuisinesDetailsAdapter(cuisineDetailsItems,this)
         binding?.recyclerCuisines?.adapter = cuisinesDetailsAdapter
     }
 
     override fun addCallbacks() {
+    }
+
+    override fun onClickRecipe(recipeName : String) {
+        val recipeDetails = RecipeDetailsFragment.newInstance(recipeName)
+        addFragment(recipeDetails)
+    }
+    companion object {
+        private const val RECIPE_CUISINE = "recipeCuisine"
+        fun newInstance(recipeName: String) = RecipeCuisinesDetailsFragment().apply {
+            arguments = Bundle().apply {
+                putString(RECIPE_CUISINE, recipeName)
+            }
+        }
     }
 }
