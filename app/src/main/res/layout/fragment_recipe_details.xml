@@ -276,7 +276,6 @@
                             style="@style/secondSubCardViewContent"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/space24"
                             tools:text="salt;amchur (dry mango powder);karela (bitter gourd pavakkai);red chilli powder;gram flour (besan);onion;cumin seeds (jeera);coriander powder;turmeric powder;sunflower oil" />
                     </LinearLayout>
                 </LinearLayout>
