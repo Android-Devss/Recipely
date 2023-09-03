@@ -24,7 +24,7 @@ class HorizontalAdapter(
             horizontalRecipeNameHome.text = currentItem.recipeName
             horizontalRecipeCuisineHome.text = currentItem.cuisine
             horizontalRecipeImageHome.loadImageWithPlaceholderAndCrossFade(currentItem.imageUrl)
-            horizontalRecipe.setOnClickListener {
+            root.setOnClickListener {
                 listener.onClickRecipe(currentItem.recipeName)
             }
         }
