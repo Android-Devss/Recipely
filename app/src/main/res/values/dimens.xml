@@ -21,7 +21,7 @@
 
     <dimen name="first_card_image">102dp</dimen>
     <dimen name="first_card_height_home">152dp</dimen>
-    <dimen name="first_card_width">140dp</dimen>
+    <dimen name="width140">140dp</dimen>
     <dimen name="second_card_height">140dp</dimen>
 
     <dimen name="corner_reduis">14dp</dimen>
@@ -35,4 +35,5 @@
     <dimen name="image_icon_button">32dp</dimen>
     <dimen name="first_sub_card_view_height">120dp</dimen>
     <dimen name="first_sub_card_view_margin_top">210dp</dimen>
+    <dimen name="width150">150dp</dimen>
 </resources>
