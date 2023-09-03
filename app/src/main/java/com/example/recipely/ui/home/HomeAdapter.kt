@@ -1,4 +1,4 @@
-package com.example.recipely.ui.recipehome
+package com.example.recipely.ui.home
 
 import android.view.LayoutInflater
 import android.view.View
@@ -12,8 +12,8 @@ import com.example.recipely.databinding.LayoutEasyToCookRecipesBinding
 import com.example.recipely.databinding.LayoutPopularRecipesBinding
 import com.example.recipely.ui.base.BaseAdapter
 import com.example.recipely.domain.enums.SeeAllTypes
-import com.example.recipely.ui.recipehome.homemodel.HomeItem
-import com.example.recipely.ui.recipehome.homemodel.HomeItemType
+import com.example.recipely.ui.home.homemodel.HomeItem
+import com.example.recipely.ui.home.homemodel.HomeItemType
 
 @Suppress("UNCHECKED_CAST")
 class HomeAdapter(

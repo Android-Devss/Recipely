@@ -7,14 +7,15 @@ import com.example.recipely.databinding.ItemSeeAllCardBinding
 import com.example.recipely.ui.base.BaseAdapter
 import com.example.recipely.util.loadImageWithPlaceholderAndCrossFade
 
-class SeeAllAdapter (recipes: List<Recipe>, private val listener: RecipeInteractionListener)
-    : BaseAdapter<Recipe, ItemSeeAllCardBinding>(recipes) {
+class SeeAllAdapter(recipes: List<Recipe>, private val listener: RecipeInteractionListener) :
+    BaseAdapter<Recipe, ItemSeeAllCardBinding>(recipes) {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> ItemSeeAllCardBinding
         get() = ItemSeeAllCardBinding::inflate
 
     override fun onBindViewHolder(
-        holder: BaseViewHolder<ItemSeeAllCardBinding>, position: Int, currentItem: Recipe
-
+        holder: BaseViewHolder<ItemSeeAllCardBinding>,
+        position: Int,
+        currentItem: Recipe
     ) {
         holder.binding.apply {
             Name.text = currentItem.recipeName

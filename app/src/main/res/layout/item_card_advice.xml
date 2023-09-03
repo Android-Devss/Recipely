@@ -3,56 +3,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:theme="@style/backgroundItemCardAdvice">
+    android:layout_height="200dp"
+    android:layout_margin="@dimen/space8"
+    android:theme="@style/backgroundItemCardAdvice"
+    app:layout_constraintCircleRadius="@dimen/space16">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/card_advice"
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/advice_img"
+        style="@style/img_card"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="@dimen/space8"
-        app:layout_constraintCircleRadius="@dimen/space16"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_img_card_advice"
+        android:scaleType="fitXY"
+        app:shapeAppearanceOverlay="@style/circle"
+        app:srcCompat="@drawable/eat_indian" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/shadow"
+        style="@style/CardImageStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_img_card_advice"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/advice_img"
-            style="@style/img_card"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/background_img_card_advice"
-            android:scaleType="fitXY"
-            app:shapeAppearanceOverlay="@style/circle"
-            app:srcCompat="@drawable/eat_indian" />
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/shadow"
-            style="@style/CardImageStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/background_img_card_advice"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/advice_instruction"
-            style="@style/adviceTextInstruction"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="@dimen/space12"
-            android:background="@android:color/transparent"
-            android:ellipsize="end"
-            android:gravity="center"
-            android:paddingLeft="@dimen/space12"
-            android:paddingRight="@dimen/space12"
-            app:layout_constraintBottom_toBottomOf="@id/advice_img"
-            app:layout_constraintEnd_toEndOf="@id/advice_img"
-            app:layout_constraintStart_toStartOf="@id/advice_img"
-            tools:text="Advice for you to eat healthy food" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/advice_instruction"
+        style="@style/adviceTextInstruction"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/space12"
+        android:background="@android:color/transparent"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:paddingLeft="@dimen/space12"
+        android:paddingRight="@dimen/space12"
+        app:layout_constraintBottom_toBottomOf="@id/advice_img"
+        app:layout_constraintEnd_toEndOf="@id/advice_img"
+        app:layout_constraintStart_toStartOf="@id/advice_img"
+        tools:text="Advice for you to eat healthy food" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.recipely.ui.recipehome
+package com.example.recipely.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

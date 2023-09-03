@@ -11,7 +11,7 @@ import com.example.recipely.domain.usecase.cuisine.GetCuisineRecipesUseCase
 import com.example.recipely.ui.base.BaseFragment
 import com.example.recipely.ui.recipecuisines.RecipeCuisinesFragment
 import com.example.recipely.ui.recipedetails.RecipeDetailsFragment
-import com.example.recipely.ui.recipehome.HomeAdapter
+import com.example.recipely.ui.home.HomeAdapter
 import com.example.recipely.util.CsvParser
 import com.example.recipely.util.addFragment
 

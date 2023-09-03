@@ -6,11 +6,10 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
 import com.example.recipely.R
 import com.example.recipely.databinding.ActivityMainBinding
-import com.example.recipely.ui.adviceFragment.AdviceFragment
-import com.example.recipely.ui.cuisinesdetails.RecipeCuisinesDetailsFragment
-import com.example.recipely.ui.fragment.search.SearchFragment
+import com.example.recipely.ui.advice.AdviceFragment
+import com.example.recipely.ui.search.SearchFragment
 import com.example.recipely.ui.recipecuisines.RecipeCuisinesFragment
-import com.example.recipely.ui.recipehome.RecipeHomeFragment
+import com.example.recipely.ui.home.RecipeHomeFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

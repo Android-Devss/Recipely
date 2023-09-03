@@ -1,4 +1,4 @@
-package com.example.recipely.ui.fragment.search
+package com.example.recipely.ui.search
 
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +15,7 @@ import com.example.recipely.ui.recipedetails.RecipeDetailsFragment
 import com.example.recipely.util.CsvParser
 import com.example.recipely.util.replaceFragment
 
-class SearchFragment : BaseFragment<FragmentSearchBinding>(), ActionListener,
+class SearchFragment : BaseFragment<FragmentSearchBinding>(), SearchAdapter.SearchInteractionListener,
     SearchView.OnQueryTextListener {
 
     private val dataSource by lazy { DataSourceImp(requireContext(), CsvParser()) }
@@ -118,7 +118,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), ActionListener,
         visibility = View.VISIBLE
     }
 
-    override fun onRecipeClick(recipeName: String) {
+    override fun onClickRecipe(recipeName: String) {
         val recipeDetails = RecipeDetailsFragment.newInstance(recipeName)
         replaceFragment(recipeDetails)
     }

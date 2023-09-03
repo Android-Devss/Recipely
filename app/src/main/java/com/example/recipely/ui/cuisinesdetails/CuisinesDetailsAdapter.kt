@@ -3,11 +3,9 @@ package com.example.recipely.ui.cuisinesdetails
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.recipely.data.source.model.Recipe
-import com.example.recipely.databinding.ItemCuisinesBinding
 import com.example.recipely.databinding.ItemCuisinesDetailsBinding
-import com.example.recipely.databinding.ItemPopularRecipeBinding
 import com.example.recipely.ui.base.BaseAdapter
-import com.example.recipely.ui.recipehome.HomeAdapter
+import com.example.recipely.ui.home.HomeAdapter
 import com.example.recipely.util.loadImageWithPlaceholderAndCrossFade
 
 class CuisinesDetailsAdapter(
