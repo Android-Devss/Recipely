@@ -1,10 +1,21 @@
 <resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.Recipely" parent="Theme.Material3.Light.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/white_ff</item>
-        <item name="colorOnPrimary">@color/primary</item>
-        <item name="colorSecondaryContainer">@color/primary50</item>
+        <!--Primary-->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white_ff</item>
+        <item name="colorPrimaryContainer">@color/primary</item>
+        <item name="colorOnPrimaryContainer">@color/secondary</item>
+        <!--Secondary-->
+        <item name="colorSecondary">@color/black8</item>
+        <item name="colorOnSecondary">@color/white_ff</item>
+        <item name="colorSecondaryContainer">@color/primary</item>
+        <item name="colorOnSecondaryContainer">@color/black8</item>
+        <!--Tertiary-->
+        <item name="colorTertiary">@color/primary</item>
+        <item name="colorOnTertiary">@color/white_ff</item>
+        <item name="colorTertiaryContainer">@color/primary</item>
+        <item name="colorOnTertiaryContainer">@color/primary</item>
     </style>
 
     <style name="Theme.Recipely" parent="Base.Theme.Recipely" />
@@ -24,23 +35,6 @@
         <item name="android:scaleType">fitXY</item>
     </style>
 
-    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
-        <!--Primary-->
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorOnPrimary">@color/white_ff</item>
-        <item name="colorPrimaryContainer">@color/primary</item>
-        <item name="colorOnPrimaryContainer">@color/secondary</item>
-        <!--Secondary-->
-        <item name="colorSecondary">@color/black8</item>
-        <item name="colorOnSecondary">@color/white_ff</item>
-        <item name="colorSecondaryContainer">@color/primary</item>
-        <item name="colorOnSecondaryContainer">@color/black8</item>
-        <!--Tertiary-->
-        <item name="colorTertiary">@color/primary</item>
-        <item name="colorOnTertiary">@color/white_ff</item>
-        <item name="colorTertiaryContainer">@color/primary</item>
-        <item name="colorOnTertiaryContainer">@color/primary</item>
-    </style>
     <!--   Style text name for category item card    -->
     <style name="CategoryTextName">
         <item name="android:layout_marginStart">@dimen/space4</item>
