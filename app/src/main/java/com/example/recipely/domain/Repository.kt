@@ -7,4 +7,5 @@ interface Repository {
     fun getAllRecipes(): List<Recipe>
     fun searchAboutRecipes(searchQuery: String): List<Recipe>
 
+    fun getAllCuisines() : List<Recipe>
 }

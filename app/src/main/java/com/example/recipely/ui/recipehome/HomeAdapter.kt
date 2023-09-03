@@ -11,6 +11,7 @@ import com.example.recipely.databinding.ItemPopularRecipeHeaderBinding
 import com.example.recipely.databinding.LayoutEasyToCookRecipesBinding
 import com.example.recipely.databinding.LayoutPopularRecipesBinding
 import com.example.recipely.ui.base.BaseAdapter
+import com.example.recipely.domain.enums.SeeAllTypes
 import com.example.recipely.ui.recipehome.homemodel.HomeItem
 import com.example.recipely.ui.recipehome.homemodel.HomeItemType
 
@@ -54,13 +55,17 @@ class HomeAdapter(
         when (holder) {
             is ItemPopularViewHolder -> {
                 holder.binding.apply {
-                    popularRecipesViewAll.setOnClickListener { }
+                    popularRecipesViewAll.setOnClickListener {
+                     listener.onClickHomeSeeAll(SeeAllTypes.TYPE_HOME_POPULAR)
+                    }
                 }
             }
 
             is ItemEditorChoiceViewHolder -> {
                 holder.binding.apply {
-                    editorChoiceViewAll.setOnClickListener { }
+                    editorChoiceViewAll.setOnClickListener {
+                       listener.onClickHomeSeeAll(SeeAllTypes.TYPE_HOME_EASY)
+                    }
                 }
             }
 
@@ -116,8 +121,8 @@ class HomeAdapter(
 
     interface HomeInteractionListener : BaseAdapter.BaseInteractionListener {
         fun onClickRecipe(recipeName: String)
+        fun onClickHomeSeeAll(type: SeeAllTypes)
     }
-
 
     companion object {
         const val ITEM_POPULAR = 0

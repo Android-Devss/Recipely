@@ -6,12 +6,14 @@ import com.example.recipely.R
 import com.example.recipely.data.repository.RepositoryImp
 import com.example.recipely.data.source.DataSourceImp
 import com.example.recipely.databinding.FragmentRecipeHomeBinding
-import com.example.recipely.domain.usecase.home.GetPopularRecipesUseCase
+import com.example.recipely.domain.enums.SeeAllTypes
 import com.example.recipely.domain.usecase.home.GetEasyRecipesUseCase
+import com.example.recipely.domain.usecase.home.GetPopularRecipesUseCase
 import com.example.recipely.ui.base.BaseFragment
 import com.example.recipely.ui.recipedetails.RecipeDetailsFragment
 import com.example.recipely.ui.recipehome.homemodel.HomeItem
 import com.example.recipely.ui.recipehome.homemodel.HomeItemType
+import com.example.recipely.ui.seeAllHome.SeeAllFragment
 import com.example.recipely.util.CsvParser
 import com.example.recipely.util.addFragment
 import com.example.recipely.util.replaceFragment
@@ -50,5 +52,10 @@ class RecipeHomeFragment : BaseFragment<FragmentRecipeHomeBinding>(),
     override fun onClickRecipe(recipeName: String) {
         val recipeDetails = RecipeDetailsFragment.newInstance(recipeName)
         addFragment(recipeDetails)
+    }
+
+    override fun onClickHomeSeeAll(type: SeeAllTypes) {
+        val seeAllRecipesFragment = SeeAllFragment.newInstance(type)
+        addFragment(seeAllRecipesFragment)
     }
 }

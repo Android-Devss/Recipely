@@ -8,9 +8,6 @@
     <!--Black Palette-->
     <color name="black87">#DE121212</color>
     <color name="black60">#99121212</color>
-    <color name="black37">#5E121212</color>
-    <color name="black16">#29121212</color>
-    <color name="black8">#14121212</color>
     <!--White Palette-->
     <color name="white_ff">#FFFFFFFF</color>
     <color name="white_fa">#FFFAFAFA</color>
