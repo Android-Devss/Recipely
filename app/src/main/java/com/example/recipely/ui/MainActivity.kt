@@ -7,9 +7,9 @@ import androidx.fragment.app.Fragment
 import com.example.recipely.R
 import com.example.recipely.databinding.ActivityMainBinding
 import com.example.recipely.ui.advice.AdviceFragment
-import com.example.recipely.ui.search.SearchFragment
-import com.example.recipely.ui.recipecuisines.RecipeCuisinesFragment
 import com.example.recipely.ui.home.RecipeHomeFragment
+import com.example.recipely.ui.recipecuisines.RecipeCuisinesFragment
+import com.example.recipely.ui.search.SearchFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -61,14 +61,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .add(R.id.fragment_container, fragment)
-            .commit()
+        if (!(fragment.isAdded))
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fragment_container, fragment).addToBackStack(null)
+                .commit()
     }
 
     private fun replaceFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment)
-            .commit()
+        if (!(fragment.isAdded))
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment).addToBackStack(null)
+                .commit()
     }
 }

@@ -9,11 +9,10 @@ import com.example.recipely.databinding.FragmentRecipeCuisinesDetailsBinding
 import com.example.recipely.domain.enums.SeeAllTypes
 import com.example.recipely.domain.usecase.cuisine.GetCuisineRecipesUseCase
 import com.example.recipely.ui.base.BaseFragment
+import com.example.recipely.ui.home.HomeAdapter
 import com.example.recipely.ui.recipecuisines.RecipeCuisinesFragment
 import com.example.recipely.ui.recipedetails.RecipeDetailsFragment
-import com.example.recipely.ui.home.HomeAdapter
 import com.example.recipely.util.CsvParser
-import com.example.recipely.util.addFragment
 import com.example.recipely.util.replaceFragment
 
 class RecipeCuisinesDetailsFragment : BaseFragment<FragmentRecipeCuisinesDetailsBinding>(),
@@ -40,7 +39,7 @@ class RecipeCuisinesDetailsFragment : BaseFragment<FragmentRecipeCuisinesDetails
 
     override fun addCallbacks() {
         binding?.arrowBackToCuisines?.setOnClickListener {
-            addFragment(recipeCuisinesFragment)
+            replaceFragment(recipeCuisinesFragment)
         }
     }
 

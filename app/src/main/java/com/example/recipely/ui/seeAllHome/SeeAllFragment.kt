@@ -15,7 +15,6 @@ import com.example.recipely.domain.usecase.seeall.GetAllPopularRecipesUseCase
 import com.example.recipely.ui.base.BaseFragment
 import com.example.recipely.ui.recipedetails.RecipeDetailsFragment
 import com.example.recipely.util.CsvParser
-import com.example.recipely.util.addFragment
 import com.example.recipely.util.replaceFragment
 
 
