@@ -29,6 +29,8 @@ class OnBoardingActivity : AppCompatActivity() {
            binding.next.setOnClickListener {
                 if (getItem(0) < 2) {
                     binding.slideViewPager.setCurrentItem(getItem(1), true)
+                    binding.skip.setTextColor(getColor(R.color.black87))
+                    binding.next.setTextColor(getColor(R.color.black87))
                 } else {
                     val intent = Intent(this@OnBoardingActivity, MainActivity::class.java)
                     startActivity(intent)
