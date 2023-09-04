@@ -1,5 +1,6 @@
 <resources>
     <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat"/>
     <style name="Base.Theme.Recipely" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item reciepeName="colorPrimary">@color/my_dark_primary</item> -->
@@ -10,7 +11,7 @@
         <item name="android:scaleType">fitXY</item>
     </style>
 
-    <style name="AppTheme" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="AppThem" parent="Theme.Material3.Dark.NoActionBar">
         <!--Primary-->
         <item name="colorPrimary">@color/primary_dark</item>
         <item name="colorOnPrimary">@color/white_ff_dark</item>

@@ -33,4 +33,7 @@
     <string name="popular">popular</string>
     <string name="back_to_cuisines">Back To Cuisines</string>
     <string name="recipley_instructions">Recipley Instructions</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="get_started">Get Started</string>
 </resources>
