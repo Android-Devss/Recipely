@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!--Primary Palette-->
+    <color name="primary">#FF70B9BE</color>
+    <color name="primary50">#FFB5E8EC</color>
+    <!--Secondary Palette-->
+    <color name="secondary">#FF042628</color>
+    <!--Black Palette-->
+    <color name="black87">#DE121212</color>
+    <color name="black60">#99121212</color>
+    <color name="black37">#5E121212</color>
+    <color name="black8">#14121212</color>
+    <!--White Palette-->
+    <color name="white_ff">#FFFFFFFF</color>
+    <color name="white_fa">#FFFAFAFA</color>
+    <color name="white_ec">#FFECECEC</color>
+    <color name="white_e1">#FFE1E1E1</color>
+
+    <!--Primary Dark Palette-->
+    <color name="primary_dark">#02082C</color>
+    <!--Secondary Palette-->
+    <color name="secondary_dark">#FF70B9BE</color>
+    <!--Black Dark Palette-->
+    <color name="black87_dark">#FFFFFFFF</color>
+    <color name="black60_dark">#FFFAFAFA</color>
+    <color name="black37_dark">#FFECECEC</color>
+    <color name="black16_dark">#FFECECEC</color>
+    <color name="black8_dark">#FFE1E1E1</color>
+    <!--White Dark Palette-->
+    <color name="white_ff_dark">#DE121212</color>
+    <color name="white_fa_dark">#99121212</color>
+    <color name="white_ec_dark">#5E121212</color>
+    <color name="white_e1_dark">#14121212</color>
+    <!--Other-->
+    <color name="card_background">#FFF6F6F6</color>
+
+    <color name="inactive">#C4C4C4</color>
+    <color name="active">#50C2C9</color>
+
 </resources>

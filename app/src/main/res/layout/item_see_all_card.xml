@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/space4"
+    android:backgroundTint="@color/white_ff"
+    app:cardCornerRadius="@dimen/corners14"
+    app:strokeWidth="@dimen/space_zero">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/recipe_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height200"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/burgur" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height200"
+        android:background="@drawable/text_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|bottom"
+        android:layout_marginHorizontal="@dimen/space12"
+        android:layout_marginBottom="@dimen/space12"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_regular"
+        android:lines="1"
+        android:text="@string/burgur"
+        android:textColor="@color/white_ff"
+        android:textSize="@dimen/text14" />
+
+
+</com.google.android.material.card.MaterialCardView>
+
+
+

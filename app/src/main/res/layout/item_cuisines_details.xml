@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height200"
+    android:layout_margin="@dimen/space4"
+    android:backgroundTint="@color/white_ec"
+    app:cardCornerRadius="@dimen/corners14"
+    app:strokeWidth="@dimen/space_zero">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/cuisine_details_recipe_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/food_image" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height200"
+            android:background="@drawable/text_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/cuisine_details_recipe_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space8"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_medium"
+            android:lines="1"
+            android:maxLines="2"
+            android:textColor="@color/white_ff"
+            android:textSize="@dimen/text16"
+            app:layout_constraintBottom_toTopOf="@+id/cuisine_details_cuisine_name"
+            app:layout_constraintEnd_toEndOf="@+id/cuisine_details_cuisine_name"
+            app:layout_constraintStart_toStartOf="@+id/cuisine_details_recipe_image"
+            tools:text="Pizza" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/cuisine_details_cuisine_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space8"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center_vertical"
+            android:lines="2"
+            android:textColor="@color/white_fa"
+            android:textSize="@dimen/text14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="USA" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
+
+
+
