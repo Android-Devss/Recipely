@@ -1,6 +1,7 @@
 package com.example.recipely.ui
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
@@ -10,9 +11,10 @@ import com.example.recipely.ui.advice.AdviceFragment
 import com.example.recipely.ui.search.SearchFragment
 import com.example.recipely.ui.recipecuisines.RecipeCuisinesFragment
 import com.example.recipely.ui.home.RecipeHomeFragment
+import com.example.recipely.ui.onboardingScreen.OnboardingFragment
+lateinit var binding: ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
     private val recipeHomeFragment by lazy { RecipeHomeFragment() }
     private val adviceFragment by lazy { AdviceFragment() }
     private val recipeCuisinesFragment by lazy { RecipeCuisinesFragment() }
@@ -57,18 +59,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initSubView() {
-        addFragment(recipeHomeFragment)
+        addFragment(OnboardingFragment())
     }
 
     private fun addFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .add(R.id.fragment_container, fragment)
             .commit()
+        binding.bottomNavigationBar.visibility= View.GONE
+
     }
 
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit()
+
     }
 }

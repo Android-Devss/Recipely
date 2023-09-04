@@ -1,9 +1,11 @@
 package com.example.recipely.util
 
+import android.view.View
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import coil.load
 import com.example.recipely.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 fun ImageView.loadImageWithPlaceholderAndCrossFade(url: String) {
     this.load(url) {
@@ -16,9 +18,11 @@ fun ImageView.loadImageWithPlaceholderAndCrossFade(url: String) {
 fun Int.toTimeFormat() = "$this min"
 
 fun Fragment.replaceFragment(fragment: Fragment) {
+
     requireActivity().supportFragmentManager.beginTransaction()
         .replace(R.id.fragment_container, fragment).addToBackStack(null)
         .commit()
+    requireActivity().findViewById<BottomNavigationView>(R.id.bottom_navigation_bar).visibility=View.VISIBLE
 }
 
 fun Fragment.addFragment(fragment: Fragment) {

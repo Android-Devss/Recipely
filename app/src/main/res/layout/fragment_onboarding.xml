@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:id="@+id/container_view"
     android:layout_height="match_parent"
-    tools:context=".ui.onboardingScreen.OnboardingActivity">
+    android:background="@drawable/screen_one"
+    android:id="@+id/container_view"
+    tools:context=".ui.onboardingScreen.OnboardingFragment">
 
-    <!-- ViewPager as the background -->
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/slideViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-    <!-- Content Views (Text and Button) above the ViewPager -->
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/next"
         android:layout_width="wrap_content"
