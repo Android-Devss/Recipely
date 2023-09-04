@@ -14,6 +14,7 @@ import com.example.recipely.ui.recipedetails.RecipeDetailsFragment
 import com.example.recipely.ui.home.HomeAdapter
 import com.example.recipely.util.CsvParser
 import com.example.recipely.util.addFragment
+import com.example.recipely.util.replaceFragment
 
 class RecipeCuisinesDetailsFragment : BaseFragment<FragmentRecipeCuisinesDetailsBinding>(),
     HomeAdapter.HomeInteractionListener {
@@ -58,7 +59,7 @@ class RecipeCuisinesDetailsFragment : BaseFragment<FragmentRecipeCuisinesDetails
 
     override fun onClickRecipe(recipeName: String) {
         val recipeDetails = RecipeDetailsFragment.newInstance(recipeName)
-        addFragment(recipeDetails)
+        replaceFragment(recipeDetails)
     }
 
     override fun onClickHomeSeeAll(type: SeeAllTypes) {
