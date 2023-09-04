@@ -4,39 +4,34 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
 import androidx.viewpager.widget.PagerAdapter
 import com.example.recipely.R
 
-class ViewPagerAdapter(private val context: Context) : PagerAdapter() {
-
-    private val images = intArrayOf(
-        R.drawable.screen_one,
-        R.drawable.screen_two
-
-    )
+class OnboardingPagerAdapter(private val layouts: List<Int>, private val context: Context) : PagerAdapter() {
     override fun getCount(): Int {
-        return images.size
+        return layouts.size
     }
 
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
-        return view == `object` as LinearLayout
+        return view === `object`
     }
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val view = layoutInflater.inflate(R.layout.slider_layout, container, false)
+        val view = layoutInflater.inflate(layouts[position], container, false)
 
-        val slideTitleImage = view.findViewById<ImageView>(R.id.shapeableImageView)
+        if (position==0){
+            view.setBackgroundResource(R.drawable.screen_one)
+        }
+        else{
+            view.setBackgroundResource(R.drawable.screen_two)
 
-        slideTitleImage.setImageResource(images[position])
+        }
         container.addView(view)
-
         return view
     }
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
-        container.removeView(`object` as LinearLayout)
+        container.removeView(`object` as View)
     }
 }
